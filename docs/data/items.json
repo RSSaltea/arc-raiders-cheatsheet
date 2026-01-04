@@ -3,18 +3,18 @@
   "generatedAt": "2026-01-04T14:06:28.356408Z",
   "items": [
     {
-      "name": "Accelerator",
+      "name": "Magnetic Accelerator",
       "sellValue": 5000,
       "recycleDelta": null,
-      "section": "Essentials",
+      "section": "High-Tier Components",
       "category": null
     },
     {
       "name": "Alarm Clock",
-      "sellValue": 32000,
-      "recycleDelta": "+0%",
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sellValue": 1000,
+      "recycleDelta": "-14%",
+      "section": "Safe to Sell / Recycle",
+      "category": "Plastic Parts"
     },
     {
       "name": "Antiseptic",
