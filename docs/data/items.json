@@ -16,196 +16,252 @@
       "sellValue": 1000,
       "recycleDelta": "-14%",
       "sections": ["Safe to Sell / Recycle"],
-      "categories": [ "Plastic Parts", "Processor" ]
+      "categories": [ "Plastic Parts", "Processor" ],
+      "icon": "icons/Alarm_Clock.png",
+      "rarity": "Rare"
     },
     {
       "name": "Antiseptic",
       "sellValue": 1000,
       "recycleDelta": "-50%",
       "sections": ["Workshop Upgrades"],
-      "categories": [ "Medical Components", "Chemicals" ]
+      "categories": [ "Medical Components", "Chemicals" ],
+      "icon": "icons/Antiseptic.png",
+      "rarity": "Rare"
     },
     {
       "name": "ARC Circuitry",
       "sellValue": 1000,
       "recycleDelta": "-25%",
       "sections": ["Workshop Upgrades"],
-      "categories": [ "Explosive Components", "Gear Components", "Refiner Components" ]
+      "categories": [ "Explosive Components", "Gear Components", "Refiner Components" ],
+      "icon": "icons/ARC_Circuitry.png",
+      "rarity": "Rare"
     },
     {
       "name": "ARC Coolant",
       "sellValue": 1000,
       "recycleDelta": null,
       "sections": ["Recycle into High-Priority Components"],
-      "categories": ["Chemicals"]
+      "categories": ["Chemicals"],
+      "icon": "icons/ARC_Coolant.png",
+      "rarity": "Rare"
     },
     {
       "name": "ARC Flex Rubber",
       "sellValue": 1000,
       "recycleDelta": null,
       "sections": ["Recycle into High-Priority Components"],
-      "categories": ["Rubber Parts"]
+      "categories": ["Rubber Parts"],
+      "icon": "icons/ARC_Flex_Rubber.png",
+      "rarity": "Rare"
     },
     {
       "name": "ARC Motion Core",
       "sellValue": 1000,
       "recycleDelta": null,
       "sections": [ "Workshop Upgrades", "High-Priority Components" ],
-      "categories": [ "Workbench Components", "Refiner Components", "Explosive Components" ]
+      "categories": [ "Workbench Components", "Refiner Components", "Explosive Components" ],
+      "icon": "icons/ARC_Motion_Core.png",
+      "rarity": "Rare"
     },
     {
       "name": "ARC Synthetic Resin",
       "sellValue": 1000,
       "recycleDelta": null,
       "sections": ["Recycle into High-Priority Components"],
-      "categories": ["Plastic Parts"]
+      "categories": ["Plastic Parts"],
+      "icon": "icons/ARC_Synthetic_Resin.png",
+      "rarity": "Rare"
     },
     {
       "name": "ARC Thermo Lining",
       "sellValue": 1000,
       "recycleDelta": null,
       "sections": ["Recycle into High-Priority Components"],
-      "categories": ["Fabric"]
+      "categories": ["Fabric"],
+      "icon": "icons/ARC_Thermo_Lining.png",
+      "rarity": "Rare"
     },
     {
       "name": "Bastion Cell",
       "sellValue": 5000,
       "recycleDelta": null,
       "sections": ["Workshop Upgrades"],
-      "categories": null
+      "categories": null,
+      "icon": "icons/Bastion_Cell.png",
+      "rarity": "Epic"
     },
     {
       "name": "Battery",
       "sellValue": 250,
       "recycleDelta": "-40%",
       "sections": ["Expedition Project"],
-      "categories": [ "Workbench Components", "Gear Components", "Explosive Components" ]
+      "categories": [ "Workbench Components", "Gear Components", "Explosive Components" ],
+      "icon": "icons/Battery.png",
+      "rarity": "Uncommon"
     },
     {
       "name": "Bicycle Pump",
       "sellValue": 2000,
       "recycleDelta": null,
       "sections": ["Recycle into High-Priority Components"],
-      "categories": [ "Metal Parts", "Canister" ]
+      "categories": [ "Metal Parts", "Canister" ],
+      "icon": "icons/Bicycle_Pump.png",
+      "rarity": "Rare"
     },
     {
       "name": "Bombardier Cell",
       "sellValue": 5000,
       "recycleDelta": null,
       "sections": ["Workshop Upgrades"],
-      "categories": null
+      "categories": null,
+      "icon": "icons/Bombardier_Cell.png",
+      "rarity": "Epic"
     },
     {
       "name": "Frequency Modulation Box",
       "sellValue": 3000,
       "recycleDelta": null,
       "sections": ["Expedition Project"],
-      "categories": null
+      "categories": null,
+      "icon": "icons/Frequency_Modulation_Box.png",
+      "rarity": "Rare"
     },
     {
       "name": "Broken Flashlight",
       "sellValue": 1000,
       "recycleDelta": null,
       "sections": ["Recycle into Core Components"],
-      "categories": ["Battery"]
+      "categories": ["Battery"],
+      "icon": "icons/Broken_Flashlight.png",
+      "rarity": "Rare"
     },
     {
       "name": "Broken Taser",
       "sellValue": 1000,
       "recycleDelta": null,
       "sections": ["Recycle into Core Components"],
-      "categories": ["Battery"]
+      "categories": ["Battery"],
+      "icon": "icons/Broken_Taser.png",
+      "rarity": "Rare"
     },
     {
       "name": "Burned ARC Circuitry",
       "sellValue": 640,
       "recycleDelta": "-25%",
       "sections": ["Safe to Sell / Recycle"],
-      "categories": null
+      "categories": null,
+      "icon": "icons/Burned_ARC_Circuitry.png",
+      "rarity": "Uncommon"
     },
     {
       "name": "Candle Holder",
       "sellValue": 640,
       "recycleDelta": null,
       "sections": ["Recycle into High-Priority Components"],
-      "categories": ["Metal Parts"]
+      "categories": ["Metal Parts"],
+      "icon": "icons/Candle_Holder.png",
+      "rarity": "Uncommon"
     },
     {
       "name": "Adv. Electrical Components",
       "sellValue": 1750,
       "recycleDelta": null,
       "sections": ["Workshop Upgrades"],
-      "categories": null
+      "categories": null,
+      "icon": "icons/Advanced_Electrical_Components.png",
+      "rarity": "Rare"
     },
     {
       "name": "Adv. Mechanical Components",
       "sellValue": 1750,
       "recycleDelta": null,
       "sections": ["Workshop Upgrades"],
-      "categories": null
+      "categories": null,
+      "icon": "icons/Advanced_Mechanical_Components.png",
+      "rarity": "Rare"
     },
     {
       "name": "Coolant",
       "sellValue": 31000,
       "recycleDelta": "-10%",
       "sections": ["Safe to Sell / Recycle"],
-      "categories": [ "Chemicals", "Oil" ]
+      "categories": [ "Chemicals", "Oil" ],
+      "icon": "icons/Coolant.png",
+      "rarity": "Rare"
     },
     {
       "name": "Cooling Coil",
       "sellValue": 1000,
       "recycleDelta": null,
       "sections": [ "Recycle into Core Components", "Recycle into High-Priority Components", "Expedition Project" ],
-      "categories": [ "Chemicals", "Steel Spring" ]
+      "categories": [ "Chemicals", "Steel Spring" ],
+      "icon": "icons/Cooling_Coil.png",
+      "rarity": "Rare"
     },
     {
       "name": "Cracked Bioscanner",
       "sellValue": 1000,
       "recycleDelta": null,
       "sections": [ "Workshop Upgrades", "Recycle into Core Components" ],
-      "categories": [ "Battery", "Rubber Parts" ]
+      "categories": [ "Battery", "Rubber Parts" ],
+      "icon": "icons/Cracked_Bioscanner.png",
+      "rarity": "Rare"
     },
     {
       "name": "Crude Explosives",
       "sellValue": 270,
       "recycleDelta": "-44%",
       "sections": ["Workshop Upgrades"],
-      "categories": [ "Refiner Components", "Explosive Components", "Gear Components" ]
+      "categories": [ "Refiner Components", "Explosive Components", "Gear Components" ],
+      "icon": "icons/Crude_Explosives.png",
+      "rarity": "Uncommon"
     },
     {
       "name": "Damaged Heat Sink",
       "sellValue": 1000,
       "recycleDelta": null,
       "sections": ["Workshop Upgrades"],
-      "categories": null
+      "categories": null,
+      "icon": "icons/Damaged_Heat_Sink.png",
+      "rarity": "Rare"
     },
     {
       "name": "Diving Goggles",
       "sellValue": 640,
       "recycleDelta": "-6%",
       "sections": ["Safe to Sell / Recycle"],
-      "categories": ["Rubber Parts"]
+      "categories": ["Rubber Parts"],
+      "icon": "icons/Diving_Goggles.png",
+      "rarity": "Rare"
     },
     {
       "name": "Dog Collar",
       "sellValue": 640,
-      "recycleDelta": null,
-      "sections": "Workshop Upgrades",
-      "categories": "Components"
+      "recycleDelta": "-26%",
+      "sections": ["Workshop Upgrades"],
+      "categories": ["Fabric", "Metal Parts"],
+      "icon": "icons/Dog_Collar.png",
+      "rarity": "Rare"
     },
     {
       "name": "Durable Cloth",
       "sellValue": 640,
-      "recycleDelta": null,
-      "sections": "High-Priority Components",
-      "categories": "Fabric"
+      "recycleDelta": "-53%",
+      "sections": ["Expedition Project","Workshop Upgrades"],
+      "categories": ["Fabric", "Medical Components"],
+      "icon": "icons/Durable_Cloth.png",
+      "rarity": "Uncommon"
     },
     {
       "name": "Electrical Components",
       "sellValue": 640,
       "recycleDelta": "-48%",
-      "sections": "Workshop Upgrades",
-      "categories": "Components"
+      "sections": ["Workshop Upgrades","Expedition Project"],
+      "categories": ["Refiner Components","Gear Components","Explosive Components","Utility Components","Medical Components"],
+      "icon": "icons/Electrical_Components.png",
+      "rarity": "Uncommon"
     },
     {
       "name": "Exodus Modules",
