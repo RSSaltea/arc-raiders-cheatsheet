@@ -218,6 +218,18 @@ kbd{
   white-space:nowrap;
 }
 
+.badge.good {
+  color: var(--good);
+  border-color: rgba(124,255,182,.6);
+  background: rgba(124,255,182,.08);
+}
+
+.badge.bad {
+  color: var(--bad);
+  border-color: rgba(255,124,141,.6);
+  background: rgba(255,124,141,.08);
+}
+
 .meta{
   display:grid;
   gap:8px;
