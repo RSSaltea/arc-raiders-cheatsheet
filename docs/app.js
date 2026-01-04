@@ -165,3 +165,22 @@ main().catch(err => {
   console.error(err);
   els.grid.innerHTML = `<div class="card"><div class="name">Failed to load data</div><div class="subtitle">Check console for details.</div></div>`;
 });
+function getIconPath(item){
+  const cat = (item.category || "").toLowerCase();
+  const sec = (item.section || "").toLowerCase();
+
+  // Prefer specific categories
+  if (cat.includes("metal")) return "assets/icons/metal.svg";
+  if (cat.includes("fabric")) return "assets/icons/fabric.svg";
+  if (cat.includes("chemical")) return "assets/icons/chem.svg";
+  if (cat.includes("plastic")) return "assets/icons/plastic.svg";
+  if (cat.includes("rubber")) return "assets/icons/rubber.svg";
+  if (cat.includes("base components")) return "assets/icons/base.svg";
+
+  // Fallback by section
+  if (sec.includes("high-tier")) return "assets/icons/hightier.svg";
+  if (sec.includes("essentials")) return "assets/icons/base.svg";
+  return "assets/icons/components.svg";
+}
+
+
