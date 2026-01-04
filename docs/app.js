@@ -72,9 +72,9 @@ function render(items) {
     }
 
     const sec = node.querySelector('.section');
-    sec.textContent = item.section || 'Unsorted';
+    sec.textContent = (item.sections && item.sections.length) ? item.sections.join(' • ') : 'Unsorted';
     const cat = node.querySelector('.category');
-    cat.textContent = item.category || 'Uncategorized';
+    cat.textContent = (item.categories && item.categories.length) ? item.categories.join(' • ') : 'Uncategorized';
 
     frag.appendChild(node);
   }
@@ -89,14 +89,14 @@ function applyFilters(allItems) {
 
   let items = allItems.slice();
 
-  if (sec) items = items.filter(i => (i.section || '') === sec);
-  if (cat) items = items.filter(i => (i.category || '') === cat);
+if (sec) items = items.filter(i => (i.sections || []).includes(sec));
+if (cat) items = items.filter(i => (i.categories || []).includes(cat));
 
   if (q) {
     items = items.filter(i => {
       const name = (i.name || '').toLowerCase();
-      const section = (i.section || '').toLowerCase();
-      const category = (i.category || '').toLowerCase();
+      const section = (i.sections || []).join(' ').toLowerCase();
+      const category = (i.categories || []).join(' ').toLowerCase();
       const delta = (i.recycleDelta || '').toLowerCase();
       const value = String(i.sellValue ?? '');
       return (
@@ -129,14 +129,16 @@ function applyFilters(allItems) {
 async function main() {
   const res = await fetch('./data/items.json', { cache: 'no-store' });
   const payload = await res.json();
-  const allItems = (payload.items || []).map(i => ({
-    ...i,
-    name: String(i.name || '').trim()
-  })).filter(i => i.name);
+const allItems = (payload.items || []).map(i => ({
+  ...i,
+  name: String(i.name || '').trim(),
+  sections: Array.isArray(i.sections) ? i.sections.filter(Boolean) : (i.section ? [i.section] : []),
+  categories: Array.isArray(i.categories) ? i.categories.filter(Boolean) : (i.category ? [i.category] : [])
+})).filter(i => i.name);
 
   // Build select options
-  const sections = uniq(allItems.map(i => i.section));
-  const categories = uniq(allItems.map(i => i.category));
+const sections = uniq(allItems.flatMap(i => i.sections));
+const categories = uniq(allItems.flatMap(i => i.categories));
 
   fillSelect(els.section, sections, 'All sections');
   fillSelect(els.category, categories, 'All categories');
@@ -165,22 +167,5 @@ main().catch(err => {
   console.error(err);
   els.grid.innerHTML = `<div class="card"><div class="name">Failed to load data</div><div class="subtitle">Check console for details.</div></div>`;
 });
-function getIconPath(item){
-  const cat = (item.category || "").toLowerCase();
-  const sec = (item.section || "").toLowerCase();
-
-  // Prefer specific categories
-  if (cat.includes("metal")) return "assets/icons/metal.svg";
-  if (cat.includes("fabric")) return "assets/icons/fabric.svg";
-  if (cat.includes("chemical")) return "assets/icons/chem.svg";
-  if (cat.includes("plastic")) return "assets/icons/plastic.svg";
-  if (cat.includes("rubber")) return "assets/icons/rubber.svg";
-  if (cat.includes("base components")) return "assets/icons/base.svg";
-
-  // Fallback by section
-  if (sec.includes("high-tier")) return "assets/icons/hightier.svg";
-  if (sec.includes("essentials")) return "assets/icons/base.svg";
-  return "assets/icons/components.svg";
-}
 
 
