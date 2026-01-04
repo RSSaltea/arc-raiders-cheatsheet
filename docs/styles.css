@@ -228,13 +228,6 @@ kbd{
   z-index: 2;
 }
 
-
-/* Ensure content is above overlays */
-.card > *{
-  position: relative;
-  z-index: 2;
-}
-
 .cardTop{
   display:flex;
   align-items:flex-start;
@@ -385,14 +378,43 @@ kbd{
 .card.rarity-epic{ border-color: rgba(242,177,255,.9); }
 .card.rarity-legendary{ border-color: rgba(255,212,121,.95); }
 
-.card.rarity-uncommon,
 .card.rarity-rare,
 .card.rarity-epic,
 .card.rarity-legendary{
   box-shadow:
+    0 0 0 1px rgba(255,255,255,.06),
+    0 0 22px rgba(255,255,255,.04),
     inset 0 0 40px rgba(255,255,255,.04),
     0 20px 60px rgba(0,0,0,.45);
 }
+
+/* Rarity tag colours */
+.tag.rarity-common{
+  border-color: rgba(190,200,220,.6);
+  color: rgba(220,230,255,.9);
+  background: rgba(190,200,220,.12);
+}
+.tag.rarity-uncommon{
+  border-color: rgba(124,255,182,.8);
+  color: rgba(170,255,210,.95);
+  background: rgba(124,255,182,.12);
+}
+.tag.rarity-rare{
+  border-color: rgba(122,167,255,.85);
+  color: rgba(170,205,255,.95);
+  background: rgba(122,167,255,.12);
+}
+.tag.rarity-epic{
+  border-color: rgba(242,177,255,.9);
+  color: rgba(255,210,255,.95);
+  background: rgba(242,177,255,.12);
+}
+.tag.rarity-legendary{
+  border-color: rgba(255,212,121,.95);
+  color: rgba(255,235,190,.95);
+  background: rgba(255,212,121,.12);
+}
+
 
 .footer{
   margin-top: 22px;
