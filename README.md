@@ -21,8 +21,4 @@ This repo is scaffolded for **GitHub Pages** and includes:
 
 ## Notes
 
-The initial `items.json` was generated from your PDF infographic via automated extraction, so a few entries may need cleanup.
-If you want, we can tighten the extraction rules and add fields like:
-- stack size
-- rarity
-- “best choice” / “recycles into” / “crafts into”
+The initial `items.json` was generated from the PDF infographic via automated extraction, so a few entries may need cleanup.
