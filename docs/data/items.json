@@ -7,7 +7,8 @@
       "sellValue": 5000,
       "recycleDelta": null,
       "sections": ["High-Tier Components"],
-      "categories": null
+      "categories": null,
+      "icon": "/icons/Magnetic_Accelerator.png"
     },
     {
       "name": "Alarm Clock",
