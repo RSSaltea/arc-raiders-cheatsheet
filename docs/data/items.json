@@ -8,7 +8,8 @@
       "recycleDelta": null,
       "sections": ["High-Tier Components"],
       "categories": null,
-      "icon": "icons/Magnetic_Accelerator.png"
+      "icon": "icons/Magnetic_Accelerator.png",
+      "rarity": "Epic"
     },
     {
       "name": "Alarm Clock",
@@ -130,14 +131,14 @@
       "categories": ["Metal Parts"]
     },
     {
-      "name": "Advanced Electrical Components",
+      "name": "Adv. Electrical Components",
       "sellValue": 1750,
       "recycleDelta": null,
       "sections": ["Workshop Upgrades"],
       "categories": null
     },
     {
-      "name": "Advanced Mechanical Components",
+      "name": "Adv. Mechanical Components",
       "sellValue": 1750,
       "recycleDelta": null,
       "sections": ["Workshop Upgrades"],
