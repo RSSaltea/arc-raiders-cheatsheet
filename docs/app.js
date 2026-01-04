@@ -81,6 +81,22 @@ function render(items) {
   els.grid.appendChild(frag);
 }
 
+const icon = node.querySelector('.icon');
+if (icon) {
+  if (item.icon) {
+    // show image icon
+    icon.className = 'icon';
+    icon.style.backgroundImage = `url("${item.icon}")`;
+    icon.style.backgroundSize = 'contain';
+    icon.style.backgroundRepeat = 'no-repeat';
+    icon.style.backgroundPosition = 'center';
+  } else {
+    // fallback to CSS/emoji icon classes
+    icon.style.backgroundImage = '';
+    icon.className = `icon ${getIconClass(item)}`;
+  }
+}
+
 function applyFilters(allItems) {
   const q = els.q.value.trim().toLowerCase();
   const sec = els.section.value;
