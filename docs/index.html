@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ARC Raiders Master Cheat Sheet (Interactive)</title>
+  <meta name="description" content="Interactive, searchable ARC Raiders cheat sheet (GitHub Pages)." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo" aria-hidden="true"></div>
+      <div>
+        <div class="title">ARC Raiders Cheat Sheet</div>
+        <div class="subtitle">Interactive • Search • Filter • Sort</div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <label class="control">
+        <span>Search</span>
+        <input id="q" type="search" placeholder="e.g., Cooling Coil, Rubber Pad…" autocomplete="off" />
+      </label>
+
+      <label class="control">
+        <span>Section</span>
+        <select id="section"></select>
+      </label>
+
+      <label class="control">
+        <span>Category</span>
+        <select id="category"></select>
+      </label>
+
+      <label class="control">
+        <span>Sort</span>
+        <select id="sort">
+          <option value="name-asc">Name (A→Z)</option>
+          <option value="value-desc">Sell Value (high→low)</option>
+          <option value="value-asc">Sell Value (low→high)</option>
+          <option value="delta-desc">Recycle Δ% (high→low)</option>
+          <option value="delta-asc">Recycle Δ% (low→high)</option>
+        </select>
+      </label>
+
+      <button id="reset" class="btn" type="button">Reset</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="stats" aria-live="polite">
+      <div class="pill"><span id="count">0</span> items</div>
+      <div class="pill">Tip: use <kbd>+</kbd> or <kbd>-</kbd> in search to find positive/negative recycle deltas</div>
+    </section>
+
+    <section id="grid" class="grid" aria-label="Items list"></section>
+
+    <footer class="footer">
+      <div>Data extracted from your PDF and turned into JSON for this site.</div>
+      <div class="muted">If you want, we can refine the extraction and add the missing sections/fields.</div>
+    </footer>
+  </main>
+
+  <template id="cardTpl">
+    <article class="card">
+      <div class="cardTop">
+        <div class="name"></div>
+        <div class="badge"></div>
+      </div>
+
+      <div class="meta">
+        <div class="metaRow">
+          <span class="label">Sell</span>
+          <span class="value sell"></span>
+        </div>
+        <div class="metaRow">
+          <span class="label">Recycle Δ</span>
+          <span class="value delta"></span>
+        </div>
+      </div>
+
+      <div class="tags">
+        <span class="tag section"></span>
+        <span class="tag category"></span>
+      </div>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
