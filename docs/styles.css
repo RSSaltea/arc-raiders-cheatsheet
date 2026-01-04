@@ -182,7 +182,6 @@ kbd{
 }
 
 .card{
-  position: relative;
   border-radius: 18px;
   border:1px solid rgba(42,53,87,.75);
   background: linear-gradient(180deg, rgba(11,18,38,.80), rgba(11,18,38,.55));
@@ -233,7 +232,6 @@ kbd{
 .meta{
   display:grid;
   gap:8px;
-  padding-right: 56px;
 }
 
 .metaRow{
@@ -268,10 +266,14 @@ kbd{
   color: var(--muted);
 }
 
+.metaWrap{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  column-gap: 12px;
+}
+
 .icon{
-  position: absolute;
-  right: 16px;
-  bottom: 56px;
   width: 36px;
   height: 36px;
   background-size: contain;
