@@ -6,43 +6,43 @@
       "name": "Magnetic Accelerator",
       "sellValue": 5000,
       "recycleDelta": null,
-      "sections": "High-Tier Components",
+      "sections": ["High-Tier Components"],
       "categories": null
     },
     {
       "name": "Alarm Clock",
       "sellValue": 1000,
       "recycleDelta": "-14%",
-      "sections": "Safe to Sell / Recycle",
+      "sections": ["Safe to Sell / Recycle"],
       "categories": [ "Plastic Parts", "Processor" ]
     },
     {
       "name": "Antiseptic",
       "sellValue": 1000,
       "recycleDelta": "-50%",
-      "sections": "Workshop Upgrades",
+      "sections": ["Workshop Upgrades"],
       "categories": [ "Medical Components", "Chemicals" ]
     },
     {
       "name": "ARC Circuitry",
       "sellValue": 1000,
       "recycleDelta": "-25%",
-      "sections": "Workshop Upgrades",
+      "sections": ["Workshop Upgrades"],
       "categories": [ "Explosive Components", "Gear Components", "Refiner Components" ]
     },
     {
       "name": "ARC Coolant",
       "sellValue": 1000,
       "recycleDelta": null,
-      "sections": "Recycle into High-Priority Components",
-      "categories": "Chemicals"
+      "sections": ["Recycle into High-Priority Components"],
+      "categories": ["Chemicals"]
     },
     {
       "name": "ARC Flex Rubber",
       "sellValue": 1000,
       "recycleDelta": null,
-      "sections": "Recycle into High-Priority Components",
-      "categories": "Rubber Parts"
+      "sections": ["Recycle into High-Priority Components"],
+      "categories": ["Rubber Parts"]
     },
     {
       "name": "ARC Motion Core",
@@ -55,98 +55,98 @@
       "name": "ARC Synthetic Resin",
       "sellValue": 1000,
       "recycleDelta": null,
-      "sections": "Recycle into High-Priority Components",
-      "categories": "Plastic Parts"
+      "sections": ["Recycle into High-Priority Components"],
+      "categories": ["Plastic Parts"]
     },
     {
       "name": "ARC Thermo Lining",
       "sellValue": 1000,
       "recycleDelta": null,
-      "sections": "Recycle into High-Priority Components",
-      "categories": "Fabric"
+      "sections": ["Recycle into High-Priority Components"],
+      "categories": ["Fabric"]
     },
     {
       "name": "Bastion Cell",
       "sellValue": 5000,
       "recycleDelta": null,
-      "sections": "Workshop Upgrades",
+      "sections": ["Workshop Upgrades"],
       "categories": null
     },
     {
       "name": "Battery",
       "sellValue": 250,
       "recycleDelta": "-40%",
-      "sections": "Expedition Project",
+      "sections": ["Expedition Project"],
       "categories": [ "Workbench Components", "Gear Components", "Explosive Components" ]
     },
     {
       "name": "Bicycle Pump",
       "sellValue": 2000,
       "recycleDelta": null,
-      "sections": "Recycle into High-Priority Components",
+      "sections": ["Recycle into High-Priority Components"],
       "categories": [ "Metal Parts", "Canister" ]
     },
     {
       "name": "Bombardier Cell",
       "sellValue": 5000,
       "recycleDelta": null,
-      "sections": "Workshop Upgrades",
+      "sections": ["Workshop Upgrades"],
       "categories": null
     },
     {
       "name": "Frequency Modulation Box",
       "sellValue": 3000,
       "recycleDelta": null,
-      "sections": "Expedition Project",
+      "sections": ["Expedition Project"],
       "categories": null
     },
     {
       "name": "Broken Flashlight",
       "sellValue": 1000,
       "recycleDelta": null,
-      "sections": "Recycle into Core Components",
-      "categories": "Battery"
+      "sections": ["Recycle into Core Components"],
+      "categories": ["Battery"]
     },
     {
       "name": "Broken Taser",
       "sellValue": 1000,
       "recycleDelta": null,
-      "sections": "Recycle into Core Components",
-      "categories": "Battery"
+      "sections": ["Recycle into Core Components"],
+      "categories": ["Battery"]
     },
     {
       "name": "Burned ARC Circuitry",
       "sellValue": 640,
       "recycleDelta": "-25%",
-      "sections": "Safe to Sell / Recycle",
+      "sections": ["Safe to Sell / Recycle"],
       "categories": null
     },
     {
       "name": "Candle Holder",
       "sellValue": 640,
       "recycleDelta": null,
-      "sections": "Recycle into High-Priority Components",
-      "categories": "Metal Parts"
+      "sections": ["Recycle into High-Priority Components"],
+      "categories": ["Metal Parts"]
     },
     {
       "name": "Advanced Electrical Components",
       "sellValue": 1750,
       "recycleDelta": null,
-      "sections": "Workshop Upgrades",
+      "sections": ["Workshop Upgrades"],
       "categories": null
     },
     {
       "name": "Advanced Mechanical Components",
       "sellValue": 1750,
       "recycleDelta": null,
-      "sections": "Workshop Upgrades",
+      "sections": ["Workshop Upgrades"],
       "categories": null
     },
     {
       "name": "Coolant",
       "sellValue": 31000,
       "recycleDelta": "-10%",
-      "sections": "Safe to Sell / Recycle",
+      "sections": ["Safe to Sell / Recycle"],
       "categories": [ "Chemicals", "Oil" ]
     },
     {
@@ -167,22 +167,22 @@
       "name": "Crude Explosives",
       "sellValue": 270,
       "recycleDelta": "-44%",
-      "sections": "Workshop Upgrades",
+      "sections": ["Workshop Upgrades"],
       "categories": [ "Refiner Components", "Explosive Components", "Gear Components" ]
     },
     {
       "name": "Damaged Heat Sink",
       "sellValue": 1000,
       "recycleDelta": null,
-      "sections": "Workshop Upgrades",
+      "sections": ["Workshop Upgrades"],
       "categories": null
     },
     {
       "name": "Diving Goggles",
       "sellValue": 640,
       "recycleDelta": "-6%",
-      "sections": "Safe to Sell / Recycle",
-      "categories": "Rubber Parts"
+      "sections": ["Safe to Sell / Recycle"],
+      "categories": ["Rubber Parts"]
     },
     {
       "name": "Dog Collar",
