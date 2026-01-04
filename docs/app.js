@@ -22,7 +22,7 @@ function parseDelta(delta) {
 }
 
 function uniq(arr) {
-  return [...new Set(arr)].filter(Boolean).sort((a,b)=>a.localeCompare(b));
+  return [...new Set(arr)].filter(Boolean).sort((a, b) => a.localeCompare(b));
 }
 
 function fillSelect(selectEl, options, labelAll) {
@@ -51,33 +51,43 @@ function render(items) {
   els.count.textContent = String(items.length);
 
   const frag = document.createDocumentFragment();
+
   for (const item of items) {
     const node = els.tpl.content.cloneNode(true);
 
-    node.querySelector('.name').textContent = item.name;
+    // Name
+    const nameEl = node.querySelector('.name');
+    if (nameEl) nameEl.textContent = item.name;
 
+    // Badge (Recycle Δ) with color
     const badge = node.querySelector('.badge');
-    badge.textContent = cardBadge(item);
+    if (badge) {
+      badge.textContent = cardBadge(item);
+      badge.classList.remove('good', 'bad');
 
-    node.querySelector('.sell').textContent = fmt.format(item.sellValue);
-
-    const deltaEl = node.querySelector('.delta');
-    if (!item.recycleDelta) {
-      deltaEl.textContent = '—';
-      deltaEl.classList.add('na');
-    } else {
-      deltaEl.textContent = item.recycleDelta;
       const d = parseDelta(item.recycleDelta);
-      if (d > 0) deltaEl.classList.add('good');
-      else if (d < 0) deltaEl.classList.add('bad');
+      if (d > 0) badge.classList.add('good');
+      else if (d < 0) badge.classList.add('bad');
     }
 
-    const sec = node.querySelector('.section');
-    sec.textContent = (item.sections && item.sections.length) ? item.sections.join(' • ') : 'Unsorted';
+    // Sell value
+    const sellEl = node.querySelector('.sell');
+    if (sellEl) sellEl.textContent = fmt.format(item.sellValue ?? 0);
 
-    const cat = node.querySelector('.category');
-    cat.textContent = (item.categories && item.categories.length) ? item.categories.join(' • ') : 'Uncategorized';
+    // Section / Category tags (multi)
+    const secEl = node.querySelector('.section');
+    if (secEl) {
+      secEl.textContent =
+        (item.sections && item.sections.length) ? item.sections.join(' • ') : 'Unsorted';
+    }
 
+    const catEl = node.querySelector('.category');
+    if (catEl) {
+      catEl.textContent =
+        (item.categories && item.categories.length) ? item.categories.join(' • ') : 'Uncategorized';
+    }
+
+    // Icon (PNG/WebP/etc.) - uses item.icon, no SVG required
     const icon = node.querySelector('.icon');
     if (icon) {
       if (item.icon) {
@@ -103,9 +113,11 @@ function applyFilters(allItems) {
 
   let items = allItems.slice();
 
-if (sec) items = items.filter(i => (i.sections || []).includes(sec));
-if (cat) items = items.filter(i => (i.categories || []).includes(cat));
+  // Filter by multi sections/categories
+  if (sec) items = items.filter(i => (i.sections || []).includes(sec));
+  if (cat) items = items.filter(i => (i.categories || []).includes(cat));
 
+  // Search
   if (q) {
     items = items.filter(i => {
       const name = (i.name || '').toLowerCase();
@@ -113,22 +125,26 @@ if (cat) items = items.filter(i => (i.categories || []).includes(cat));
       const category = (i.categories || []).join(' ').toLowerCase();
       const delta = (i.recycleDelta || '').toLowerCase();
       const value = String(i.sellValue ?? '');
+      const icon = (i.icon || '').toLowerCase();
+
       return (
         name.includes(q) ||
         section.includes(q) ||
         category.includes(q) ||
         delta.includes(q) ||
-        value.includes(q)
+        value.includes(q) ||
+        icon.includes(q)
       );
     });
   }
 
-  items.sort((a,b) => {
+  // Sort
+  items.sort((a, b) => {
     const da = parseDelta(a.recycleDelta);
     const db = parseDelta(b.recycleDelta);
 
     switch (sort) {
-      case 'name-asc': return a.name.localeCompare(b.name);
+      case 'name-asc': return (a.name || '').localeCompare(b.name || '');
       case 'value-desc': return (b.sellValue ?? 0) - (a.sellValue ?? 0);
       case 'value-asc': return (a.sellValue ?? 0) - (b.sellValue ?? 0);
       case 'delta-desc': return (db ?? -9999) - (da ?? -9999);
@@ -143,23 +159,28 @@ if (cat) items = items.filter(i => (i.categories || []).includes(cat));
 async function main() {
   const res = await fetch('./data/items.json', { cache: 'no-store' });
   const payload = await res.json();
-const allItems = (payload.items || []).map(i => ({
-  ...i,
-  name: String(i.name || '').trim(),
-  sections: Array.isArray(i.sections) ? i.sections.filter(Boolean) : (i.section ? [i.section] : []),
-  categories: Array.isArray(i.categories) ? i.categories.filter(Boolean) : (i.category ? [i.category] : [])
-})).filter(i => i.name);
+
+  // Support both: { items: [...] } and [ ... ]
+  const rawItems = Array.isArray(payload) ? payload : (payload.items || []);
+
+  // Normalize to multi sections/categories
+  const allItems = rawItems.map(i => ({
+    ...i,
+    name: String(i.name || '').trim(),
+    sections: Array.isArray(i.sections) ? i.sections.filter(Boolean) : (i.section ? [i.section] : []),
+    categories: Array.isArray(i.categories) ? i.categories.filter(Boolean) : (i.category ? [i.category] : [])
+  })).filter(i => i.name);
 
   // Build select options
-const sections = uniq(allItems.flatMap(i => i.sections));
-const categories = uniq(allItems.flatMap(i => i.categories));
+  const sections = uniq(allItems.flatMap(i => i.sections));
+  const categories = uniq(allItems.flatMap(i => i.categories));
 
   fillSelect(els.section, sections, 'All sections');
   fillSelect(els.category, categories, 'All categories');
 
-  // wire listeners
+  // Wire listeners
   const onChange = () => applyFilters(allItems);
-  ['input','change'].forEach(evt => {
+  ['input', 'change'].forEach(evt => {
     els.q.addEventListener(evt, onChange);
     els.section.addEventListener(evt, onChange);
     els.category.addEventListener(evt, onChange);
@@ -179,7 +200,6 @@ const categories = uniq(allItems.flatMap(i => i.categories));
 
 main().catch(err => {
   console.error(err);
-  els.grid.innerHTML = `<div class="card"><div class="name">Failed to load data</div><div class="subtitle">Check console for details.</div></div>`;
+  els.grid.innerHTML =
+    `<div class="card"><div class="name">Failed to load data</div><div class="subtitle">Check console for details.</div></div>`;
 });
-
-
