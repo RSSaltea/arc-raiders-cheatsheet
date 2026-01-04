@@ -221,6 +221,7 @@ kbd{
 .meta{
   display:grid;
   gap:8px;
+  padding-right: 56px;
 }
 
 .metaRow{
