@@ -65,11 +65,18 @@ function render(items) {
   for (const item of items) {
     const node = els.tpl.content.cloneNode(true);
 
-    // Apply rarity class to the card
-    const cardEl = node.querySelector('.card');
-    if (cardEl) {
-      cardEl.classList.add(rarityClass(item.rarity));
-    }
+// Apply rarity class to the card (reset first)
+const cardEl = node.querySelector('.card');
+if (cardEl) {
+  cardEl.classList.remove(
+    'rarity-common',
+    'rarity-uncommon',
+    'rarity-rare',
+    'rarity-epic',
+    'rarity-legendary'
+  );
+        cardEl.classList.add(rarityClass(item.rarity));
+}
 
     // Name
     const nameEl = node.querySelector('.name');
@@ -96,6 +103,21 @@ function render(items) {
       secEl.textContent =
         (item.sections && item.sections.length) ? item.sections.join(' • ') : 'Unsorted';
     }
+    
+    // Rarity tag
+const rarityEl = node.querySelector('.rarity');
+if (rarityEl) {
+  const r = String(item.rarity || 'Common').trim().toLowerCase();
+  const safe = ['common','uncommon','rare','epic','legendary'].includes(r) ? r : 'common';
+
+  rarityEl.textContent = safe.charAt(0).toUpperCase() + safe.slice(1);
+
+  rarityEl.classList.remove(
+    'rarity-common','rarity-uncommon','rarity-rare','rarity-epic','rarity-legendary'
+  );
+  rarityEl.classList.add(`rarity-${safe}`);
+}
+
 
     const catEl = node.querySelector('.category');
     if (catEl) {
