@@ -8,7 +8,7 @@
       "recycleDelta": null,
       "sections": ["High-Tier Components"],
       "categories": null,
-      "icon": "/icons/Magnetic_Accelerator.png"
+      "icon": "icons/Magnetic_Accelerator.png"
     },
     {
       "name": "Alarm Clock",
