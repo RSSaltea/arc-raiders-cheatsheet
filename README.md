@@ -5,16 +5,6 @@ This repo is scaffolded for **GitHub Pages** and includes:
 - Search + filter + sort
 - JSON data source at `docs/data/items.json`
 
-## Quick start (deploy to GitHub Pages)
-
-1. Create a new repo on GitHub (e.g. `arc-raiders-cheatsheet`).
-2. Copy the contents of this folder into the repo.
-3. In GitHub: **Settings → Pages**
-   - **Source:** Deploy from a branch
-   - **Branch:** `main` (or `master`)
-   - **Folder:** `/docs`
-4. Your site will be live at: `https://<your-user>.github.io/<repo-name>/`
-
 ## Editing data
 
 - Data lives in `docs/data/items.json`
