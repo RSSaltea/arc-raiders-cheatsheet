@@ -46,6 +46,16 @@ function cardBadge(item) {
   return d > 0 ? `Δ +${d}%` : `Δ ${d}%`;
 }
 
+// Normalize rarity string -> class suffix
+function rarityClass(rarity) {
+  const r = String(rarity || 'Common').trim().toLowerCase();
+  if (r === 'uncommon') return 'rarity-uncommon';
+  if (r === 'rare') return 'rarity-rare';
+  if (r === 'epic') return 'rarity-epic';
+  if (r === 'legendary') return 'rarity-legendary';
+  return 'rarity-common';
+}
+
 function render(items) {
   els.grid.innerHTML = '';
   els.count.textContent = String(items.length);
@@ -54,6 +64,12 @@ function render(items) {
 
   for (const item of items) {
     const node = els.tpl.content.cloneNode(true);
+
+    // Apply rarity class to the card
+    const cardEl = node.querySelector('.card');
+    if (cardEl) {
+      cardEl.classList.add(rarityClass(item.rarity));
+    }
 
     // Name
     const nameEl = node.querySelector('.name');
@@ -87,7 +103,7 @@ function render(items) {
         (item.categories && item.categories.length) ? item.categories.join(' • ') : 'Uncategorized';
     }
 
-    // Icon (PNG/WebP/etc.) - uses item.icon, no SVG required
+    // Icon (PNG/WebP/etc.) - uses item.icon
     const icon = node.querySelector('.icon');
     if (icon) {
       if (item.icon) {
@@ -126,6 +142,7 @@ function applyFilters(allItems) {
       const delta = (i.recycleDelta || '').toLowerCase();
       const value = String(i.sellValue ?? '');
       const icon = (i.icon || '').toLowerCase();
+      const rarity = String(i.rarity || '').toLowerCase();
 
       return (
         name.includes(q) ||
@@ -133,7 +150,8 @@ function applyFilters(allItems) {
         category.includes(q) ||
         delta.includes(q) ||
         value.includes(q) ||
-        icon.includes(q)
+        icon.includes(q) ||
+        rarity.includes(q)
       );
     });
   }
@@ -163,12 +181,13 @@ async function main() {
   // Support both: { items: [...] } and [ ... ]
   const rawItems = Array.isArray(payload) ? payload : (payload.items || []);
 
-  // Normalize to multi sections/categories
+  // Normalize to multi sections/categories + rarity
   const allItems = rawItems.map(i => ({
     ...i,
     name: String(i.name || '').trim(),
     sections: Array.isArray(i.sections) ? i.sections.filter(Boolean) : (i.section ? [i.section] : []),
-    categories: Array.isArray(i.categories) ? i.categories.filter(Boolean) : (i.category ? [i.category] : [])
+    categories: Array.isArray(i.categories) ? i.categories.filter(Boolean) : (i.category ? [i.category] : []),
+    rarity: String(i.rarity || 'Common').trim()
   })).filter(i => i.name);
 
   // Build select options
