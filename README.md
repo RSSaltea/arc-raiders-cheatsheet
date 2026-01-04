@@ -10,13 +10,13 @@ This repo is scaffolded for **GitHub Pages** and includes:
 - Data lives in `docs/data/items.json`
 - Each item is:
   ```json
-  {
-    "name": "Cooling Coil",
-    "sellValue": 1000,
-    "recycleDelta": "+6%",
-    "section": "High-Priority Components",
-    "category": "Chemicals"
-  }
+    {
+      "name": "Crude Explosives",
+      "sellValue": 270,
+      "recycleDelta": "-44%",
+      "sections": ["Workshop Upgrades"],
+      "categories": [ "Refiner Components", "Explosive Components", "Gear Components" ]
+    },
   ```
 
 ## Notes
