@@ -53,6 +53,7 @@ function render(items) {
   const frag = document.createDocumentFragment();
   for (const item of items) {
     const node = els.tpl.content.cloneNode(true);
+
     node.querySelector('.name').textContent = item.name;
 
     const badge = node.querySelector('.badge');
@@ -73,28 +74,25 @@ function render(items) {
 
     const sec = node.querySelector('.section');
     sec.textContent = (item.sections && item.sections.length) ? item.sections.join(' • ') : 'Unsorted';
+
     const cat = node.querySelector('.category');
     cat.textContent = (item.categories && item.categories.length) ? item.categories.join(' • ') : 'Uncategorized';
 
+    const icon = node.querySelector('.icon');
+    if (icon) {
+      if (item.icon) {
+        icon.className = 'icon';
+        icon.style.backgroundImage = `url("${item.icon}")`;
+      } else {
+        icon.style.backgroundImage = '';
+        icon.className = 'icon';
+      }
+    }
+
     frag.appendChild(node);
   }
-  els.grid.appendChild(frag);
-}
 
-const icon = node.querySelector('.icon');
-if (icon) {
-  if (item.icon) {
-    // show image icon
-    icon.className = 'icon';
-    icon.style.backgroundImage = `url("${item.icon}")`;
-    icon.style.backgroundSize = 'contain';
-    icon.style.backgroundRepeat = 'no-repeat';
-    icon.style.backgroundPosition = 'center';
-  } else {
-    // fallback to CSS/emoji icon classes
-    icon.style.backgroundImage = '';
-    icon.className = `icon ${getIconClass(item)}`;
-  }
+  els.grid.appendChild(frag);
 }
 
 function applyFilters(allItems) {
