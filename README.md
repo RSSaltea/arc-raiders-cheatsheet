@@ -1,5 +1,8 @@
 # ARC Raiders Cheat Sheet (Interactive) — GitHub Pages
 
+## WIP Project
+This is far from complete so if you come across it, do not expect it to be the go-to.
+
 This repo is scaffolded for **GitHub Pages** and includes:
 - Mobile-first UI (dark, ARC-ish vibe)
 - Search + filter + sort
