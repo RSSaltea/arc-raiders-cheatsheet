@@ -6,890 +6,834 @@
       "name": "Magnetic Accelerator",
       "sellValue": 5000,
       "recycleDelta": null,
-      "section": "High-Tier Components",
-      "category": null
+      "sections": "High-Tier Components",
+      "categories": null
     },
     {
       "name": "Alarm Clock",
       "sellValue": 1000,
       "recycleDelta": "-14%",
-      "section": "Safe to Sell / Recycle",
-      "category": "Plastic Parts"
+      "sections": "Safe to Sell / Recycle",
+      "categories": [ "Plastic Parts", "Processor" ]
     },
     {
       "name": "Antiseptic",
       "sellValue": 1000,
-      "recycleDelta": null,
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "recycleDelta": "-50%",
+      "sections": "Workshop Upgrades",
+      "categories": [ "Medical Components", "Chemicals" ]
     },
     {
       "name": "ARC Circuitry",
       "sellValue": 1000,
-      "recycleDelta": null,
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "recycleDelta": "-25%",
+      "sections": "Workshop Upgrades",
+      "categories": [ "Explosive Components", "Gear Components", "Refiner Components" ]
     },
     {
       "name": "ARC Coolant",
       "sellValue": 1000,
-      "recycleDelta": "+16%",
-      "section": "High-Priority Components",
-      "category": "Chemicals"
+      "recycleDelta": null,
+      "sections": "Recycle into High-Priority Components",
+      "categories": "Chemicals"
     },
     {
       "name": "ARC Flex Rubber",
       "sellValue": 1000,
-      "recycleDelta": "+16%",
-      "section": "High-Priority Components",
-      "category": "Rubber Parts"
+      "recycleDelta": null,
+      "sections": "Recycle into High-Priority Components",
+      "categories": "Rubber Parts"
     },
     {
       "name": "ARC Motion Core",
       "sellValue": 1000,
       "recycleDelta": null,
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": [ "Workshop Upgrades", "High-Priority Components" ],
+      "categories": [ "Workbench Components", "Refiner Components", "Explosive Components" ]
     },
     {
       "name": "ARC Synthetic Resin",
       "sellValue": 1000,
-      "recycleDelta": "+14%",
-      "section": "High-Priority Components",
-      "category": "Plastic Parts"
+      "recycleDelta": null,
+      "sections": "Recycle into High-Priority Components",
+      "categories": "Plastic Parts"
     },
     {
       "name": "ARC Thermo Lining",
       "sellValue": 1000,
-      "recycleDelta": "+16%",
-      "section": "High-Priority Components",
-      "category": "Fabric"
+      "recycleDelta": null,
+      "sections": "Recycle into High-Priority Components",
+      "categories": "Fabric"
     },
     {
       "name": "Bastion Cell",
       "sellValue": 5000,
       "recycleDelta": null,
-      "section": "Workshop Upgrades",
-      "category": "Components"
-    },
-    {
-      "name": "Battery",
-      "sellValue": 250,
-      "recycleDelta": null,
-      "section": "High-Tier Components",
-      "category": null
+      "sections": "Workshop Upgrades",
+      "categories": null
     },
     {
       "name": "Battery",
       "sellValue": 250,
       "recycleDelta": "-40%",
-      "section": "Workshop Upgrades",
-      "category": "Rubber Parts"
+      "sections": "Expedition Project",
+      "categories": [ "Workbench Components", "Gear Components", "Explosive Components" ]
     },
     {
       "name": "Bicycle Pump",
       "sellValue": 2000,
-      "recycleDelta": "+10%",
-      "section": "High-Priority Components",
-      "category": "Metal Parts"
-    },
-    {
-      "name": "Bobcat I",
-      "sellValue": 13000,
       "recycleDelta": null,
-      "section": "Essentials",
-      "category": null
+      "sections": "Recycle into High-Priority Components",
+      "categories": [ "Metal Parts", "Canister" ]
     },
     {
       "name": "Bombardier Cell",
       "sellValue": 5000,
       "recycleDelta": null,
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": "Workshop Upgrades",
+      "categories": null
     },
     {
-      "name": "Box",
+      "name": "Frequency Modulation Box",
       "sellValue": 3000,
-      "recycleDelta": "+1%",
-      "section": "Essentials",
-      "category": null
+      "recycleDelta": null,
+      "sections": "Expedition Project",
+      "categories": null
     },
     {
       "name": "Broken Flashlight",
       "sellValue": 1000,
-      "recycleDelta": "+2%",
-      "section": "High-Tier Components",
-      "category": null
+      "recycleDelta": null,
+      "sections": "Recycle into Core Components",
+      "categories": "Battery"
     },
     {
       "name": "Broken Taser",
       "sellValue": 1000,
-      "recycleDelta": "+2%",
-      "section": "High-Tier Components",
-      "category": null
+      "recycleDelta": null,
+      "sections": "Recycle into Core Components",
+      "categories": "Battery"
     },
     {
       "name": "Burned ARC Circuitry",
       "sellValue": 640,
-      "recycleDelta": "-16%",
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "recycleDelta": "-25%",
+      "sections": "Safe to Sell / Recycle",
+      "categories": null
     },
     {
       "name": "Candle Holder",
       "sellValue": 640,
-      "recycleDelta": "+8%",
-      "section": "High-Priority Components",
-      "category": "Metal Parts"
-    },
-    {
-      "name": "Combat Mk. 3 (Aggressive)",
-      "sellValue": 5000,
       "recycleDelta": null,
-      "section": "Essentials",
-      "category": "Base Components"
+      "sections": "Recycle into High-Priority Components",
+      "categories": "Metal Parts"
     },
     {
-      "name": "Combat Mk. 3 (Flanking)",
-      "sellValue": 3000,
-      "recycleDelta": null,
-      "section": "Essentials",
-      "category": "Base Components"
-    },
-    {
-      "name": "Components",
+      "name": "Advanced Electrical Components",
       "sellValue": 1750,
       "recycleDelta": null,
-      "section": "Essentials",
-      "category": null
+      "sections": "Workshop Upgrades",
+      "categories": null
     },
     {
-      "name": "Components",
-      "sellValue": 750,
+      "name": "Advanced Mechanical Components",
+      "sellValue": 1750,
       "recycleDelta": null,
-      "section": "High-Tier Components",
-      "category": null
-    },
-    {
-      "name": "Components",
-      "sellValue": 640,
-      "recycleDelta": null,
-      "section": "High-Tier Components",
-      "category": null
-    },
-    {
-      "name": "Components",
-      "sellValue": 750,
-      "recycleDelta": null,
-      "section": "High-Tier Components",
-      "category": "Wires"
-    },
-    {
-      "name": "Components",
-      "sellValue": 640,
-      "recycleDelta": null,
-      "section": "High-Tier Components",
-      "category": "Wires"
+      "sections": "Workshop Upgrades",
+      "categories": null
     },
     {
       "name": "Coolant",
       "sellValue": 31000,
       "recycleDelta": "-10%",
-      "section": "Workshop Upgrades",
-      "category": "Components"
-    },
-    {
-      "name": "Cooling Coil",
-      "sellValue": 660,
-      "recycleDelta": "-26%",
-      "section": "High-Priority Components",
-      "category": "Chemicals"
+      "sections": "Safe to Sell / Recycle",
+      "categories": [ "Chemicals", "Oil" ]
     },
     {
       "name": "Cooling Coil",
       "sellValue": 1000,
-      "recycleDelta": "+2%",
-      "section": "High-Tier Components",
-      "category": "Wires"
+      "recycleDelta": null,
+      "sections": [ "Recycle into Core Components", "Recycle into High-Priority Components", "Expedition Project" ],
+      "categories": [ "Chemicals", "Steel Spring" ]
     },
     {
       "name": "Cracked Bioscanner",
       "sellValue": 1000,
       "recycleDelta": null,
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": [ "Workshop Upgrades", "Recycle into Core Components" ],
+      "categories": [ "Battery", "Rubber Parts" ]
     },
     {
       "name": "Crude Explosives",
       "sellValue": 270,
       "recycleDelta": "-44%",
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": "Workshop Upgrades",
+      "categories": [ "Refiner Components", "Explosive Components", "Gear Components" ]
     },
     {
       "name": "Damaged Heat Sink",
       "sellValue": 1000,
       "recycleDelta": null,
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": "Workshop Upgrades",
+      "categories": null
     },
     {
       "name": "Diving Goggles",
       "sellValue": 640,
       "recycleDelta": "-6%",
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": "Safe to Sell / Recycle",
+      "categories": "Rubber Parts"
     },
     {
       "name": "Dog Collar",
       "sellValue": 640,
       "recycleDelta": null,
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": "Workshop Upgrades",
+      "categories": "Components"
     },
     {
       "name": "Durable Cloth",
       "sellValue": 640,
       "recycleDelta": null,
-      "section": "High-Priority Components",
-      "category": "Fabric"
+      "sections": "High-Priority Components",
+      "categories": "Fabric"
     },
     {
       "name": "Electrical Components",
       "sellValue": 640,
       "recycleDelta": "-48%",
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": "Workshop Upgrades",
+      "categories": "Components"
     },
     {
       "name": "Exodus Modules",
       "sellValue": 750,
       "recycleDelta": "+2%",
-      "section": "High-Tier Components",
-      "category": "Wires"
+      "sections": "High-Tier Components",
+      "categories": "Wires"
     },
     {
       "name": "Expedition Project Expedition",
       "sellValue": 640,
       "recycleDelta": "-6%",
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": "Workshop Upgrades",
+      "categories": "Components"
     },
     {
       "name": "Expired Respirator",
       "sellValue": 31000,
       "recycleDelta": "-14%",
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": "Workshop Upgrades",
+      "categories": "Components"
     },
     {
       "name": "Explosive Compound",
       "sellValue": 1000,
       "recycleDelta": null,
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": "Workshop Upgrades",
+      "categories": "Components"
     },
     {
       "name": "Fireball Burner",
       "sellValue": 640,
       "recycleDelta": "-27%",
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": "Workshop Upgrades",
+      "categories": "Components"
     },
     {
       "name": "Flame Spray",
       "sellValue": 640,
       "recycleDelta": "-14%",
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": "Workshop Upgrades",
+      "categories": "Components"
     },
     {
       "name": "Flow Controller",
       "sellValue": 3000,
       "recycleDelta": "+1%",
-      "section": "Essentials",
-      "category": null
+      "sections": "Essentials",
+      "categories": null
     },
     {
       "name": "Fried Motherboard",
       "sellValue": 2000,
       "recycleDelta": "+2%",
-      "section": "High-Tier Components",
-      "category": "Wires"
+      "sections": "High-Tier Components",
+      "categories": "Wires"
     },
     {
       "name": "Fried Motherboard",
       "sellValue": 2000,
       "recycleDelta": null,
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": "Workshop Upgrades",
+      "categories": "Components"
     },
     {
       "name": "Frying Pan",
       "sellValue": 640,
       "recycleDelta": "+8%",
-      "section": "High-Priority Components",
-      "category": "Metal Parts"
+      "sections": "High-Priority Components",
+      "categories": "Metal Parts"
     },
     {
       "name": "Garlic Press",
       "sellValue": 1000,
       "recycleDelta": "+12%",
-      "section": "High-Priority Components",
-      "category": "Metal Parts"
+      "sections": "High-Priority Components",
+      "categories": "Metal Parts"
     },
     {
       "name": "Headphones",
       "sellValue": 31000,
       "recycleDelta": "-12%",
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": "Workshop Upgrades",
+      "categories": "Components"
     },
     {
       "name": "Heavy Gun Parts",
       "sellValue": 700,
       "recycleDelta": null,
-      "section": "Essentials",
-      "category": null
+      "sections": "Essentials",
+      "categories": null
     },
     {
       "name": "Hornet Driver",
       "sellValue": 2000,
       "recycleDelta": "+2%",
-      "section": "High-Tier Components",
-      "category": "Wires"
+      "sections": "High-Tier Components",
+      "categories": "Wires"
     },
     {
       "name": "Hornet Driver",
       "sellValue": 2000,
       "recycleDelta": null,
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": "Workshop Upgrades",
+      "categories": "Components"
     },
     {
       "name": "Ice Cream Scooper",
       "sellValue": 640,
       "recycleDelta": "+7%",
-      "section": "High-Priority Components",
-      "category": "Metal Parts"
+      "sections": "High-Priority Components",
+      "categories": "Metal Parts"
     },
     {
       "name": "Industrial Battery",
       "sellValue": 1000,
       "recycleDelta": null,
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": "Workshop Upgrades",
+      "categories": "Components"
     },
     {
       "name": "Industrial Charger",
       "sellValue": 31000,
       "recycleDelta": "+0%",
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": "Workshop Upgrades",
+      "categories": "Components"
     },
     {
       "name": "Industrial Magnet",
       "sellValue": 1000,
       "recycleDelta": "+2%",
-      "section": "High-Tier Components",
-      "category": "Wires"
+      "sections": "High-Tier Components",
+      "categories": "Wires"
     },
     {
       "name": "Key",
       "sellValue": 2000,
       "recycleDelta": null,
-      "section": "Essentials",
-      "category": null
+      "sections": "Essentials",
+      "categories": null
     },
     {
       "name": "Kit",
       "sellValue": 99,
       "recycleDelta": null,
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": "Workshop Upgrades",
+      "categories": "Components"
     },
     {
       "name": "Laboratory Reagents",
       "sellValue": 2000,
       "recycleDelta": null,
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": "Workshop Upgrades",
+      "categories": "Components"
     },
     {
       "name": "Leaper Pulse Unit",
       "sellValue": 5000,
       "recycleDelta": "+2%",
-      "section": "Essentials",
-      "category": null
+      "sections": "Essentials",
+      "categories": null
     },
     {
       "name": "Leaper Pulse Unit",
       "sellValue": 5000,
       "recycleDelta": null,
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": "Workshop Upgrades",
+      "categories": "Components"
     },
     {
       "name": "Light Gun Part",
       "sellValue": 700,
       "recycleDelta": null,
-      "section": "Essentials",
-      "category": null
+      "sections": "Essentials",
+      "categories": null
     },
     {
       "name": "Looting Mk. 3 (Cautious)",
       "sellValue": 5000,
       "recycleDelta": null,
-      "section": "Essentials",
-      "category": "Base Components"
+      "sections": "Essentials",
+      "categories": "Base Components"
     },
     {
       "name": "Looting Mk. 3 (Survivor)",
       "sellValue": 5000,
       "recycleDelta": null,
-      "section": "Essentials",
-      "category": "Base Components"
+      "sections": "Essentials",
+      "categories": "Base Components"
     },
     {
       "name": "Magnet",
       "sellValue": 330,
       "recycleDelta": null,
-      "section": "High-Tier Components",
-      "category": "Wires"
+      "sections": "High-Tier Components",
+      "categories": "Wires"
     },
     {
       "name": "Medium Gun Part",
       "sellValue": 700,
       "recycleDelta": null,
-      "section": "Essentials",
-      "category": null
+      "sections": "Essentials",
+      "categories": null
     },
     {
       "name": "Microscope",
       "sellValue": 3000,
       "recycleDelta": "+1%",
-      "section": "Essentials",
-      "category": null
+      "sections": "Essentials",
+      "categories": null
     },
     {
       "name": "Mini Centrifuge",
       "sellValue": 3000,
       "recycleDelta": "+2%",
-      "section": "Essentials",
-      "category": null
+      "sections": "Essentials",
+      "categories": null
     },
     {
       "name": "Mod Components",
       "sellValue": 750,
       "recycleDelta": null,
-      "section": "High-Tier Components",
-      "category": null
+      "sections": "High-Tier Components",
+      "categories": null
     },
     {
       "name": "Motor",
       "sellValue": 2000,
       "recycleDelta": null,
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": "Workshop Upgrades",
+      "categories": "Components"
     },
     {
       "name": "Number Plate",
       "sellValue": 640,
       "recycleDelta": "-6%",
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": "Workshop Upgrades",
+      "categories": "Components"
     },
     {
       "name": "Pop Trigger",
       "sellValue": 640,
       "recycleDelta": null,
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": "Workshop Upgrades",
+      "categories": "Components"
     },
     {
       "name": "Portable T V",
       "sellValue": 2000,
       "recycleDelta": "+2%",
-      "section": "High-Tier Components",
-      "category": null
+      "sections": "High-Tier Components",
+      "categories": null
     },
     {
       "name": "Portable T V",
       "sellValue": 2000,
       "recycleDelta": "+6%",
-      "section": "High-Tier Components",
-      "category": "Wires"
+      "sections": "High-Tier Components",
+      "categories": "Wires"
     },
     {
       "name": "Power Bank",
       "sellValue": 1000,
       "recycleDelta": "+2%",
-      "section": "High-Tier Components",
-      "category": null
+      "sections": "High-Tier Components",
+      "categories": null
     },
     {
       "name": "Power Cable",
       "sellValue": 1000,
       "recycleDelta": "+4%",
-      "section": "High-Tier Components",
-      "category": "Wires"
+      "sections": "High-Tier Components",
+      "categories": "Wires"
     },
     {
       "name": "Power Cable",
       "sellValue": 1000,
       "recycleDelta": null,
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": "Workshop Upgrades",
+      "categories": "Components"
     },
     {
       "name": "Power Rod",
       "sellValue": 5500,
       "recycleDelta": null,
-      "section": "Essentials",
-      "category": null
+      "sections": "Essentials",
+      "categories": null
     },
     {
       "name": "Powercell",
       "sellValue": 640,
       "recycleDelta": "-14%",
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": "Workshop Upgrades",
+      "categories": "Components"
     },
     {
       "name": "Prickly Pear",
       "sellValue": 640,
       "recycleDelta": null,
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": "Workshop Upgrades",
+      "categories": "Components"
     },
     {
       "name": "Projector",
       "sellValue": 1000,
       "recycleDelta": "+2%",
-      "section": "High-Tier Components",
-      "category": "Wires"
+      "sections": "High-Tier Components",
+      "categories": "Wires"
     },
     {
       "name": "Radio",
       "sellValue": 2000,
       "recycleDelta": "+2%",
-      "section": "High-Tier Components",
-      "category": "Wires"
+      "sections": "High-Tier Components",
+      "categories": "Wires"
     },
     {
       "name": "Radio Relay",
       "sellValue": 991000,
       "recycleDelta": "-8%",
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": "Workshop Upgrades",
+      "categories": "Components"
     },
     {
       "name": "Recharger",
       "sellValue": 200,
       "recycleDelta": null,
-      "section": "High-Tier Components",
-      "category": "Wires"
+      "sections": "High-Tier Components",
+      "categories": "Wires"
     },
     {
       "name": "Ripped Safety Vest",
       "sellValue": 1000,
       "recycleDelta": "+1%",
-      "section": "High-Tier Components",
-      "category": "Wires"
+      "sections": "High-Tier Components",
+      "categories": "Wires"
     },
     {
       "name": "Rocketeer Driver",
       "sellValue": 5000,
       "recycleDelta": null,
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": "Workshop Upgrades",
+      "categories": "Components"
     },
     {
       "name": "Rotary Encoder",
       "sellValue": 3000,
       "recycleDelta": "+2%",
-      "section": "High-Tier Components",
-      "category": "Wires"
+      "sections": "High-Tier Components",
+      "categories": "Wires"
     },
     {
       "name": "Rubber",
       "sellValue": 31000,
       "recycleDelta": "-10%",
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": "Workshop Upgrades",
+      "categories": "Components"
     },
     {
       "name": "Rubber Pad",
       "sellValue": 1000,
       "recycleDelta": "+18%",
-      "section": "High-Priority Components",
-      "category": "Rubber Parts"
+      "sections": "High-Priority Components",
+      "categories": "Rubber Parts"
     },
     {
       "name": "Ruined Parachute",
       "sellValue": 640,
       "recycleDelta": "+10%",
-      "section": "High-Priority Components",
-      "category": "Fabric"
+      "sections": "High-Priority Components",
+      "categories": "Fabric"
     },
     {
       "name": "Ruinedbaton",
       "sellValue": 32000,
       "recycleDelta": "-26%",
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": "Workshop Upgrades",
+      "categories": "Components"
     },
     {
       "name": "Rusted Gear",
       "sellValue": 2000,
       "recycleDelta": "+2%",
-      "section": "High-Tier Components",
-      "category": null
+      "sections": "High-Tier Components",
+      "categories": null
     },
     {
       "name": "Rusted Gear",
       "sellValue": 2000,
       "recycleDelta": null,
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": "Workshop Upgrades",
+      "categories": "Components"
     },
     {
       "name": "Rusted Tools",
       "sellValue": 1000,
       "recycleDelta": "+1%",
-      "section": "High-Tier Components",
-      "category": "Wires"
+      "sections": "High-Tier Components",
+      "categories": "Wires"
     },
     {
       "name": "Rusted Tools",
       "sellValue": 1000,
       "recycleDelta": null,
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": "Workshop Upgrades",
+      "categories": "Components"
     },
     {
       "name": "Rusty ARC Steel",
       "sellValue": 640,
       "recycleDelta": "-6%",
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": "Workshop Upgrades",
+      "categories": "Components"
     },
     {
       "name": "Sell Valuex",
       "sellValue": 100,
       "recycleDelta": null,
-      "section": "Workshop Upgrades",
-      "category": "Explosive Compound"
+      "sections": "Workshop Upgrades",
+      "categories": "Explosive Compound"
     },
     {
       "name": "Sentinel Firing Core",
       "sellValue": 3000,
       "recycleDelta": "+2%",
-      "section": "High-Tier Components",
-      "category": null
+      "sections": "High-Tier Components",
+      "categories": null
     },
     {
       "name": "Sentinel Firing Core",
       "sellValue": 3000,
       "recycleDelta": null,
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": "Workshop Upgrades",
+      "categories": "Components"
     },
     {
       "name": "Signal Amplifier",
       "sellValue": 3000,
       "recycleDelta": "+2%",
-      "section": "High-Tier Components",
-      "category": "Wires"
+      "sections": "High-Tier Components",
+      "categories": "Wires"
     },
     {
       "name": "Snap Hook",
       "sellValue": 14000,
       "recycleDelta": null,
-      "section": "Essentials",
-      "category": null
+      "sections": "Essentials",
+      "categories": null
     },
     {
       "name": "Snitch Scanner",
       "sellValue": 2000,
       "recycleDelta": "-26%",
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": "Workshop Upgrades",
+      "categories": "Components"
     },
     {
       "name": "Spectrometer",
       "sellValue": 3000,
       "recycleDelta": "+1%",
-      "section": "Essentials",
-      "category": null
+      "sections": "Essentials",
+      "categories": null
     },
     {
       "name": "Spring Cushion",
       "sellValue": 2000,
       "recycleDelta": "+28%",
-      "section": "High-Priority Components",
-      "category": "Fabric"
+      "sections": "High-Priority Components",
+      "categories": "Fabric"
     },
     {
       "name": "Spring Cushion",
       "sellValue": 2000,
       "recycleDelta": "+2%",
-      "section": "High-Tier Components",
-      "category": "Wires"
+      "sections": "High-Tier Components",
+      "categories": "Wires"
     },
     {
       "name": "Steel",
       "sellValue": 1000,
       "recycleDelta": "+7%",
-      "section": "High-Priority Components",
-      "category": "Metal Parts"
+      "sections": "High-Priority Components",
+      "categories": "Metal Parts"
     },
     {
       "name": "Steel Spring",
       "sellValue": 300,
       "recycleDelta": null,
-      "section": "High-Tier Components",
-      "category": "Wires"
+      "sections": "High-Tier Components",
+      "categories": "Wires"
     },
     {
       "name": "Surveyor Vault",
       "sellValue": 2000,
       "recycleDelta": null,
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": "Workshop Upgrades",
+      "categories": "Components"
     },
     {
       "name": "Synthesized Fuel",
       "sellValue": 700,
       "recycleDelta": null,
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": "Workshop Upgrades",
+      "categories": "Components"
     },
     {
       "name": "Tactical Mk. 3 (Defensive)",
       "sellValue": 5000,
       "recycleDelta": null,
-      "section": "Essentials",
-      "category": "Base Components"
+      "sections": "Essentials",
+      "categories": "Base Components"
     },
     {
       "name": "Tactical Mk. 3 (Healing)",
       "sellValue": 5000,
       "recycleDelta": null,
-      "section": "Essentials",
-      "category": "Base Components"
+      "sections": "Essentials",
+      "categories": "Base Components"
     },
     {
       "name": "Tattered ARC Lining",
       "sellValue": 640,
       "recycleDelta": "+12%",
-      "section": "High-Priority Components",
-      "category": "Fabric"
+      "sections": "High-Priority Components",
+      "categories": "Fabric"
     },
     {
       "name": "Telemetry Transceiver",
       "sellValue": 3000,
       "recycleDelta": "+1%",
-      "section": "Essentials",
-      "category": null
+      "sections": "Essentials",
+      "categories": null
     },
     {
       "name": "Tempest I",
       "sellValue": 13000,
       "recycleDelta": null,
-      "section": "Essentials",
-      "category": null
+      "sections": "Essentials",
+      "categories": null
     },
     {
       "name": "Tick Pod",
       "sellValue": 640,
       "recycleDelta": "-22%",
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": "Workshop Upgrades",
+      "categories": "Components"
     },
     {
       "name": "Toaster",
       "sellValue": 1000,
       "recycleDelta": null,
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": "Workshop Upgrades",
+      "categories": "Components"
     },
     {
       "name": "Torn Blanket",
       "sellValue": 640,
       "recycleDelta": "+12%",
-      "section": "High-Priority Components",
-      "category": "Fabric"
+      "sections": "High-Priority Components",
+      "categories": "Fabric"
     },
     {
       "name": "Torrente I",
       "sellValue": 750,
       "recycleDelta": null,
-      "section": "High-Tier Components",
-      "category": "Wires"
+      "sections": "High-Tier Components",
+      "categories": "Wires"
     },
     {
       "name": "Total",
       "sellValue": 350,
       "recycleDelta": null,
-      "section": "Workshop Upgrades",
-      "category": "Explosive Compound"
+      "sections": "Workshop Upgrades",
+      "categories": "Explosive Compound"
     },
     {
       "name": "Turbo Pump",
       "sellValue": 2000,
       "recycleDelta": "+1%",
-      "section": "High-Tier Components",
-      "category": null
+      "sections": "High-Tier Components",
+      "categories": null
     },
     {
       "name": "Unusable Weapon",
       "sellValue": 500,
       "recycleDelta": "-46%",
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": "Workshop Upgrades",
+      "categories": "Components"
     },
     {
       "name": "Venator I",
       "sellValue": 750,
       "recycleDelta": null,
-      "section": "High-Tier Components",
-      "category": "Wires"
+      "sections": "High-Tier Components",
+      "categories": "Wires"
     },
     {
       "name": "Voltage Converter",
       "sellValue": 51000,
       "recycleDelta": "-46%",
-      "section": "High-Tier Components",
-      "category": "Processor"
+      "sections": "High-Tier Components",
+      "categories": "Processor"
     },
     {
       "name": "Wasp Driver",
       "sellValue": 1000,
       "recycleDelta": null,
-      "section": "Workshop Upgrades",
-      "category": "Components"
+      "sections": "Workshop Upgrades",
+      "categories": "Components"
     },
     {
       "name": "x Chemicals 1 x 50 =",
       "sellValue": 501,
       "recycleDelta": null,
-      "section": "Workshop Upgrades",
-      "category": "Explosive Compound"
+      "sections": "Workshop Upgrades",
+      "categories": "Explosive Compound"
     },
     {
       "name": "x Oil 1 x 300 =",
       "sellValue": 300,
       "recycleDelta": null,
-      "section": "Workshop Upgrades",
-      "category": "Explosive Compound"
+      "sections": "Workshop Upgrades",
+      "categories": "Explosive Compound"
     },
     {
       "name": "x Synthesized Fuel",
       "sellValue": 700,
       "recycleDelta": null,
-      "section": "Workshop Upgrades",
-      "category": "Explosive Compound"
+      "sections": "Workshop Upgrades",
+      "categories": "Explosive Compound"
     }
   ]
 }
