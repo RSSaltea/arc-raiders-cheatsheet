@@ -22,7 +22,7 @@ body{
   color:var(--text);
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   background:
-    radial-gradient(1100px 650px at 15% -10%, rgba(122,167,255,.22), transparent 60%),
+    radial-gradient(1100px 650px at 15% -10%, rgba(122,167,255,.22), transparentl. transparent 60%),
     radial-gradient(900px 650px at 90% 0%, rgba(242,177,255,.16), transparent 55%),
     radial-gradient(900px 650px at 50% 105%, rgba(124,255,182,.10), transparent 55%),
     linear-gradient(180deg, var(--bg0), var(--bg1));
@@ -182,6 +182,8 @@ kbd{
 }
 
 .card{
+  position: relative;
+  overflow: hidden;
   border-radius: 18px;
   border:1px solid rgba(42,53,87,.75);
   background: linear-gradient(180deg, rgba(11,18,38,.80), rgba(11,18,38,.55));
@@ -190,6 +192,24 @@ kbd{
   display:flex;
   flex-direction:column;
   gap: 10px;
+}
+
+/* Base overlay (subtle highlight) */
+.card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:.65;
+  background:
+    radial-gradient(120% 80% at 10% 15%, rgba(255,255,255,.08), transparent 55%),
+    linear-gradient(135deg, rgba(255,255,255,.06), transparent 55%);
+}
+
+/* Ensure content is above overlays */
+.card > *{
+  position: relative;
+  z-index: 1;
 }
 
 .cardTop{
@@ -281,6 +301,63 @@ kbd{
   background-position: center;
   filter: drop-shadow(0 0 10px rgba(93,220,255,0.35));
   opacity: 0.95;
+}
+
+/* ===== RARITY GRADIENTS ===== */
+
+/* Common: Grey */
+.card.rarity-common{
+  border-color: rgba(150,160,180,.35);
+}
+.card.rarity-common::before{
+  background:
+    radial-gradient(100% 80% at 0% 50%, rgba(170,180,200,.22), transparent 60%),
+    radial-gradient(120% 80% at 10% 15%, rgba(255,255,255,.08), transparent 55%),
+    linear-gradient(135deg, rgba(255,255,255,.06), transparent 55%);
+}
+
+/* Uncommon: Green */
+.card.rarity-uncommon{
+  border-color: rgba(124,255,182,.35);
+}
+.card.rarity-uncommon::before{
+  background:
+    radial-gradient(100% 80% at 0% 50%, rgba(124,255,182,.22), transparent 60%),
+    radial-gradient(120% 80% at 10% 15%, rgba(255,255,255,.08), transparent 55%),
+    linear-gradient(135deg, rgba(255,255,255,.06), transparent 55%);
+}
+
+/* Rare: Blue */
+.card.rarity-rare{
+  border-color: rgba(122,167,255,.40);
+}
+.card.rarity-rare::before{
+  background:
+    radial-gradient(100% 80% at 0% 50%, rgba(122,167,255,.22), transparent 60%),
+    radial-gradient(120% 80% at 10% 15%, rgba(255,255,255,.08), transparent 55%),
+    linear-gradient(135deg, rgba(255,255,255,.06), transparent 55%);
+}
+
+/* Epic: Pink */
+.card.rarity-epic{
+  border-color: rgba(242,177,255,.40);
+}
+.card.rarity-epic::before{
+  background:
+    radial-gradient(100% 80% at 0% 50%, rgba(242,177,255,.22), transparent 60%),
+    radial-gradient(120% 80% at 10% 15%, rgba(255,255,255,.08), transparent 55%),
+    linear-gradient(135deg, rgba(255,255,255,.06), transparent 55%);
+}
+
+/* Legendary: Gold */
+.card.rarity-legendary{
+  border-color: rgba(255,212,121,.45);
+}
+.card.rarity-legendary::before{
+  background:
+    radial-gradient(100% 80% at 0% 50%, rgba(255,212,121,.22), transparent 60%),
+    radial-gradient(120% 80% at 10% 15%, rgba(255,255,255,.08), transparent 55%),
+    linear-gradient(135deg, rgba(255,255,255,.06), transparent 55%);
 }
 
 .footer{
