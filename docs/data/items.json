@@ -168,7 +168,7 @@
       "name": "Adv. Electrical Components",
       "sellValue": 1750,
       "recycleDelta": "-52%",
-      "sections": ["Workshop Upgrades"],
+      "sections": ["Workshop Upgrades","Expedition Project"],
       "categories": ["Gear Components","Utility Components","Refiner Components","Explosive Components"],
       "icon": "icons/Advanced_Electrical_Components.png",
       "rarity": "Rare"
