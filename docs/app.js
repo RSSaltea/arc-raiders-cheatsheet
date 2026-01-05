@@ -94,7 +94,7 @@ if (cardEl) {
     }
 
     // Sell value
-    const sellEl = node.querySelector('.sell');
+    const sellEl = node.querySelector('.value.sell');
     if (sellEl) sellEl.textContent = fmt.format(item.sellValue ?? 0);
 
     // Section / Category tags (multi)
