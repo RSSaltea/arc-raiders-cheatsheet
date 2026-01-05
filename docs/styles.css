@@ -297,7 +297,6 @@ kbd{
 
 .label{
   color: var(--muted);
-  font-size: 13px;
 }
 
 .value{font-weight:600}
@@ -329,7 +328,7 @@ kbd{
 .metaWrap{
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: stretch;
   gap: 6px;
 }
 
