@@ -266,14 +266,23 @@ kbd{
 }
 
 .meta{
-  display:grid;
-  gap:8px;
+  width: 100%;
 }
 
 .metaRow{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.metaRow .label{
+  text-align: left;
+}
+
+.metaRow .value.sell{
+  text-align: right;
 }
 
 .label{
