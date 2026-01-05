@@ -87,7 +87,7 @@
       "name": "Bastion Cell",
       "sellValue": 5000,
       "recycleDelta": "-22%",
-      "sections": ["Workshop Upgrades"],
+      "sections": ["Workshop Upgrades","Safe to Sell / Recycle"],
       "categories": null,
       "icon": "icons/Bastion_Cell.png",
       "rarity": "Epic"
@@ -114,7 +114,7 @@
       "name": "Bombardier Cell",
       "sellValue": 5000,
       "recycleDelta": "-25%",
-      "sections": ["Workshop Upgrades"],
+      "sections": ["Workshop Upgrades","Safe to Sell / Recycle"],
       "categories": null,
       "icon": "icons/Bombardier_Cell.png",
       "rarity": "Epic"
@@ -168,7 +168,7 @@
       "name": "Adv. Electrical Components",
       "sellValue": 1750,
       "recycleDelta": "-52%",
-      "sections": ["Workshop Upgrades","Expedition Project"],
+      "sections": ["Workshop Upgrades","High-Tier Components"],
       "categories": ["Gear Components","Utility Components","Refiner Components","Explosive Components"],
       "icon": "icons/Advanced_Electrical_Components.png",
       "rarity": "Rare"
@@ -177,7 +177,7 @@
       "name": "Adv. Mechanical Components",
       "sellValue": 1750,
       "recycleDelta": "-46%",
-      "sections": ["Workshop Upgrades"],
+      "sections": ["Workshop Upgrades","High-Tier Components"],
       "categories": ["Gun Components"],
       "icon": "icons/Advanced_Mechanical_Components.png",
       "rarity": "Rare"
@@ -222,7 +222,7 @@
       "name": "Damaged Heat Sink",
       "sellValue": 1000,
       "recycleDelta": "-15%",
-      "sections": ["Workshop Upgrades"],
+      "sections": ["Workshop Upgrades","Safe to Sell / Recycle"],
       "categories": null,
       "icon": "icons/Damaged_Heat_Sink.png",
       "rarity": "Rare"
@@ -240,7 +240,7 @@
       "name": "Dog Collar",
       "sellValue": 640,
       "recycleDelta": "-26%",
-      "sections": ["Workshop Upgrades"],
+      "sections": ["Workshop Upgrades","Safe to Sell / Recycle"],
       "categories": ["Fabric", "Metal Parts"],
       "icon": "icons/Dog_Collar.png",
       "rarity": "Rare"
@@ -294,7 +294,7 @@
       "name": "Fireball Burner",
       "sellValue": 640,
       "recycleDelta": "-27%",
-      "sections": ["Workshop Upgrades"],
+      "sections": ["Workshop Upgrades","Safe to Sell / Recycle"],
       "categories": ["Chemicals"],
       "icon": "icons/Fireball_Burner.png",
       "rarity": "Uncommon"
@@ -411,7 +411,7 @@
       "name": "Raider Hatch Key",
       "sellValue": 2000,
       "recycleDelta": null,
-      "sections": ["High-Tier Components"],
+      "sections": ["High-Tier Items"],
       "categories": null,
       "icon": "icons/Raider_Hatch_Key.png",
       "rarity": "Rare"
@@ -446,170 +446,191 @@
     {
       "name": "Leaper Pulse Unit",
       "sellValue": 5000,
-      "recycleDelta": "+2%",
-      "sections": "Essentials",
-      "categories": null
-    },
-    {
-      "name": "Leaper Pulse Unit",
-      "sellValue": 5000,
-      "recycleDelta": null,
-      "sections": "Workshop Upgrades",
-      "categories": "Components"
+      "recycleDelta": "-18%",
+      "sections": ["Workshop Upgrades","Expedition Project","Safe to Sell / Recycle"],
+      "categories": null,
+      "icon": "icons/Leaper_Pulse_Unit.png",
+      "rarity": "Epic"
     },
     {
       "name": "Light Gun Part",
       "sellValue": 700,
       "recycleDelta": null,
-      "sections": "Essentials",
-      "categories": null
+      "sections": ["High-Tier Components"],
+      "categories": ["Gun Components"],
+      "icon": "icons/Light_Gun_Parts.png",
+      "rarity": "Rare"
     },
     {
       "name": "Looting Mk. 3 (Cautious)",
       "sellValue": 5000,
       "recycleDelta": null,
-      "sections": "Essentials",
-      "categories": "Base Components"
+      "sections": ["High-Tier Items","Augments"],
+      "categories": null,
+      "icon": "icons/Looting_Mk._3_(Cautious).png",
+      "rarity": "Epic"
     },
     {
       "name": "Looting Mk. 3 (Survivor)",
       "sellValue": 5000,
       "recycleDelta": null,
-      "sections": "Essentials",
-      "categories": "Base Components"
+      "sections": ["High-Tier Items","Augments"],
+      "categories": null,
+      "icon": "icons/Looting_Mk._3_(Survivor).png",
+      "rarity": "Epic"
     },
     {
       "name": "Magnet",
-      "sellValue": 330,
+      "sellValue": 300,
       "recycleDelta": null,
-      "sections": "High-Tier Components",
-      "categories": "Wires"
+      "sections": ["Core Components"],
+      "categories": ["Metal Parts","Gear Components","Explosive Components","Gun Components"],
+      "icon": "icons/Magnet.png",
+      "rarity": "Uncommon"
     },
     {
       "name": "Medium Gun Part",
       "sellValue": 700,
       "recycleDelta": null,
-      "sections": "Essentials",
-      "categories": null
+      "sections": ["High-Tier Components"],
+      "categories": ["Gun Components"],
+      "icon": "icons/Medium_Gun_Parts.png",
+      "rarity": "Rare"
     },
     {
       "name": "Microscope",
       "sellValue": 3000,
-      "recycleDelta": "+1%",
-      "sections": "Essentials",
-      "categories": null
+      "recycleDelta": null,
+      "sections": ["Recycle into Core Components","Recycle into High-Priority Components","Safe to Sell / Recycle"],
+      "categories": ["Magnet"],
+      "icon": "icons/Microscope.png",
+      "rarity": "Rare"
     },
     {
       "name": "Mini Centrifuge",
       "sellValue": 3000,
-      "recycleDelta": "+2%",
-      "sections": "Essentials",
-      "categories": null
+      "recycleDelta": null,
+      "sections": ["Recycle into High-Priority Components","Safe to Sell / Recycle"],
+      "categories": ["Canister"],
+      "icon": "icons/Mini_Centrifuge.png",
+      "rarity": "Rare"
     },
     {
       "name": "Mod Components",
-      "sellValue": 750,
+      "sellValue": 1750,
       "recycleDelta": null,
-      "sections": "High-Tier Components",
-      "categories": null
+      "sections": ["Core Components"],
+      "categories": null,
+      "icon": "icons/Mod_Components.png",
+      "rarity": "Rare"
     },
     {
       "name": "Motor",
       "sellValue": 2000,
-      "recycleDelta": null,
-      "sections": "Workshop Upgrades",
-      "categories": "Components"
+      "recycleDelta": "-25%",
+      "sections": ["Workshop Upgrades","Safe to Sell / Recycle"],
+      "categories": ["Oil"],
+      "icon": "icons/Motor.png",
+      "rarity": "Rare"
     },
     {
       "name": "Number Plate",
-      "sellValue": 640,
-      "recycleDelta": "-6%",
-      "sections": "Workshop Upgrades",
-      "categories": "Components"
+      "sellValue": 270,
+      "recycleDelta": "+181%",
+      "sections": ["Safe to Sell / Recycle"],
+      "categories": ["Metal Parts"],
+      "icon": "icons/Number_Plate.png",
+      "rarity": "Uncommon"
     },
     {
       "name": "Pop Trigger",
       "sellValue": 640,
+      "recycleDelta": "-27%",
+      "sections": ["Workshop Upgrades","Safe to Sell / Recycle"],
+      "categories": null,
+      "icon": "icons/Pop_Trigger.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Portable TV",
+      "sellValue": 2000,
       "recycleDelta": null,
-      "sections": "Workshop Upgrades",
-      "categories": "Components"
-    },
-    {
-      "name": "Portable T V",
-      "sellValue": 2000,
-      "recycleDelta": "+2%",
-      "sections": "High-Tier Components",
-      "categories": null
-    },
-    {
-      "name": "Portable T V",
-      "sellValue": 2000,
-      "recycleDelta": "+6%",
-      "sections": "High-Tier Components",
-      "categories": "Wires"
+      "sections": ["Recycle into Core Components","Safe to Sell / Recycle"],
+      "categories": ["Battery","Wires"],
+      "icon": "icons/Portable_TV.png",
+      "rarity": "Rare"
     },
     {
       "name": "Power Bank",
       "sellValue": 1000,
-      "recycleDelta": "+2%",
-      "sections": "High-Tier Components",
-      "categories": null
-    },
-    {
-      "name": "Power Cable",
-      "sellValue": 1000,
-      "recycleDelta": "+4%",
-      "sections": "High-Tier Components",
-      "categories": "Wires"
-    },
-    {
-      "name": "Power Cable",
-      "sellValue": 1000,
       "recycleDelta": null,
-      "sections": "Workshop Upgrades",
-      "categories": "Components"
+      "sections": ["Recycle into Core Components","Safe to Sell / Recycle"],
+      "categories": ["Battery","Wires"],
+      "icon": "icons/Power_Bank.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Power Cable",
+      "sellValue": 1000,
+      "recycleDelta": "-20%",
+      "sections": ["Workshop Upgrades","Recycle into Core Components","Safe to Sell / Recycle"],
+      "categories": ["Wires"],
+      "icon": "icons/Power_Cable.png",
+      "rarity": "Rare"
     },
     {
       "name": "Power Rod",
       "sellValue": 5500,
       "recycleDelta": null,
-      "sections": "Essentials",
-      "categories": null
+      "sections": ["High-Tier Components"],
+      "categories": ["Gear Components"],
+      "icon": "icons/Power_Rod.png",
+      "rarity": "Epic"
     },
     {
-      "name": "Powercell",
-      "sellValue": 640,
-      "recycleDelta": "-14%",
-      "sections": "Workshop Upgrades",
-      "categories": "Components"
+      "name": "Damaged ARC Powercell",
+      "sellValue": 293,
+      "recycleDelta": "-32%",
+      "sections": ["Safe to Sell / Recycle"],
+      "categories": null,
+      "icon": "icons/Damaged_ARC_Powercell.png",
+      "rarity": "Common"
     },
     {
       "name": "Prickly Pear",
       "sellValue": 640,
-      "recycleDelta": null,
-      "sections": "Workshop Upgrades",
-      "categories": "Components"
+      "recycleDelta": "-53%",
+      "sections": ["Workshop Upgrades","Safe to Sell / Recycle"],
+      "categories": null,
+      "icon": "icons/Prickly_Pear.png",
+      "rarity": "Uncommon"
     },
     {
       "name": "Projector",
       "sellValue": 1000,
-      "recycleDelta": "+2%",
-      "sections": "High-Tier Components",
-      "categories": "Wires"
+      "recycleDelta": null,
+      "sections": ["Recycle into Core Components","Safe to Sell / Recycle"],
+      "categories": ["Wires","Processor"],
+      "icon": "icons/Projector.png",
+      "rarity": "Rare"
     },
     {
       "name": "Radio",
-      "sellValue": 2000,
-      "recycleDelta": "+2%",
-      "sections": "High-Tier Components",
-      "categories": "Wires"
+      "sellValue": 1000,
+      "recycleDelta": "+0%",
+      "sections": ["Safe to Sell / Recycle"],
+      "categories": ["Sensors"],
+      "icon": "icons/Radio.png",
+      "rarity": "Rare"
     },
     {
       "name": "Radio Relay",
-      "sellValue": 991000,
-      "recycleDelta": "-8%",
-      "sections": "Workshop Upgrades",
-      "categories": "Components"
+      "sellValue": 3000,
+      "recycleDelta": "-33%",
+      "sections": ["Safe to Sell / Recycle"],
+      "categories": ["Sensors"],
+      "icon": "icons/Radio_Relay.png",
+      "rarity": "Rare"
     },
     {
       "name": "Recharger",
