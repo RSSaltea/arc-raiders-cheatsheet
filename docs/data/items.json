@@ -169,7 +169,7 @@
       "sellValue": 1750,
       "recycleDelta": null,
       "sections": ["Workshop Upgrades"],
-      "categories": null,
+      "categories": ["Gear Components","Utility Components","Refiner Components","Explosive Components"],
       "icon": "icons/Advanced_Electrical_Components.png",
       "rarity": "Rare"
     },
@@ -178,7 +178,7 @@
       "sellValue": 1750,
       "recycleDelta": null,
       "sections": ["Workshop Upgrades"],
-      "categories": null,
+      "categories": ["Gun Components"],
       "icon": "icons/Advanced_Mechanical_Components.png",
       "rarity": "Rare"
     },
