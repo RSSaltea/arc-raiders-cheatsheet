@@ -265,6 +265,13 @@ kbd{
   background: rgba(255,124,141,.08);
 }
 
+.topBadges{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
 .meta{
   width: 100%;
 }
