@@ -7,7 +7,7 @@
       "sellValue": 5000,
       "recycleDelta": null,
       "sections": ["High-Tier Components"],
-      "categories": null,
+      "categories": ["Gun Components"],
       "icon": "icons/Magnetic_Accelerator.png",
       "rarity": "Epic"
     },
@@ -123,7 +123,7 @@
       "name": "Frequency Modulation Box",
       "sellValue": 3000,
       "recycleDelta": null,
-      "sections": ["Expedition Project"],
+      "sections": ["Expedition Project","Recycle into High-Priority Components"],
       "categories": null,
       "icon": "icons/Frequency_Modulation_Box.png",
       "rarity": "Rare"
