@@ -303,23 +303,26 @@ kbd{
 }
 
 .metaWrap{
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: end;
-  column-gap: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
 }
 
 .icon{
-  width: 36px;
-  height: 36px;
+  width: 108px;
+  height: 108px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  filter: drop-shadow(0 0 10px rgba(93,220,255,0.35));
-  opacity: 0.95;
-}
+  margin-top: 4px;
 
-/* ===== RARITY GRADIENTS ===== */
+  filter:
+    drop-shadow(0 0 18px rgba(93,220,255,0.45))
+    drop-shadow(0 0 35px rgba(93,220,255,0.25));
+
+  opacity: 0.98;
+}
 
 /* Common: Grey */
 .card.rarity-common{
