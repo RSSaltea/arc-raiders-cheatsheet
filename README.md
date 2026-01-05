@@ -14,11 +14,13 @@ This is far from complete so if you come across it, do not expect it to be the g
 - Each item is:
   ```json
     {
-      "name": "Crude Explosives",
-      "sellValue": 270,
-      "recycleDelta": "-44%",
-      "sections": ["Workshop Upgrades"],
-      "categories": [ "Refiner Components", "Explosive Components", "Gear Components" ]
+      "name": "Magnetic Accelerator",
+      "sellValue": 5000,
+      "recycleDelta": null,
+      "sections": ["High-Tier Components"],
+      "categories": null,
+      "icon": "icons/Magnetic_Accelerator.png",
+      "rarity": "Epic"
     },
   ```
 
