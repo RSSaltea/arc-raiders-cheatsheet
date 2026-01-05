@@ -328,7 +328,7 @@ kbd{
 .metaWrap{
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: flex-end;
   gap: 6px;
 }
 
