@@ -256,7 +256,7 @@
       "name": "Electrical Components",
       "sellValue": 640,
       "recycleDelta": "-48%",
-      "sections": ["Workshop Upgrades","Expedition Project"],
+      "sections": ["Workshop Upgrades","Expedition Project","Core Components"],
       "categories": ["Refiner Components","Gear Components","Explosive Components","Utility Components","Medical Components"],
       "icon": "icons/Electrical_Components.png",
       "rarity": "Uncommon"
@@ -1150,6 +1150,141 @@
       "sections": ["Expedition Project","Recycle into High-Priority Components","Safe to Sell / Recycle"],
       "categories": ["Voltage Converter"],
       "icon": "icons/Ion_Sputter.png",
+      "rarity": "Epic"
+    },
+    {
+      "name": "Mechanical Components",
+      "sellValue": 640,
+      "recycleDelta": "-49%",
+      "sections": ["Workshop Upgrades","Core Components"],
+      "categories": ["Refiner Components","Gun Components"],
+      "icon": "icons/Mechanical_Components.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Lemon",
+      "sellValue": 640,
+      "recycleDelta": "-25%",
+      "sections": ["Workshop Upgrades","Safe to Sell / Recycle"],
+      "categories": null,
+      "icon": "icons/Lemon.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Apricot",
+      "sellValue": 640,
+      "recycleDelta": "-53%",
+      "sections": ["Workshop Upgrades","Safe to Sell / Recycle"],
+      "categories": null,
+      "icon": "icons/Apricot.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Olives",
+      "sellValue": 640,
+      "recycleDelta": "-69%",
+      "sections": ["Workshop Upgrades","Safe to Sell / Recycle"],
+      "categories": null,
+      "icon": "icons/Olives.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Cat Bed",
+      "sellValue": 1000,
+      "recycleDelta": "-25%",
+      "sections": ["Workshop Upgrades","Safe to Sell / Recycle"],
+      "categories": null,
+      "icon": "icons/Cat_Bed.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Mushroom",
+      "sellValue": 1000,
+      "recycleDelta": "-25%",
+      "sections": ["Workshop Upgrades","Safe to Sell / Recycle"],
+      "categories": null,
+      "icon": "icons/Mushroom.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Very Comfortable Pillow",
+      "sellValue": 2000,
+      "recycleDelta": "-25%",
+      "sections": ["Workshop Upgrades","Safe to Sell / Recycle"],
+      "categories": null,
+      "icon": "icons/Very_Comfortable_Pillow.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Plastic Parts",
+      "sellValue": 60,
+      "recycleDelta": "-26%",
+      "sections": ["Workshop Upgrades","Base Components"],
+      "categories": ["Medical Components","Utility Components","Gear Components","Refiner Components","Gun Components"],
+      "icon": "icons/Plastic_Parts.png",
+      "rarity": "Common"
+    },
+    {
+      "name": "Fabric",
+      "sellValue": 50,
+      "recycleDelta": null,
+      "sections": ["Workshop Upgrades","Base Components"],
+      "categories": ["Medical Components","Refiner Components"],
+      "icon": "icons/Fabric.png",
+      "rarity": "Common"
+    },
+    {
+      "name": "Ruined Riot Shield",
+      "sellValue": 1000,
+      "recycleDelta": null,
+      "sections": ["Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Plastic Parts","Rubber Parts"],
+      "icon": "icons/Ruined_Riot_Shield.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Tattered Clothes",
+      "sellValue": 640,
+      "recycleDelta": null,
+      "sections": ["Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Fabric"],
+      "icon": "icons/Tattered_Clothes.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "ARC Performance Steel",
+      "sellValue": 1000,
+      "recycleDelta": null,
+      "sections": ["Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Metal Parts"],
+      "icon": "icons/ARC_Performance_Steel.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Processor",
+      "sellValue": 500,
+      "recycleDelta": "-50%",
+      "sections": ["High-Tier Components"],
+      "categories": ["Gear Components","Explosive Components"],
+      "icon": "icons/Processor.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Ruined Accordion",
+      "sellValue": 2000,
+      "recycleDelta": null,
+      "sections": ["Recycle into Core Components","Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Rubber Parts","Steel Spring"],
+      "icon": "icons/Ruined_Accordion.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Geiger Counter",
+      "sellValue": 3500,
+      "recycleDelta": null,
+      "sections": ["Recycle into Core Components","Safe to Sell / Recycle"],
+      "categories": ["Battery"],
+      "icon": "icons/Geiger_Counter.png",
       "rarity": "Epic"
     }
   ]
