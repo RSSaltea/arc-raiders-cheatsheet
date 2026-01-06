@@ -42,8 +42,11 @@ function fillSelect(selectEl, options, labelAll) {
 
 function cardBadge(item) {
   const d = parseDelta(item.recycleDelta);
-  if (d == null) return 'Δ N/A';
-  return d > 0 ? `Δ +${d}%` : `Δ ${d}%`;
+  if (d == null) return 'N/A';
+
+  if (d > 0) return `▲ +${d}%`;   // green (good)
+  if (d < 0) return `▼ ${d}%`;    // red (bad)  (d already includes the minus sign)
+  return `→ 0%`;                  // optional: neutral case
 }
 
 // Normalize rarity string -> class suffix
