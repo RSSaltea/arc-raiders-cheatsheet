@@ -146,7 +146,8 @@ function applyFilters(allItems) {
   const q = els.q.value.trim().toLowerCase();
   const sec = els.section.value;
   const cat = els.category.value;
-  const sort = els.sort.value || 'name-asc'; // <-- changed
+  const allowedSorts = new Set(['name-asc','value-desc','value-asc','delta-desc','delta-asc']);
+  const sort = allowedSorts.has(els.sort.value) ? els.sort.value : 'name-asc';
 
   let items = allItems.slice();
 
@@ -218,23 +219,16 @@ async function main() {
   fillSelect(els.section, sections, 'All sections');
   fillSelect(els.category, categories, 'All categories');
 
-  // Wire listeners (delegated = more reliable)
-  const schedule = () => requestAnimationFrame(() => applyFilters(allItems));
+  // Wire listeners 
+  const onChange = () => applyFilters(allItems);
 
-  document.addEventListener('input', (e) => {
-    if (e.target === els.q) schedule();
-  });
 
-  document.addEventListener('change', (e) => {
-    if (e.target === els.section || e.target === els.category || e.target === els.sort) {
-      schedule();
-    }
-  });
+  els.q.addEventListener('input', onChange);
+  els.q.addEventListener('search', onChange); // when user clicks the clear (x)
 
-  // Handles the native clear ("x") on <input type="search"> in some browsers
-  document.addEventListener('search', (e) => {
-    if (e.target === els.q) schedule();
-  });
+  els.section.addEventListener('change', onChange);
+  els.category.addEventListener('change', onChange);
+  els.sort.addEventListener('change', onChange);
 
 
   els.reset.addEventListener('click', () => {
