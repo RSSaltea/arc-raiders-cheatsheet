@@ -156,27 +156,28 @@ function applyFilters(allItems) {
   if (cat) items = items.filter(i => (i.categories || []).includes(cat));
 
   // Search
-  if (q) {
-    items = items.filter(i => {
-      const name = (i.name || '').toLowerCase();
-      const section = (i.sections || []).join(' ').toLowerCase();
-      const category = (i.categories || []).join(' ').toLowerCase();
-      const delta = (i.recycleDelta || '').toLowerCase();
-      const value = String(i.sellValue ?? '');
-      const icon = (i.icon || '').toLowerCase();
-      const rarity = String(i.rarity || '').toLowerCase();
+// Search
+if (q) {
+  items = items.filter(i => {
+    const name = String(i.name || '').toLowerCase();
+    const section = (i.sections || []).join(' ').toLowerCase();
+    const category = (i.categories || []).join(' ').toLowerCase();
+    const delta = String(i.recycleDelta ?? '').toLowerCase();   // <- changed
+    const value = String(i.sellValue ?? '');
+    const icon = String(i.icon ?? '').toLowerCase();            // <- changed
+    const rarity = String(i.rarity ?? '').toLowerCase();        // <- changed
 
-      return (
-        name.includes(q) ||
-        section.includes(q) ||
-        category.includes(q) ||
-        delta.includes(q) ||
-        value.includes(q) ||
-        icon.includes(q) ||
-        rarity.includes(q)
-      );
-    });
-  }
+    return (
+      name.includes(q) ||
+      section.includes(q) ||
+      category.includes(q) ||
+      delta.includes(q) ||
+      value.includes(q) ||
+      icon.includes(q) ||
+      rarity.includes(q)
+    );
+  });
+}
 
   // Sort
   items.sort((a, b) => {
