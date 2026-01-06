@@ -65,18 +65,18 @@ function render(items) {
   for (const item of items) {
     const node = els.tpl.content.cloneNode(true);
 
-// Apply rarity class to the card (reset first)
-const cardEl = node.querySelector('.card');
-if (cardEl) {
-  cardEl.classList.remove(
-    'rarity-common',
-    'rarity-uncommon',
-    'rarity-rare',
-    'rarity-epic',
-    'rarity-legendary'
-  );
-        cardEl.classList.add(rarityClass(item.rarity));
-}
+    // Apply rarity class to the card (reset first)
+    const cardEl = node.querySelector('.card');
+    if (cardEl) {
+      cardEl.classList.remove(
+        'rarity-common',
+        'rarity-uncommon',
+        'rarity-rare',
+        'rarity-epic',
+        'rarity-legendary'
+      );
+      cardEl.classList.add(rarityClass(item.rarity));
+    }
 
     // Name
     const nameEl = node.querySelector('.name');
@@ -103,21 +103,20 @@ if (cardEl) {
       secEl.textContent =
         (item.sections && item.sections.length) ? item.sections.join(' • ') : 'Unsorted';
     }
-    
+
     // Rarity tag
-const rarityEl = node.querySelector('.rarity');
-if (rarityEl) {
-  const r = String(item.rarity || 'Common').trim().toLowerCase();
-  const safe = ['common','uncommon','rare','epic','legendary'].includes(r) ? r : 'common';
+    const rarityEl = node.querySelector('.rarity');
+    if (rarityEl) {
+      const r = String(item.rarity || 'Common').trim().toLowerCase();
+      const safe = ['common','uncommon','rare','epic','legendary'].includes(r) ? r : 'common';
 
-  rarityEl.textContent = safe.charAt(0).toUpperCase() + safe.slice(1);
+      rarityEl.textContent = safe.charAt(0).toUpperCase() + safe.slice(1);
 
-  rarityEl.classList.remove(
-    'rarity-common','rarity-uncommon','rarity-rare','rarity-epic','rarity-legendary'
-  );
-  rarityEl.classList.add(`rarity-${safe}`);
-}
-
+      rarityEl.classList.remove(
+        'rarity-common','rarity-uncommon','rarity-rare','rarity-epic','rarity-legendary'
+      );
+      rarityEl.classList.add(`rarity-${safe}`);
+    }
 
     const catEl = node.querySelector('.category');
     if (catEl) {
@@ -147,7 +146,7 @@ function applyFilters(allItems) {
   const q = els.q.value.trim().toLowerCase();
   const sec = els.section.value;
   const cat = els.category.value;
-  const sort = els.sort.value;
+  const sort = els.sort.value || 'name-asc'; // <-- changed
 
   let items = allItems.slice();
 
@@ -219,14 +218,16 @@ async function main() {
   fillSelect(els.section, sections, 'All sections');
   fillSelect(els.category, categories, 'All categories');
 
-  // Wire listeners
+  // Wire listeners (explicit + reliable)  <-- changed
   const onChange = () => applyFilters(allItems);
-  ['input', 'change'].forEach(evt => {
-    els.q.addEventListener(evt, onChange);
-    els.section.addEventListener(evt, onChange);
-    els.category.addEventListener(evt, onChange);
-    els.sort.addEventListener(evt, onChange);
-  });
+
+  els.q.addEventListener('input', onChange);
+  els.q.addEventListener('search', onChange);
+  els.q.addEventListener('change', onChange); // optional safety
+
+  els.section.addEventListener('change', onChange);
+  els.category.addEventListener('change', onChange);
+  els.sort.addEventListener('change', onChange);
 
   els.reset.addEventListener('click', () => {
     els.q.value = '';
