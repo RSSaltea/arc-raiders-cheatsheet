@@ -218,16 +218,19 @@ async function main() {
   fillSelect(els.section, sections, 'All sections');
   fillSelect(els.category, categories, 'All categories');
 
-  // Wire listeners (explicit + reliable)  <-- changed
+  // Wire listeners 
   const onChange = () => applyFilters(allItems);
 
+
   els.q.addEventListener('input', onChange);
-  els.q.addEventListener('search', onChange);
-  els.q.addEventListener('change', onChange); // optional safety
+  els.q.addEventListener('keyup', onChange);
+  els.q.addEventListener('search', onChange); 
+  els.q.addEventListener('change', onChange); 
 
   els.section.addEventListener('change', onChange);
   els.category.addEventListener('change', onChange);
   els.sort.addEventListener('change', onChange);
+
 
   els.reset.addEventListener('click', () => {
     els.q.value = '';
