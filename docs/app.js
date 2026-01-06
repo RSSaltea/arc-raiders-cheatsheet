@@ -218,18 +218,23 @@ async function main() {
   fillSelect(els.section, sections, 'All sections');
   fillSelect(els.category, categories, 'All categories');
 
-  // Wire listeners 
-  const onChange = () => applyFilters(allItems);
+  // Wire listeners (delegated = more reliable)
+  const schedule = () => requestAnimationFrame(() => applyFilters(allItems));
 
+  document.addEventListener('input', (e) => {
+    if (e.target === els.q) schedule();
+  });
 
-  els.q.addEventListener('input', onChange);
-  els.q.addEventListener('keyup', onChange);
-  els.q.addEventListener('search', onChange); 
-  els.q.addEventListener('change', onChange); 
+  document.addEventListener('change', (e) => {
+    if (e.target === els.section || e.target === els.category || e.target === els.sort) {
+      schedule();
+    }
+  });
 
-  els.section.addEventListener('change', onChange);
-  els.category.addEventListener('change', onChange);
-  els.sort.addEventListener('change', onChange);
+  // Handles the native clear ("x") on <input type="search"> in some browsers
+  document.addEventListener('search', (e) => {
+    if (e.target === els.q) schedule();
+  });
 
 
   els.reset.addEventListener('click', () => {
