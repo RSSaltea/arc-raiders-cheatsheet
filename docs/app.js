@@ -46,7 +46,7 @@ function cardBadge(item) {
 
   if (d > 0) return `▲ +${d}%`;   // green (good)
   if (d < 0) return `▼ ${d}%`;    // red (bad)  (d already includes the minus sign)
-  return `→ 0%`;                  // optional: neutral case
+  return `0%`;                  // optional: neutral case
 }
 
 // Normalize rarity string -> class suffix
