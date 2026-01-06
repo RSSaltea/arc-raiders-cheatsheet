@@ -182,7 +182,7 @@
     },
     {
       "name": "Coolant",
-      "sellValue": 31000,
+      "sellValue": 1000,
       "recycleDelta": "-10%",
       "sections": ["Safe to Sell / Recycle"],
       "categories": [ "Chemicals", "Oil" ],
