@@ -953,6 +953,150 @@
       "categories": ["Explosive Components","Refiner Components","Gun Components"],
       "icon": "icons/Oil.png",
       "rarity": "Uncommon"
+    },
+    {
+      "name": "Broken Guidance System",
+      "sellValue": 2000,
+      "recycleDelta": "+0%",
+      "sections": ["Recycle into Core Components","Safe to Sell / Recycle"],
+      "categories": ["Processor"],
+      "icon": "icons/Broken_Guidance_System.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Broken Handheld Radio",
+      "sellValue": 2000,
+      "recycleDelta": "-5%",
+      "sections": ["Recycle into Core Components","Safe to Sell / Recycle"],
+      "categories": ["Sensors","Wires"],
+      "icon": "icons/Broken_Handheld_Radio.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Pollued Air Filter",
+      "sellValue": 1000,
+      "recycleDelta": "-10%",
+      "sections": ["Recycle into High-Priority Components","Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Oil","Fabric"],
+      "icon": "icons/Polluted_Air_Filter.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Remote Control",
+      "sellValue": 1000,
+      "recycleDelta": "-8%",
+      "sections": ["Recycle into High-Priority Components","Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Plastic Parts","Sensors"],
+      "icon": "icons/Remote_Control.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Thermostat",
+      "sellValue": 1000,
+      "recycleDelta": "-15%",
+      "sections": ["Recycle into High-Priority Components","Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Rubber Parts","Sensors"],
+      "icon": "icons/Thermostat.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Sample Cleaner",
+      "sellValue": 3000,
+      "recycleDelta": "-11%",
+      "sections": ["Recycle into High-Priority Components","Safe to Sell / Recycle"],
+      "categories": null,
+      "icon": "icons/Sample_Cleaner.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Speaker Component",
+      "sellValue": 500,
+      "recycleDelta": "-46%",
+      "sections": ["Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Plastic Parts","Rubber Parts"],
+      "icon": "icons/Speaker_Component.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Camera Lens",
+      "sellValue": 640,
+      "recycleDelta": "-25%",
+      "sections": ["Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Plastic Parts"],
+      "icon": "icons/Camera_Lens.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Crumpled Plastic Bottle",
+      "sellValue": 270,
+      "recycleDelta": "-11%",
+      "sections": ["Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Plastic Parts"],
+      "icon": "icons/Crumpled_Plastic_Bottle.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Deflated Football",
+      "sellValue": 1000,
+      "recycleDelta": "-10%",
+      "sections": ["Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Rubber Parts","Fabric"],
+      "icon": "icons/Deflated_Football.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Degraded ARC Rubber",
+      "sellValue": 640,
+      "recycleDelta": "-14%",
+      "sections": ["Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Rubber Parts"],
+      "icon": "icons/Degraded_ARC_Rubber.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Dried-Out ARC Resin",
+      "sellValue": 640,
+      "recycleDelta": "-16%",
+      "sections": ["Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Plastic Parts"],
+      "icon": "icons/Dried-Out_ARC_Resin.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Househould Cleaner",
+      "sellValue": 640,
+      "recycleDelta": "-14%",
+      "sections": ["Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Chemicals"],
+      "icon": "icons/Household_Cleaner.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Ruined Handcuffs",
+      "sellValue": 640,
+      "recycleDelta": "-25%",
+      "sections": ["Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Metal Parts"],
+      "icon": "icons/Ruined_Handcuffs.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Spotter Relay",
+      "sellValue": 2000,
+      "recycleDelta": "-26%",
+      "sections": ["Recycle into High-Priority Components","Safe to Sell / Recycle"],
+      "categories": null,
+      "icon": "icons/Spotter_Relay.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Rusted Bolts",
+      "sellValue": 640,
+      "recycleDelta": "-6%",
+      "sections": ["Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Metal Parts"],
+      "icon": "icons/Rusted_Bolts.png",
+      "rarity": "Uncommon"
     }
   ]
 }
