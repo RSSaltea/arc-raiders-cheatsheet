@@ -386,45 +386,46 @@ kbd{
   opacity: 0.98;
 }
 
-.topbarRow{
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* <-- pushes button to right */
-  gap: 16px;
+.topbar{
+  position: sticky;
+  top: 0;
+  z-index: 20;
 }
 
-.discordBtn{
-  width: 44px;
-  height: 44px;
-  flex-shrink: 0;
+/* Discord button (top-right) */
+.discord-btn{
+  position: absolute;
+  top: 14px;
+  right: 14px;
 
-  border-radius: 12px;
-  background-color: rgba(88,101,242,.18);
+  width: 42px;
+  height: 42px;
+
   background-image: url("icons/Discord.png");
-  background-size: 22px 22px;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 
-  border: 1px solid rgba(255,255,255,.22);
-  box-shadow:
-    0 8px 20px rgba(0,0,0,.45),
-    inset 0 0 0 1px rgba(255,255,255,.06);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.18);
+  background-color: rgba(11,18,38,.55);
 
-  transition:
-    transform .15s ease,
-    box-shadow .15s ease,
-    background-color .15s ease;
+  box-shadow:
+    0 6px 18px rgba(0,0,0,.45),
+    inset 0 0 0 1px rgba(255,255,255,.05);
+
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
 }
 
-.discordBtn:hover{
+.discord-btn:hover{
   transform: translateY(-1px);
-  background-color: rgba(88,101,242,.35);
+  border-color: rgba(122,167,255,.9);
   box-shadow:
-    0 12px 28px rgba(0,0,0,.55),
-    inset 0 0 0 1px rgba(255,255,255,.1);
+    0 10px 24px rgba(0,0,0,.55),
+    inset 0 0 0 1px rgba(255,255,255,.08);
 }
 
-.discordBtn:active{
+.discord-btn:active{
   transform: translateY(0);
 }
 
