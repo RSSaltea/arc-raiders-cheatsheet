@@ -3,9 +3,6 @@
 ## WIP Project
 Keep in mind this might not have everything.
 
-## Discord
-Coming soon
-
 ## This repo is scaffolded for **GitHub Pages** and includes:
 - Mobile-first UI (dark, ARC-ish vibe)
 - Search + filter + sort
