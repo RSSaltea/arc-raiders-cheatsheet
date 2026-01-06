@@ -163,7 +163,7 @@
       "rarity": "Uncommon"
     },
     {
-      "name": "Adv. Electrical Components",
+      "name": "Advanced Electrical Components",
       "sellValue": 1750,
       "recycleDelta": "-52%",
       "sections": ["Workshop Upgrades","High-Tier Components"],
@@ -172,7 +172,7 @@
       "rarity": "Rare"
     },
     {
-      "name": "Adv. Mechanical Components",
+      "name": "Advanced Mechanical Components",
       "sellValue": 1750,
       "recycleDelta": "-46%",
       "sections": ["Workshop Upgrades","High-Tier Components"],
@@ -1097,6 +1097,60 @@
       "categories": ["Metal Parts"],
       "icon": "icons/Rusted_Bolts.png",
       "rarity": "Uncommon"
+    },
+    {
+      "name": "Metal Parts",
+      "sellValue": 75,
+      "recycleDelta": null,
+      "sections": ["Workshop Upgrades","Base Components","Expedition Project"],
+      "categories": ["Gun Components","Utility Components","Workbench Components","Refiner Components"],
+      "icon": "icons/Metal_Parts.png",
+      "rarity": "Common"
+    },
+    {
+      "name": "ARC Alloy",
+      "sellValue": 200,
+      "recycleDelta": "-25%",
+      "sections": ["Workshop Upgrades","Core Components","Expedition Project"],
+      "categories": ["Refiner Components","Gear Components","Workbench Components","Explosive Components"],
+      "icon": "icons/ARC_Alloy.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Wires",
+      "sellValue": 200,
+      "recycleDelta": "-50%",
+      "sections": ["Expedition Project","Core Components"],
+      "categories": ["Refiner Components","Workbench Components","Gun Components","Explosive Components"],
+      "icon": "icons/Wires.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Light Bulb",
+      "sellValue": 2000,
+      "recycleDelta": "-25%",
+      "sections": ["Expedition Project","Safe to Sell / Recycle"],
+      "categories": null,
+      "icon": "icons/Light_Bulb.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Shredder Gyro",
+      "sellValue": 3000,
+      "recycleDelta": "-16%",
+      "sections": ["Expedition Project","Recycle into High-Priority Components","Safe to Sell / Recycle"],
+      "categories": null,
+      "icon": "icons/Shredder_Gyro.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Shredder Gyro",
+      "sellValue": 6000,
+      "recycleDelta": "-21%",
+      "sections": ["Expedition Project","Recycle into High-Priority Components","Safe to Sell / Recycle"],
+      "categories": ["Voltage Converter"],
+      "icon": "icons/Ion_Sputter.png",
+      "rarity": "Epic"
     }
   ]
 }
