@@ -392,14 +392,15 @@ kbd{
   z-index: 20;
 }
 
-/* Discord button */
+
+/* Discord Button */
 .discordBtn{
   position: absolute;
-  top: 12px;
-  right: 12px;
+  top: -14px;
+  right: -14px;
 
-  width: 200px;         
-  height: 133px;        
+  width: 200px;
+  height: 133px;
   background: url("icons/Discord.png") center / contain no-repeat;
 
   border: 0;
@@ -407,20 +408,23 @@ kbd{
   padding: 0;
   margin: 0;
 
-  box-shadow: none;     
-  border-radius: 0;   
+  box-shadow: none;
+  border-radius: 0;
   cursor: pointer;
   display: block;
   text-decoration: none;
+
+  will-change: transform;
 }
 
 .discordBtn:hover{
-  transform: translateY(-1px);
+  transform: scale(1.03);
 }
 
 .discordBtn:active{
-  transform: translateY(0px);
+  transform: scale(0.98);
 }
+
 
 /* Mobile Discord Button */
 @media (max-width: 520px){
