@@ -392,41 +392,42 @@ kbd{
   z-index: 20;
 }
 
-/* Discord button (top-right) */
-.discord-btn{
+/* Discord button */
+.discordBtn{
   position: absolute;
-  top: 14px;
-  right: 14px;
+  top: 12px;
+  right: 12px;
 
-  width: 42px;
-  height: 42px;
+  width: 160px;         
+  height: 60px;        
+  background: url("icons/Discord.png") center / contain no-repeat;
 
-  background-image: url("icons/Discord.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
 
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,.18);
-  background-color: rgba(11,18,38,.55);
-
-  box-shadow:
-    0 6px 18px rgba(0,0,0,.45),
-    inset 0 0 0 1px rgba(255,255,255,.05);
-
-  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  box-shadow: none;     
+  border-radius: 0;   
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
 }
 
-.discord-btn:hover{
+.discordBtn:hover{
   transform: translateY(-1px);
-  border-color: rgba(122,167,255,.9);
-  box-shadow:
-    0 10px 24px rgba(0,0,0,.55),
-    inset 0 0 0 1px rgba(255,255,255,.08);
 }
 
-.discord-btn:active{
-  transform: translateY(0);
+.discordBtn:active{
+  transform: translateY(0px);
+}
+
+/* Mobile Discord Button */
+@media (max-width: 520px){
+  .discordBtn{
+    width: 130px;
+    height: 48px;
+  }
 }
 
 /* Common: Grey */
