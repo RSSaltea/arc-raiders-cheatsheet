@@ -70,6 +70,8 @@ body::after{
   backdrop-filter: blur(10px);
   background: linear-gradient(180deg, rgba(7,10,18,.88), rgba(7,10,18,.65));
   border-bottom: 1px solid rgba(42,53,87,.7);
+  position: relative;
+  overflow-x: clip;/
 }
 
 .brand{
@@ -396,8 +398,8 @@ kbd{
 /* Discord Button */
 .discordBtn{
   position: absolute;
-  top: -14px;
-  right: -14px;
+  top: 0;
+  right: 0;
 
   width: 180px;
   height: 120px;
@@ -414,15 +416,7 @@ kbd{
   display: block;
   text-decoration: none;
 
-  will-change: transform;
-}
-
-.discordBtn:hover{
-  transform: scale(1.03);
-}
-
-.discordBtn:active{
-  transform: scale(0.98);
+  transform: translate(14px, -14px);
 }
 
 
