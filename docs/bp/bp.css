@@ -76,6 +76,28 @@
   justify-content: center;
 }
 
+.bp-top-actions {
+  position: absolute;
+  right: 14px;
+  top: 16px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bp-progress {
+  font-size: 13px;
+  color: var(--muted);
+  margin-right: 6px;
+}
+
+.btn.small {
+  height: 32px;
+  padding: 0 12px;
+  font-size: 13px;
+}
+
 /* Footer row under blueprint */
 .bp-footer {
   position: absolute;
