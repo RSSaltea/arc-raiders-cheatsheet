@@ -33,10 +33,15 @@ async function init() {
       cell.classList.add("collected");
     }
 
+    const imageWrap = document.createElement("div");
+    imageWrap.className = "bp-image-wrap";
+
     const img = document.createElement("div");
     img.className = "bp-image";
     img.style.backgroundImage =
-      `url("./icons/bpicons/${name}.webp")`;
+          `url("./icons/bpicons/${name}.webp")`;
+
+    imageWrap.appendChild(img);
 
     /* Footer */
     const footer = document.createElement("div");
@@ -52,9 +57,10 @@ async function init() {
       .replace("-Level1", "")
       .replace("Mk 3", "Mk. 3");
 
-    footer.append(icon, text);
+footer.append(icon, text);
 
-    cell.append(img, footer);
+cell.append(imageWrap, footer);
+
 
     cell.addEventListener("click", () => {
       cell.classList.toggle("collected");
