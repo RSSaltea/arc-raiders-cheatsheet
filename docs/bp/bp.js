@@ -47,7 +47,7 @@ async function init() {
     icon.alt = "";
 
     const text = document.createElement("span");
-    text.textContent = "Old World";
+    text.textContent = name.replace(/_/g, " "); // make it readable
 
     footer.append(icon, text);
 
