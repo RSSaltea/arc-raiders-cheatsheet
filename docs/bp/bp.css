@@ -106,16 +106,19 @@
   right: 0;
 
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
   gap: 6px;
 
-  height: 18px;
+  padding: 3px 6px;
+  height: 32px;               
   background: #090c19;
   border-radius: 0 0 10px 10px;
 
   font-size: 11px;
   color: #cfd6ff;
+  line-height: 1.15;
+
+  overflow: hidden;
 }
 
 .bp-footer img {
