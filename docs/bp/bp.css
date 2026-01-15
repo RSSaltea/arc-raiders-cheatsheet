@@ -44,6 +44,25 @@
   opacity: 1;
 }
 
+.bp-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.bp-progress {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.bp-actions {
+  display: flex;
+  gap: 8px;
+}
+
 /* ✔ tick overlay */
 .bp-cell.collected::after {
   content: "✔";
