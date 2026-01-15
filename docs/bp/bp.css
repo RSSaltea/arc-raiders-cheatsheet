@@ -8,7 +8,7 @@
 .bp-cell {
   position: relative;
   width: 100px;
-  height: 118px; /* 100 image + ~18 footer */
+  height: 132px; /* 100 image + ~18 footer */
   border-radius: 10px;
   background:
     url("../icons/bpicons/UI_Blueprint_background.webp")
@@ -114,15 +114,27 @@
   background: #090c19;
   border-radius: 0 0 10px 10px;
 
-  font-size: 11px;
+  font-size: 10.5px;
   color: #cfd6ff;
   line-height: 1.15;
 
   overflow: hidden;
 }
 
+.bp-footer span {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;     /* max 2 lines */
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}
+
 .bp-footer img {
   width: 14px;
   height: 14px;
+  margin-top: 1px;
+  flex-shrink: 0;
   opacity: 0.9;
 }
