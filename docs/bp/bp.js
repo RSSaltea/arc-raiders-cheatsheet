@@ -112,18 +112,22 @@ searchInput?.addEventListener("input", e => {
 const exportBtn = document.getElementById("bpExport");
 
 exportBtn?.addEventListener("click", async () => {
-  const grid = document.getElementById("bpGrid");
-  if (!grid) return;
+  const gridEl = document.getElementById("bpGrid");
+  if (!gridEl) return;
 
-  // Temporarily remove hover effects / outlines if needed
+  if (typeof html2canvas !== "function") {
+    alert("Export library failed to load. Please refresh the page.");
+    return;
+  }
+
   document.body.classList.add("exporting");
 
-  const canvas = await html2canvas(grid, {
-    backgroundColor: "#070a12", // match site background
-    scale: 2,                  // higher = sharper image
+  const canvas = await html2canvas(gridEl, {
+    backgroundColor: "#070a12",
+    scale: 2,
     useCORS: true,
     scrollX: 0,
-    scrollY: -window.scrollY,  // capture full grid
+    scrollY: 0
   });
 
   document.body.classList.remove("exporting");
