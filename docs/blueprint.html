@@ -12,6 +12,7 @@
 
 <header class="topbar">
   <div class="topbarRow">
+
     <div class="brand">
       <div class="logo"></div>
       <div>
@@ -21,18 +22,17 @@
     </div>
 
     <a class="navBtn" href="index.html">Cheat Sheet</a>
+
+    <div class="bp-top-actions">
+      <div id="bpProgress" class="bp-progress">0 / 0 collected</div>
+      <button id="bpMarkAll" class="btn small">Mark all</button>
+      <button id="bpClearAll" class="btn small">Clear all</button>
+    </div>
+
   </div>
 </header>
 
 <main class="container">
-  <div class="bp-controls">
-  <div id="bpProgress" class="bp-progress">0 / 0 collected</div>
-
-  <div class="bp-actions">
-    <button id="bpMarkAll" class="btn">Mark all</button>
-    <button id="bpClearAll" class="btn">Clear all</button>
-  </div>
-</div>
 
   <section id="bpGrid" class="blueprint-grid"></section>
 </main>
