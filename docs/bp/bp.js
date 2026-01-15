@@ -1,22 +1,31 @@
 const STORAGE_KEY = "arc_blueprints_collected";
 
 const grid = document.getElementById("bpGrid");
+const progressEl = document.getElementById("bpProgress");
+const markAllBtn = document.getElementById("bpMarkAll");
+const clearAllBtn = document.getElementById("bpClearAll");
 
-function loadCollected() {
-  return new Set(JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]"));
+let allBlueprints = [];
+let collected = new Set();
+
+function save() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify([...collected]));
+  updateProgress();
 }
 
-function saveCollected(set) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify([...set]));
+function updateProgress() {
+  if (!progressEl) return;
+  progressEl.textContent = `${collected.size} / ${allBlueprints.length} collected`;
 }
 
 async function init() {
   const res = await fetch("./bp/blueprints.json");
-  const blueprints = await res.json();
+  allBlueprints = await res.json();
+  collected = new Set(JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]"));
 
-  const collected = loadCollected();
+  grid.innerHTML = "";
 
-  blueprints.forEach(name => {
+  allBlueprints.forEach(name => {
     const cell = document.createElement("div");
     cell.className = "bp-cell";
 
@@ -29,25 +38,50 @@ async function init() {
     img.style.backgroundImage =
       `url("./icons/bpicons/${name}.webp")`;
 
-    const label = document.createElement("div");
-    label.className = "bp-name";
-    label.textContent = name;
+    /* Footer */
+    const footer = document.createElement("div");
+    footer.className = "bp-footer";
 
-    cell.append(img, label);
+    const icon = document.createElement("img");
+    icon.src = "./icons/bpicons/Old_World.webp";
+    icon.alt = "";
+
+    const text = document.createElement("span");
+    text.textContent = "Old World";
+
+    footer.append(icon, text);
+
+    cell.append(img, footer);
 
     cell.addEventListener("click", () => {
+      cell.classList.toggle("collected");
+
       if (collected.has(name)) {
         collected.delete(name);
-        cell.classList.remove("collected");
       } else {
         collected.add(name);
-        cell.classList.add("collected");
       }
-      saveCollected(collected);
+
+      save();
     });
 
     grid.appendChild(cell);
   });
+
+  updateProgress();
 }
+
+/* Buttons */
+markAllBtn?.addEventListener("click", () => {
+  collected = new Set(allBlueprints);
+  document.querySelectorAll(".bp-cell").forEach(c => c.classList.add("collected"));
+  save();
+});
+
+clearAllBtn?.addEventListener("click", () => {
+  collected.clear();
+  document.querySelectorAll(".bp-cell").forEach(c => c.classList.remove("collected"));
+  save();
+});
 
 init();
