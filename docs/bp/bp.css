@@ -1,3 +1,34 @@
+.bp-search {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 58px; /* sits under the title nicely */
+
+  width: 280px;
+}
+
+.bp-search input {
+  width: 100%;
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(42,53,87,.9);
+  background: rgba(11,18,38,.65);
+  color: var(--text);
+  outline: none;
+  font-size: 14px;
+}
+
+.bp-search input::placeholder {
+  color: rgba(170,180,230,.6);
+}
+
+.bp-search input:focus {
+  border-color: rgba(122,167,255,.9);
+  box-shadow: 0 0 0 4px rgba(122,167,255,.16);
+}
+
+
 .blueprint-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, 100px);
