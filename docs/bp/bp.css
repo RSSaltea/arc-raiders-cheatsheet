@@ -1,10 +1,8 @@
 .bp-search {
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 58px; /* sits under the title nicely */
-
-  width: 280px;
+  top: 16px;
+  right: 220px; /* sits just left of Cheat Sheet */
+  width: 260px;
 }
 
 .bp-search input {
@@ -180,4 +178,12 @@
   margin-top: 1px;
   flex-shrink: 0;
   opacity: 0.9;
+}
+
+@media (max-width: 720px) {
+  .bp-search {
+    position: static;
+    width: 100%;
+    margin-top: 10px;
+  }
 }
