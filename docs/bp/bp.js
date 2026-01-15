@@ -56,7 +56,7 @@ async function init() {
     text.textContent = name
       .replace(/_/g, " ")
       .replace("-Level1", "")
-      .replace("Mk 3", "Mk. 3");
+      .replace("Mk 3", "Mk. 3")
       .replace("Extended", "Ext.");
 
 footer.append(icon, text);
