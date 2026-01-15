@@ -1,7 +1,10 @@
 .bp-search {
   position: absolute;
   top: 16px;
-  right: 220px; /* sits just left of Cheat Sheet */
+
+  left: 50%;
+  transform: translateX(calc(-100% - 12px));
+
   width: 260px;
 }
 
