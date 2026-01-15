@@ -8,7 +8,7 @@
 .bp-cell {
   position: relative;
   width: 100px;
-  height: 100px;
+  height: 118px; /* 100 image + ~18 footer */
   border-radius: 10px;
   background:
     url("../icons/bpicons/UI_Blueprint_background.webp")
@@ -79,19 +79,21 @@
 /* Footer row under blueprint */
 .bp-footer {
   position: absolute;
-  bottom: -18px;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 0;
+  left: 0;
+  right: 0;
+
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
 
-  padding: 4px 8px;
+  height: 18px;
   background: #090c19;
   border-radius: 0 0 10px 10px;
+
   font-size: 11px;
   color: #cfd6ff;
-  white-space: nowrap;
 }
 
 .bp-footer img {
