@@ -2,7 +2,7 @@
   position: absolute;
   top: 16px;
 
-  right: 75%;
+  left: 75%;
   transform: translateX(calc(-100% - 12px));
 
   width: 260px;
