@@ -47,7 +47,10 @@ async function init() {
     icon.alt = "";
 
     const text = document.createElement("span");
-    text.textContent = name.replace(/_/g, " "); // make it readable
+    text.textContent = name
+      .replace(/_/g, " ")
+      .replace("-Level1", "")
+      .replace("Mk 3", "Mk. 3");
 
     footer.append(icon, text);
 
