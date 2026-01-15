@@ -1,6 +1,3 @@
-<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
-<script src="bp/bp.js"></script>
-
 const STORAGE_KEY = "arc_blueprints_collected";
 
 const grid = document.getElementById("bpGrid");
@@ -8,6 +5,7 @@ const progressEl = document.getElementById("bpProgress");
 const markAllBtn = document.getElementById("bpMarkAll");
 const clearAllBtn = document.getElementById("bpClearAll");
 const searchInput = document.getElementById("bpSearch");
+const exportBtn = document.getElementById("bpExport");
 
 let allBlueprints = [];
 let collected = new Set();
@@ -33,27 +31,22 @@ async function init() {
     const cell = document.createElement("div");
     cell.className = "bp-cell";
 
-    if (collected.has(name)) {
-      cell.classList.add("collected");
-    }
+    if (collected.has(name)) cell.classList.add("collected");
 
     const imageWrap = document.createElement("div");
     imageWrap.className = "bp-image-wrap";
 
     const img = document.createElement("div");
     img.className = "bp-image";
-    img.style.backgroundImage =
-          `url("./icons/bpicons/${name}.webp")`;
+    img.style.backgroundImage = `url("./icons/bpicons/${name}.webp")`;
 
     imageWrap.appendChild(img);
 
-    /* Footer */
     const footer = document.createElement("div");
     footer.className = "bp-footer";
 
     const icon = document.createElement("img");
     icon.src = "./icons/bpicons/Old_World.webp";
-    icon.alt = "";
 
     const text = document.createElement("span");
     text.textContent = name
@@ -62,20 +55,12 @@ async function init() {
       .replace("Mk 3", "Mk. 3")
       .replace("Extended", "Ext.");
 
-footer.append(icon, text);
-
-cell.append(imageWrap, footer);
-
+    footer.append(icon, text);
+    cell.append(imageWrap, footer);
 
     cell.addEventListener("click", () => {
       cell.classList.toggle("collected");
-
-      if (collected.has(name)) {
-        collected.delete(name);
-      } else {
-        collected.add(name);
-      }
-
+      collected.has(name) ? collected.delete(name) : collected.add(name);
       save();
     });
 
@@ -85,7 +70,6 @@ cell.append(imageWrap, footer);
   updateProgress();
 }
 
-/* Buttons */
 markAllBtn?.addEventListener("click", () => {
   collected = new Set(allBlueprints);
   document.querySelectorAll(".bp-cell").forEach(c => c.classList.add("collected"));
@@ -98,42 +82,30 @@ clearAllBtn?.addEventListener("click", () => {
   save();
 });
 
-init();
-
 searchInput?.addEventListener("input", e => {
   const q = e.target.value.toLowerCase();
-
   document.querySelectorAll(".bp-cell").forEach(cell => {
     const name = cell.querySelector(".bp-footer span")?.textContent.toLowerCase() || "";
     cell.style.display = name.includes(q) ? "" : "none";
   });
 });
 
-const exportBtn = document.getElementById("bpExport");
-
 exportBtn?.addEventListener("click", async () => {
-  const gridEl = document.getElementById("bpGrid");
-  if (!gridEl) return;
-
   if (typeof html2canvas !== "function") {
-    alert("Export library failed to load. Please refresh the page.");
+    alert("Export library failed to load.");
     return;
   }
 
-  document.body.classList.add("exporting");
-
-  const canvas = await html2canvas(gridEl, {
+  const canvas = await html2canvas(grid, {
     backgroundColor: "#070a12",
     scale: 2,
-    useCORS: true,
-    scrollX: 0,
-    scrollY: 0
+    useCORS: true
   });
-
-  document.body.classList.remove("exporting");
 
   const link = document.createElement("a");
   link.download = "arc-raiders-blueprints.png";
   link.href = canvas.toDataURL("image/png");
   link.click();
 });
+
+init();
