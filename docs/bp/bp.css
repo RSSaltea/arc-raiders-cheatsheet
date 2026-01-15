@@ -29,12 +29,13 @@
   box-shadow: 0 0 0 4px rgba(122,167,255,.16);
 }
 
-
 .blueprint-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 100px);
+  grid-template-columns: repeat(auto-fit, minmax(92px, 1fr));
   gap: 6px;
   justify-content: center;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .bp-cell {
