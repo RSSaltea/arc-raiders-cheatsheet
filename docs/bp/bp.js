@@ -1,3 +1,6 @@
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script src="bp/bp.js"></script>
+
 const STORAGE_KEY = "arc_blueprints_collected";
 
 const grid = document.getElementById("bpGrid");
@@ -104,4 +107,29 @@ searchInput?.addEventListener("input", e => {
     const name = cell.querySelector(".bp-footer span")?.textContent.toLowerCase() || "";
     cell.style.display = name.includes(q) ? "" : "none";
   });
+});
+
+const exportBtn = document.getElementById("bpExport");
+
+exportBtn?.addEventListener("click", async () => {
+  const grid = document.getElementById("bpGrid");
+  if (!grid) return;
+
+  // Temporarily remove hover effects / outlines if needed
+  document.body.classList.add("exporting");
+
+  const canvas = await html2canvas(grid, {
+    backgroundColor: "#070a12", // match site background
+    scale: 2,                  // higher = sharper image
+    useCORS: true,
+    scrollX: 0,
+    scrollY: -window.scrollY,  // capture full grid
+  });
+
+  document.body.classList.remove("exporting");
+
+  const link = document.createElement("a");
+  link.download = "arc-raiders-blueprints.png";
+  link.href = canvas.toDataURL("image/png");
+  link.click();
 });
