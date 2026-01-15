@@ -56,3 +56,27 @@
   align-items: center;
   justify-content: center;
 }
+
+/* Footer row under blueprint */
+.bp-footer {
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 4px 8px;
+  background: #090c19;
+  border-radius: 0 0 10px 10px;
+  font-size: 11px;
+  color: #cfd6ff;
+  white-space: nowrap;
+}
+
+.bp-footer img {
+  width: 14px;
+  height: 14px;
+  opacity: 0.9;
+}
