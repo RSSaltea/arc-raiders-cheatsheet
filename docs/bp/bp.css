@@ -31,11 +31,16 @@
 
 .blueprint-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(92px, 1fr));
+
+  grid-template-columns: repeat(auto-fit, minmax(88px, 1fr));
   gap: 6px;
-  justify-content: center;
-  max-width: 1400px;
-  margin: 0 auto;
+
+  /* Full width minus 50px on each side */
+  padding-left: 50px;
+  padding-right: 50px;
+
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .bp-cell {
@@ -182,12 +187,4 @@
   margin-top: 1px;
   flex-shrink: 0;
   opacity: 0.9;
-}
-
-@media (max-width: 720px) {
-  .bp-search {
-    position: static;
-    width: 100%;
-    margin-top: 10px;
-  }
 }
