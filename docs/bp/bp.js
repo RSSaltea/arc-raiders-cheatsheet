@@ -4,6 +4,7 @@ const grid = document.getElementById("bpGrid");
 const progressEl = document.getElementById("bpProgress");
 const markAllBtn = document.getElementById("bpMarkAll");
 const clearAllBtn = document.getElementById("bpClearAll");
+const searchInput = document.getElementById("bpSearch");
 
 let allBlueprints = [];
 let collected = new Set();
@@ -94,3 +95,12 @@ clearAllBtn?.addEventListener("click", () => {
 });
 
 init();
+
+searchInput?.addEventListener("input", e => {
+  const q = e.target.value.toLowerCase();
+
+  document.querySelectorAll(".bp-cell").forEach(cell => {
+    const name = cell.querySelector(".bp-footer span")?.textContent.toLowerCase() || "";
+    cell.style.display = name.includes(q) ? "" : "none";
+  });
+});
