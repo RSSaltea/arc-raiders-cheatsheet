@@ -1,0 +1,6 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Source PDF (don't commit)
+*.pdf

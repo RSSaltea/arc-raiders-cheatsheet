@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARC Raiders Hub — Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app-layout">
+  <nav id="sidebar" class="sidebar"></nav>
+  <main class="main-content" x-data="dashApp()" x-init="init()">
+
+    <div class="page-header">
+      <div>
+        <h1>Dashboard</h1>
+        <p>Your ARC Raiders reference hub — items, blueprints, expedition tracking &amp; more</p>
+      </div>
+      <div class="flex gap-2">
+        <span class="badge badge-accent mono">PDF v3.2</span>
+        <span class="badge badge-cat mono">Jan 2026</span>
+      </div>
+    </div>
+
+    <div class="page-body">
+
+      <!-- Stats -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value" x-text="stats.items">—</div>
+          <div class="stat-label">Items in Database</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" x-text="stats.bpCollected + '/' + stats.bpTotal">—</div>
+          <div class="stat-label">Blueprints Collected</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" x-text="stats.expPct + '%'">—</div>
+          <div class="stat-label">Expedition Progress</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" x-text="stats.personalDone + '/' + stats.personalTotal">—</div>
+          <div class="stat-label">Quest Items Ready</div>
+        </div>
+      </div>
+
+      <!-- Quick access grid -->
+      <div class="sec-head mb-4">
+        <div class="sec-title">Quick Access</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-bottom:28px">
+
+        <a href="wiki.html" class="card" style="padding:20px;display:flex;align-items:center;gap:16px;cursor:pointer">
+          <div style="font-size:32px">📖</div>
+          <div>
+            <div class="bold mb-1">Item Wiki</div>
+            <div class="text-secondary text-sm">Search all items, view recycle ROI, crafting uses &amp; donor chains</div>
+          </div>
+        </a>
+
+        <a href="blueprints.html" class="card" style="padding:20px;display:flex;align-items:center;gap:16px;cursor:pointer">
+          <div style="font-size:32px">📋</div>
+          <div>
+            <div class="bold mb-1">Blueprint Tracker</div>
+            <div class="text-secondary text-sm">Track collected, wishlist, and spare blueprints across all categories</div>
+          </div>
+        </a>
+
+        <a href="expedition.html" class="card" style="padding:20px;display:flex;align-items:center;gap:16px;cursor:pointer">
+          <div style="font-size:32px">🗺</div>
+          <div>
+            <div class="bold mb-1">Expedition Tracker</div>
+            <div class="text-secondary text-sm">Phase-by-phase checklist for Expedition Project 1 (750,000 coins)</div>
+          </div>
+        </a>
+
+        <a href="personal.html" class="card" style="padding:20px;display:flex;align-items:center;gap:16px;cursor:pointer">
+          <div style="font-size:32px">⭐</div>
+          <div>
+            <div class="bold mb-1">Personal Tracker</div>
+            <div class="text-secondary text-sm">Track quest item quantities — what you need vs. what you have</div>
+          </div>
+        </a>
+
+        <a href="attachments.html" class="card" style="padding:20px;display:flex;align-items:center;gap:16px;cursor:pointer">
+          <div style="font-size:32px">🔩</div>
+          <div>
+            <div class="bold mb-1">Attachments Guide</div>
+            <div class="text-secondary text-sm">Weapon compatibility, recoil stats, mag sizes, silencers &amp; more</div>
+          </div>
+        </a>
+
+        <a href="keys.html" class="card" style="padding:20px;display:flex;align-items:center;gap:16px;cursor:pointer">
+          <div style="font-size:32px">🗝</div>
+          <div>
+            <div class="bold mb-1">Key Locations</div>
+            <div class="text-secondary text-sm">All keycards for all 5 maps — Buried City, Blue Gate, Spaceport &amp; more</div>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Highest ROI items -->
+      <div class="sec-head mb-4">
+        <div class="sec-title">Highest ROI <span class="accent-text">— Always Recycle</span></div>
+        <a href="wiki.html" class="btn btn-ghost btn-sm">View All Items →</a>
+      </div>
+      <div class="card mb-6">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Sell Value</th>
+              <th>Recycle ROI</th>
+              <th>Stack</th>
+              <th>Tip</th>
+            </tr>
+          </thead>
+          <tbody>
+            <template x-for="item in topROI" :key="item.id">
+              <tr>
+                <td><span class="bold" x-text="item.name"></span></td>
+                <td><span class="text-yellow mono" x-text="'🪙 ' + item.sellValue.toLocaleString()"></span></td>
+                <td>
+                  <span class="mono bold" :class="item.recycleROI > 0 ? 'text-green' : (item.recycleROI < -20 ? 'text-red' : 'text-secondary')"
+                    x-text="(item.recycleROI > 0 ? '+' : '') + item.recycleROI + '%'"></span>
+                </td>
+                <td><span class="mono text-muted" x-text="item.stackSize || '—'"></span></td>
+                <td><span class="text-secondary text-xs" x-text="item.notes || ''"></span></td>
+              </tr>
+            </template>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Expedition progress preview -->
+      <div class="sec-head mb-4">
+        <div class="sec-title">Expedition Project 1</div>
+        <a href="expedition.html" class="btn btn-ghost btn-sm">Open Tracker →</a>
+      </div>
+      <div class="card" style="padding:20px">
+        <template x-for="(phase, pi) in expPhases" :key="pi">
+          <div class="mb-3">
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-sm" x-text="phase.name"></span>
+              <span class="mono text-xs text-muted" x-text="phaseProgress(pi).done + '/' + phaseProgress(pi).total"></span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill" :class="phaseProgress(pi).pct === 100 ? 'green' : ''"
+                :style="'width:' + phaseProgress(pi).pct + '%'"></div>
+            </div>
+          </div>
+        </template>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+<script src="js/nav.js"></script>
+<script src="js/tracker.js"></script>
+<script>
+function dashApp() {
+  return {
+    stats: { items: '…', bpCollected: '…', bpTotal: '…', expPct: '…', personalDone: '…', personalTotal: '…' },
+    topROI: [],
+    expPhases: [],
+
+    async init() {
+      const [itemData, bpData, expData] = await Promise.all([
+        arcHub.loadJSON('data/items.json'),
+        arcHub.loadJSON('data/blueprints.json'),
+        arcHub.loadJSON('data/expedition.json'),
+      ]);
+
+      this.stats.items = itemData.items.length;
+
+      // Blueprint stats
+      const allBpIds = bpData.categories.flatMap(c => c.blueprints.map(b => b.id));
+      this.stats.bpTotal = allBpIds.length;
+      this.stats.bpCollected = Tracker.bp.countCollected(allBpIds);
+
+      // Expedition
+      this.expPhases = expData.expeditions[0].phases;
+      const prog = Tracker.exp.progress(this.expPhases);
+      this.stats.expPct = prog.pct;
+
+      // Personal
+      const questItems = itemData.items.filter(i => i.tags.includes('quest-item'));
+      this.stats.personalTotal = questItems.length;
+      this.stats.personalDone = questItems.filter(i =>
+        Tracker.personal.get(i.id) >= (i.questQty || 1)
+      ).length;
+
+      // Top ROI items (positive or near-zero)
+      this.topROI = itemData.items
+        .filter(i => i.recycleROI !== null && i.recycleROI !== undefined)
+        .sort((a, b) => b.recycleROI - a.recycleROI)
+        .slice(0, 8);
+    },
+
+    phaseProgress(pi) {
+      return Tracker.exp.phaseProgress(this.expPhases[pi], pi);
+    }
+  };
+}
+</script>
+</body>
+</html>

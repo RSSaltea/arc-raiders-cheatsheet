@@ -1,0 +1,173 @@
+{
+  "stations": [
+    {
+      "id": "gunsmith",
+      "name": "Gunsmith",
+      "icon": "🔫",
+      "upgrades": [
+        {
+          "level": 2,
+          "items": [
+            { "name": "Mechanical Components", "qty": 5,  "sellValue": 640,  "recycleROI": -49 },
+            { "name": "Rusted Tools",          "qty": 3,  "sellValue": 1000, "recycleROI": -10 },
+            { "name": "Wasp Driver",           "qty": 8,  "sellValue": 1000, "recycleROI": -16 }
+          ]
+        },
+        {
+          "level": 3,
+          "items": [
+            { "name": "Rusted Gear",                    "qty": 3, "sellValue": 2000, "recycleROI": -21 },
+            { "name": "Advanced Mechanical Components", "qty": 5, "sellValue": 1750, "recycleROI": -46 },
+            { "name": "Sentinel Firing Core",           "qty": 4, "sellValue": 3000, "recycleROI": -23 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gear-bench",
+      "name": "Gear Bench",
+      "icon": "⚙️",
+      "upgrades": [
+        {
+          "level": 2,
+          "items": [
+            { "name": "Electrical Components", "qty": 5, "sellValue": 640,  "recycleROI": -48 },
+            { "name": "Power Cable",           "qty": 3, "sellValue": 1000, "recycleROI": -20 },
+            { "name": "Hornet Driver",         "qty": 5, "sellValue": 2000, "recycleROI": -16 }
+          ]
+        },
+        {
+          "level": 3,
+          "items": [
+            { "name": "Industrial Battery",           "qty": 3, "sellValue": 1000, "recycleROI": -15 },
+            { "name": "Advanced Electrical Components","qty": 5, "sellValue": 1750, "recycleROI": -52 },
+            { "name": "Bastion Cell",                 "qty": 6, "sellValue": 5000, "recycleROI": -22 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "medical-lab",
+      "name": "Medical Lab",
+      "icon": "🧪",
+      "upgrades": [
+        {
+          "level": 2,
+          "items": [
+            { "name": "Tick Pod",          "qty": 8, "sellValue": 640,  "recycleROI": -22 },
+            { "name": "Durable Cloth",     "qty": 5, "sellValue": 640,  "recycleROI": -53 },
+            { "name": "Cracked Bioscanner","qty": 2, "sellValue": 1000, "recycleROI": -10 }
+          ]
+        },
+        {
+          "level": 3,
+          "items": [
+            { "name": "Rusted Shut Medical Kit", "qty": 1, "sellValue": 2000, "recycleROI": 0   },
+            { "name": "Antiseptic",              "qty": 8, "sellValue": 1000, "recycleROI": -50 },
+            { "name": "Surveyor Vault",          "qty": 5, "sellValue": 2000, "recycleROI": -16 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "refiner",
+      "name": "Refiner",
+      "icon": "🔥",
+      "upgrades": [
+        {
+          "level": 2,
+          "items": [
+            { "name": "Fireball Burner", "qty": 8,  "sellValue": 640,  "recycleROI": -27 },
+            { "name": "ARC Motion Core","qty": 5,  "sellValue": 1000, "recycleROI": -60 },
+            { "name": "Toaster",         "qty": 3,  "sellValue": 1000, "recycleROI": -10 }
+          ]
+        },
+        {
+          "level": 3,
+          "items": [
+            { "name": "Motor",           "qty": 3,  "sellValue": 2000, "recycleROI": -25 },
+            { "name": "ARC Circuitry",   "qty": 10, "sellValue": 1000, "recycleROI": -25 },
+            { "name": "Bombardier Cell", "qty": 6,  "sellValue": 5000, "recycleROI": -25 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "utility-station",
+      "name": "Utility Station",
+      "icon": "🛠️",
+      "upgrades": [
+        {
+          "level": 2,
+          "items": [
+            { "name": "Snitch Scanner",        "qty": 6, "sellValue": 2000, "recycleROI": -26 },
+            { "name": "Electrical Components", "qty": 5, "sellValue": 640,  "recycleROI": -48 },
+            { "name": "Damaged Heat Sink",     "qty": 2, "sellValue": 1000, "recycleROI": -15 }
+          ]
+        },
+        {
+          "level": 3,
+          "items": [
+            { "name": "Fried Motherboard",            "qty": 3, "sellValue": 2000, "recycleROI": -21 },
+            { "name": "Advanced Electrical Components","qty": 5, "sellValue": 1750, "recycleROI": -52 },
+            { "name": "Leaper Pulse Unit",            "qty": 4, "sellValue": 5000, "recycleROI": -18 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "explosives-station",
+      "name": "Explosives Station",
+      "icon": "💥",
+      "upgrades": [
+        {
+          "level": 2,
+          "items": [
+            { "name": "Pop Trigger",       "qty": 5, "sellValue": 640, "recycleROI": -27 },
+            { "name": "Crude Explosives",  "qty": 5, "sellValue": 270, "recycleROI": -44 },
+            { "name": "Synthesized Fuel",  "qty": 3, "sellValue": 700, "recycleROI": -50 }
+          ]
+        },
+        {
+          "level": 3,
+          "items": [
+            { "name": "Laboratory Reagents","qty": 3, "sellValue": 2000, "recycleROI": -20 },
+            { "name": "Explosive Compound", "qty": 5, "sellValue": 1000, "recycleROI": -46 },
+            { "name": "Rocketeer Driver",   "qty": 3, "sellValue": 5000, "recycleROI": -18 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scrappy",
+      "name": "Scrappy",
+      "icon": "🐾",
+      "upgrades": [
+        {
+          "level": 2,
+          "items": [
+            { "name": "Dog Collar", "qty": 1, "sellValue": 640, "recycleROI": -26 },
+            { "name": "Lemon",      "qty": 3, "sellValue": 640, "recycleROI": -25 },
+            { "name": "Apricot",    "qty": 3, "sellValue": 640, "recycleROI": -53 }
+          ]
+        },
+        {
+          "level": 3,
+          "items": [
+            { "name": "Prickly Pear", "qty": 6, "sellValue": 640,  "recycleROI": -53 },
+            { "name": "Olives",       "qty": 6, "sellValue": 640,  "recycleROI": -69 },
+            { "name": "Cat Bed",      "qty": 1, "sellValue": 1000, "recycleROI": -25 }
+          ]
+        },
+        {
+          "level": 4,
+          "items": [
+            { "name": "Mushroom",                "qty": 12, "sellValue": 1000, "recycleROI": -25 },
+            { "name": "Apricot",                 "qty": 12, "sellValue": 640,  "recycleROI": -53 },
+            { "name": "Very Comfortable Pillow", "qty": 3,  "sellValue": 2000, "recycleROI": -25 }
+          ]
+        }
+      ]
+    }
+  ]
+}

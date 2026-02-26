@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARC Raiders Hub — Personal Tracker</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app-layout">
+  <nav id="sidebar" class="sidebar"></nav>
+  <main class="main-content" x-data="personalApp()" x-init="init()" x-cloak>
+
+    <div class="page-header">
+      <div>
+        <h1>Personal Item Tracker</h1>
+        <p>Track quest items, farming targets &amp; custom goals. Pre-loaded from the PDF's Keep for Quests list.</p>
+      </div>
+      <div class="flex gap-2 items-center">
+        <span class="badge badge-green mono" x-text="completedCount + ' / ' + items.length + ' complete'"></span>
+        <button class="btn btn-ghost btn-sm" @click="showAdd = true">+ Add Item</button>
+        <button class="btn btn-danger btn-sm" @click="confirmReset()">Reset All</button>
+      </div>
+    </div>
+
+    <div class="page-body">
+
+      <!-- Progress -->
+      <div class="card mb-4" style="padding:16px 20px">
+        <div class="flex justify-between items-center mb-2">
+          <span class="bold">Quest Item Readiness</span>
+          <span class="mono text-accent" x-text="completedCount + '/' + items.length"></span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill"
+            :class="completedCount === items.length && items.length > 0 ? 'green' : ''"
+            :style="'width:' + (items.length ? Math.round(completedCount/items.length*100) : 0) + '%'"></div>
+        </div>
+      </div>
+
+      <!-- Filters -->
+      <div class="filter-bar mb-4">
+        <div class="search-wrap">
+          <span class="s-ico">🔍</span>
+          <input type="text" x-model="search" placeholder="Search items…">
+        </div>
+        <select class="filter-sel" x-model="filterStatus">
+          <option value="all">All Items</option>
+          <option value="incomplete">Need More</option>
+          <option value="complete">Have Enough ✓</option>
+        </select>
+      </div>
+
+      <!-- Items list -->
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <template x-for="item in filteredItems" :key="item.id">
+          <div class="track-item" :class="isComplete(item) ? 'done' : ''">
+            <div class="track-info">
+              <div class="track-name" x-text="item.name"></div>
+              <div class="flex gap-2 items-center mt-1">
+                <span class="track-sell" x-text="item.sellValue ? '🪙 ' + item.sellValue.toLocaleString() : ''"
+                  x-show="item.sellValue"></span>
+                <span class="badge" :class="'badge-' + (item.rarity || 'common')" x-text="item.rarity || 'common'"></span>
+                <span class="badge badge-cat" x-text="item.category"></span>
+                <template x-if="item.notes">
+                  <span class="text-muted text-xs" x-text="item.notes"></span>
+                </template>
+              </div>
+            </div>
+            <div class="track-ctrl">
+              <button class="track-btn" @click="dec(item.id)">−</button>
+              <div class="track-count">
+                <span :class="isComplete(item) ? 'text-green' : (getHave(item.id) > 0 ? 'text-yellow' : '')"
+                  x-text="getHave(item.id)"></span>
+                <span class="need"> / <span x-text="item.questQty || 1"></span></span>
+              </div>
+              <button class="track-btn" @click="inc(item.id)">+</button>
+              <span class="text-xs ml-2" x-show="isComplete(item)" style="color:var(--green)">✓</span>
+              <span class="text-xs ml-2" x-show="!isComplete(item)" style="color:var(--text-muted)"
+                x-text="'Need ' + Math.max(0, (item.questQty || 1) - getHave(item.id)) + ' more'"></span>
+            </div>
+          </div>
+        </template>
+      </div>
+
+      <!-- Custom items section -->
+      <template x-if="customItems.length > 0">
+        <div class="mt-6">
+          <div class="sec-head mb-3">
+            <div class="sec-title">⭐ Custom Items</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <template x-for="item in filteredCustomItems" :key="item.id">
+              <div class="track-item" :class="getHave(item.id) >= item.questQty ? 'done' : ''">
+                <div class="track-info">
+                  <div class="track-name" x-text="item.name"></div>
+                  <div class="flex gap-2 items-center mt-1">
+                    <span class="text-yellow mono text-xs" x-text="item.sellValue ? '🪙 ' + item.sellValue : ''"></span>
+                    <span class="badge badge-accent text-xs">custom</span>
+                  </div>
+                </div>
+                <div class="track-ctrl">
+                  <button class="track-btn" @click="dec(item.id)">−</button>
+                  <div class="track-count">
+                    <span :class="getHave(item.id) >= item.questQty ? 'text-green' : ''" x-text="getHave(item.id)"></span>
+                    <span class="need"> / <span x-text="item.questQty"></span></span>
+                  </div>
+                  <button class="track-btn" @click="inc(item.id)">+</button>
+                  <button class="btn btn-ghost btn-sm" style="padding:3px 8px;margin-left:8px" @click="removeCustom(item.id)">✕</button>
+                </div>
+              </div>
+            </template>
+          </div>
+        </div>
+      </template>
+
+    </div>
+
+    <!-- Add Item Modal -->
+    <div class="modal-overlay" x-show="showAdd" @click.self="showAdd = false" x-cloak>
+      <div class="modal">
+        <div class="modal-header">
+          <div class="modal-title">Add Custom Item</div>
+          <button class="modal-close" @click="showAdd = false">✕</button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label class="text-secondary text-sm" style="display:block;margin-bottom:6px">Item Name *</label>
+            <input type="text" x-model="newItem.name" placeholder="e.g. Arc Alloy"
+              style="width:100%;background:var(--bg-input);border:1px solid var(--border);color:var(--text-primary);padding:8px 12px;border-radius:4px;font-family:inherit;font-size:13px;outline:none">
+          </div>
+          <div class="mb-3">
+            <label class="text-secondary text-sm" style="display:block;margin-bottom:6px">Quantity Needed</label>
+            <input type="number" x-model.number="newItem.qty" min="1" value="1"
+              style="width:100%;background:var(--bg-input);border:1px solid var(--border);color:var(--text-primary);padding:8px 12px;border-radius:4px;font-family:inherit;font-size:13px;outline:none">
+          </div>
+          <div class="mb-4">
+            <label class="text-secondary text-sm" style="display:block;margin-bottom:6px">Sell Value (optional)</label>
+            <input type="number" x-model.number="newItem.sellValue" placeholder="e.g. 1000"
+              style="width:100%;background:var(--bg-input);border:1px solid var(--border);color:var(--text-primary);padding:8px 12px;border-radius:4px;font-family:inherit;font-size:13px;outline:none">
+          </div>
+          <div class="flex gap-2">
+            <button class="btn btn-primary" @click="addCustom()" :disabled="!newItem.name.trim()">Add Item</button>
+            <button class="btn btn-ghost" @click="showAdd = false">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+<script src="js/nav.js"></script>
+<script src="js/tracker.js"></script>
+<script>
+function personalApp() {
+  return {
+    items: [],       // Quest items from JSON
+    customItems: [], // User-added custom items
+    search: '',
+    filterStatus: 'all',
+    showAdd: false,
+    newItem: { name: '', qty: 1, sellValue: null },
+
+    async init() {
+      const data = await arcHub.loadJSON('data/items.json');
+      this.items = data.items.filter(i => i.tags.includes('quest-item'));
+      this.customItems = JSON.parse(localStorage.getItem('arc-hub-custom-items') || '[]');
+    },
+
+    get filteredItems() {
+      return this.items.filter(item => {
+        if (this.search && !item.name.toLowerCase().includes(this.search.toLowerCase())) return false;
+        if (this.filterStatus === 'complete' && !this.isComplete(item)) return false;
+        if (this.filterStatus === 'incomplete' && this.isComplete(item)) return false;
+        return true;
+      });
+    },
+
+    get filteredCustomItems() {
+      return this.customItems.filter(item => {
+        if (this.search && !item.name.toLowerCase().includes(this.search.toLowerCase())) return false;
+        return true;
+      });
+    },
+
+    get completedCount() {
+      return this.items.filter(i => this.isComplete(i)).length;
+    },
+
+    isComplete(item) {
+      return Tracker.personal.get(item.id) >= (item.questQty || 1);
+    },
+
+    getHave(id) {
+      return Tracker.personal.get(id);
+    },
+
+    inc(id) {
+      Tracker.personal.inc(id);
+      this.items = [...this.items]; // trigger reactivity
+    },
+
+    dec(id) {
+      Tracker.personal.dec(id);
+      this.items = [...this.items];
+    },
+
+    addCustom() {
+      if (!this.newItem.name.trim()) return;
+      const id = 'custom-' + Date.now();
+      this.customItems.push({
+        id,
+        name: this.newItem.name.trim(),
+        questQty: this.newItem.qty || 1,
+        sellValue: this.newItem.sellValue || null
+      });
+      localStorage.setItem('arc-hub-custom-items', JSON.stringify(this.customItems));
+      this.newItem = { name: '', qty: 1, sellValue: null };
+      this.showAdd = false;
+    },
+
+    removeCustom(id) {
+      this.customItems = this.customItems.filter(i => i.id !== id);
+      localStorage.setItem('arc-hub-custom-items', JSON.stringify(this.customItems));
+    },
+
+    confirmReset() {
+      if (confirm('Reset all personal tracking data?')) {
+        Tracker.personal.reset();
+        this.items = [...this.items];
+      }
+    }
+  };
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+{
+  "maps": [
+    {
+      "id": "buried-city",
+      "name": "Buried City",
+      "icon": "🏙",
+      "keys": [
+        { "id": "bc-town-hall",       "name": "Buried City Town Hall Key",          "stackSize": 1, "sellValue": null, "notes": "Opens Town Hall locked room" },
+        { "id": "bc-hospital",        "name": "Buried City Hospital Key",           "stackSize": 1, "sellValue": null, "notes": "Opens Hospital restricted area" },
+        { "id": "bc-residential",     "name": "Buried City Residential Master Key", "stackSize": 3, "sellValue": null, "notes": "Stack 3 — used for residential buildings" },
+        { "id": "bc-jkv-employee",    "name": "JKV Employee Access Card",           "stackSize": 3, "sellValue": null, "notes": "Stack 3 — JKV facility access" }
+      ]
+    },
+    {
+      "id": "blue-gate",
+      "name": "Blue Gate",
+      "icon": "🚧",
+      "knownLocations": ["Village", "Data Vault", "Reinforced Reception", "Headhouse", "Raider's Refuge", "Trapper's Glade", "Adorned Wreckage", "Warehouse Complex", "Back Control Room", "Checkpoint", "Ridgeline", "Maintenance Burner", "Highway Collapse", "Olive Grove", "Ruined Homestead", "Ancient Fort", "Barren Clearing", "Abandoned Housing Project"],
+      "keys": [
+        { "id": "bg-confiscation",    "name": "Blue Gate Confiscation Room Key",    "stackSize": 1, "sellValue": null, "notes": "Opens confiscation room" },
+        { "id": "bg-comm-tower",      "name": "Blue Gate Communication Tower Key",  "stackSize": 1, "sellValue": null, "notes": "Opens comm tower access" },
+        { "id": "bg-village",         "name": "Blue Gate Village Key",              "stackSize": 1, "sellValue": null, "notes": "Opens village locked area" },
+        { "id": "bg-cellar",          "name": "Blue Gate Cellar Key",               "stackSize": 1, "sellValue": null, "notes": "Opens cellar loot room" },
+        { "id": "bg-patrol-car",      "name": "Patrol Car Key",                     "stackSize": 1, "sellValue": null, "notes": "Opens patrol car trunk" }
+      ]
+    },
+    {
+      "id": "spaceport",
+      "name": "Spaceport",
+      "icon": "🚀",
+      "knownLocations": ["Fuel Depot", "South Trench Tower", "Fuel Storage", "Storage Building", "Documentation Building", "East Flight Workshops", "South Parking", "Electrical Substation", "Vehicle Workshops"],
+      "keys": [
+        { "id": "sp-warehouse",       "name": "Spaceport Warehouse Key",            "stackSize": 3, "sellValue": null, "notes": "Stack 3 — warehouse loot area" },
+        { "id": "sp-control-tower",   "name": "Spaceport Control Tower Key",        "stackSize": 1, "sellValue": null, "notes": "Opens control tower top" },
+        { "id": "sp-trench-tower",    "name": "Spaceport Trench Tower Key",         "stackSize": 1, "sellValue": null, "notes": "Opens trench tower room" },
+        { "id": "sp-container",       "name": "Spaceport Container Storage Key",    "stackSize": 3, "sellValue": null, "notes": "Stack 3 — container storage loot" }
+      ]
+    },
+    {
+      "id": "stella-montis",
+      "name": "Stella Montis",
+      "icon": "⛰",
+      "keys": [
+        { "id": "sm-medical",         "name": "Stella Montis Medical Storage Key",  "stackSize": 1, "sellValue": null, "notes": "Medical storage room" },
+        { "id": "sm-archives",        "name": "Stella Montis Archives Key",         "stackSize": 3, "sellValue": null, "notes": "Stack 3 — archive rooms" },
+        { "id": "sm-assembly",        "name": "Stella Montis Assembly Admin Key",   "stackSize": 1, "sellValue": null, "notes": "Assembly administration area" },
+        { "id": "sm-security",        "name": "Stella Montis Security Checkpoint Key","stackSize": 1,"sellValue": null,"notes": "Security checkpoint access" }
+      ]
+    },
+    {
+      "id": "dam-battlegrounds",
+      "name": "Dam Battlegrounds",
+      "icon": "🌊",
+      "knownLocations": ["Pump Plateau", "Road Reservoirs", "Park Apartments", "Power Generation Complex", "Radar Outpost East", "East Broken Bridge", "Hydroelectric Control Complex", "Pipeline Tower", "Old Battlegrounds", "South Deeplag Outpost", "Primary Creek", "Red Lakes Balcony", "Small Creek", "Electrical Tower", "Motor Stages", "Scrap Hill", "Wreckage", "Farmstead Outpost"],
+      "keys": [
+        { "id": "dam-staff",          "name": "Dam Staff Room Key",                 "stackSize": 1, "sellValue": null, "notes": "Staff room access" },
+        { "id": "dam-surveillance",   "name": "Dam Surveillance Key",               "stackSize": 1, "sellValue": null, "notes": "Surveillance room" },
+        { "id": "dam-control-tower",  "name": "Dam Control Tower Key",              "stackSize": 1, "sellValue": null, "notes": "Control tower access" },
+        { "id": "dam-power-rod",      "name": "Power Rod Door",                     "stackSize": 1, "sellValue": null, "notes": "⚡ Requires Power Rod item — special door", "special": true },
+        { "id": "dam-testing-annex",  "name": "Dam Testing Annex Key",              "stackSize": 1, "sellValue": null, "notes": "Testing annex loot room" }
+      ]
+    }
+  ]
+}

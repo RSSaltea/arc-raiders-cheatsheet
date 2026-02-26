@@ -1,0 +1,116 @@
+{
+  "version": "1.0",
+  "categories": [
+    {
+      "id": "weapons",
+      "name": "Weapons",
+      "icon": "🔫",
+      "blueprints": [
+        { "id": "bp-kettle",    "name": "Kettle",     "rarity": "uncommon", "type": "SMG",            "magType": "Light"  },
+        { "id": "bp-stitcher",  "name": "Stitcher",   "rarity": "uncommon", "type": "SMG",            "magType": "Light"  },
+        { "id": "bp-hairpin",   "name": "Hairpin",    "rarity": "uncommon", "type": "Pistol",         "magType": "Light"  },
+        { "id": "bp-burletta",  "name": "Burletta",   "rarity": "rare",     "type": "Pistol",         "magType": "Light"  },
+        { "id": "bp-bobcat",    "name": "Bobcat I",   "rarity": "epic",     "type": "SMG",            "magType": "Light"  },
+        { "id": "bp-arpeggio",  "name": "Arpeggio",   "rarity": "uncommon", "type": "Assault Rifle",  "magType": "Medium" },
+        { "id": "bp-venator",   "name": "Venator I",  "rarity": "rare",     "type": "Marksman Rifle", "magType": "Medium" },
+        { "id": "bp-renegade",  "name": "Renegade I", "rarity": "rare",     "type": "DMR",            "magType": "Medium" },
+        { "id": "bp-osprey",    "name": "Osprey I",   "rarity": "rare",     "type": "Sniper",         "magType": "Medium" },
+        { "id": "bp-tempest",   "name": "Tempest I",  "rarity": "epic",     "type": "Assault Rifle",  "magType": "Medium" },
+        { "id": "bp-il-toro",   "name": "Il Toro",    "rarity": "uncommon", "type": "LMG",            "magType": "Medium" },
+        { "id": "bp-vulcano",   "name": "Vulcano",    "rarity": "uncommon", "type": "Shotgun",        "magType": "Medium" },
+        { "id": "bp-bettina",   "name": "Bettina I",  "rarity": "epic",     "type": "Shotgun",        "magType": "Light"  },
+        { "id": "bp-torrente",  "name": "Torrente I", "rarity": "rare",     "type": "Assault Rifle",  "magType": "Medium" },
+        { "id": "bp-anvil",     "name": "Anvil I",    "rarity": "rare",     "type": "Assault Rifle",  "magType": "Medium" },
+        { "id": "bp-snap-hook", "name": "Snap Hook",  "rarity": "legendary","type": "Special",        "magType": null     }
+      ]
+    },
+    {
+      "id": "augments",
+      "name": "Augments",
+      "icon": "⚡",
+      "blueprints": [
+        { "id": "bp-combat-mk2-a",    "name": "Combat Mk. 2 (Aggressive)", "rarity": "rare",     "type": "Augment" },
+        { "id": "bp-combat-mk2-f",    "name": "Combat Mk. 2 (Flanking)",   "rarity": "rare",     "type": "Augment" },
+        { "id": "bp-combat-mk3-a",    "name": "Combat Mk. 3 (Aggressive)", "rarity": "epic",     "type": "Augment" },
+        { "id": "bp-combat-mk3-f",    "name": "Combat Mk. 3 (Flanking)",   "rarity": "epic",     "type": "Augment" },
+        { "id": "bp-looting-mk2-c",   "name": "Looting Mk. 2 (Cautious)",  "rarity": "rare",     "type": "Augment" },
+        { "id": "bp-looting-mk2-s",   "name": "Looting Mk. 2 (Survivor)",  "rarity": "rare",     "type": "Augment" },
+        { "id": "bp-looting-mk3-c",   "name": "Looting Mk. 3 (Cautious)",  "rarity": "epic",     "type": "Augment" },
+        { "id": "bp-looting-mk3-s",   "name": "Looting Mk. 3 (Survivor)",  "rarity": "epic",     "type": "Augment" },
+        { "id": "bp-tactical-mk2-d",  "name": "Tactical Mk. 2 (Defensive)","rarity": "rare",     "type": "Augment" },
+        { "id": "bp-tactical-mk2-h",  "name": "Tactical Mk. 2 (Healing)",  "rarity": "rare",     "type": "Augment" },
+        { "id": "bp-tactical-mk3-d",  "name": "Tactical Mk. 3 (Defensive)","rarity": "epic",     "type": "Augment" },
+        { "id": "bp-tactical-mk3-h",  "name": "Tactical Mk. 3 (Healing)",  "rarity": "epic",     "type": "Augment" }
+      ]
+    },
+    {
+      "id": "equipment",
+      "name": "Equipment",
+      "icon": "🛡",
+      "blueprints": [
+        { "id": "bp-photoelectric-cloak",   "name": "Photoelectric Cloak",      "rarity": "epic",     "type": "Equipment" },
+        { "id": "bp-surge-shield",          "name": "Surge Shield Recharger",   "rarity": "rare",     "type": "Equipment" },
+        { "id": "bp-raider-hatch-key",      "name": "Raider Hatch Key",         "rarity": "uncommon", "type": "Equipment" },
+        { "id": "bp-magnetic-accelerator",  "name": "Magnetic Accelerator",     "rarity": "legendary","type": "Equipment" },
+        { "id": "bp-power-rod",             "name": "Power Rod",                "rarity": "legendary","type": "Equipment" }
+      ]
+    },
+    {
+      "id": "grips",
+      "name": "Grips",
+      "icon": "✊",
+      "blueprints": [
+        { "id": "bp-angled-grip-1",   "name": "Angled Grip I",    "rarity": "common",   "type": "Grip" },
+        { "id": "bp-angled-grip-2",   "name": "Angled Grip II",   "rarity": "uncommon", "type": "Grip" },
+        { "id": "bp-angled-grip-3",   "name": "Angled Grip III",  "rarity": "rare",     "type": "Grip" },
+        { "id": "bp-vertical-grip-1", "name": "Vertical Grip I",  "rarity": "common",   "type": "Grip" },
+        { "id": "bp-vertical-grip-2", "name": "Vertical Grip II", "rarity": "uncommon", "type": "Grip" },
+        { "id": "bp-vertical-grip-3", "name": "Vertical Grip III","rarity": "rare",     "type": "Grip" },
+        { "id": "bp-horizontal-grip", "name": "Horizontal Grip",  "rarity": "uncommon", "type": "Grip" }
+      ]
+    },
+    {
+      "id": "stocks",
+      "name": "Stocks",
+      "icon": "📏",
+      "blueprints": [
+        { "id": "bp-stable-stock-1",    "name": "Stable Stock I",      "rarity": "common",   "type": "Stock" },
+        { "id": "bp-stable-stock-2",    "name": "Stable Stock II",     "rarity": "uncommon", "type": "Stock" },
+        { "id": "bp-stable-stock-3",    "name": "Stable Stock III",    "rarity": "rare",     "type": "Stock" },
+        { "id": "bp-padded-stock",      "name": "Padded Stock",        "rarity": "uncommon", "type": "Stock" },
+        { "id": "bp-lightweight-stock", "name": "Lightweight Stock",   "rarity": "uncommon", "type": "Stock" }
+      ]
+    },
+    {
+      "id": "barrels",
+      "name": "Barrels & Muzzles",
+      "icon": "🔧",
+      "blueprints": [
+        { "id": "bp-extended-barrel-1",  "name": "Extended Barrel I",   "rarity": "uncommon", "type": "Barrel" },
+        { "id": "bp-extended-barrel-2",  "name": "Extended Barrel II",  "rarity": "rare",     "type": "Barrel" },
+        { "id": "bp-silencer-1",         "name": "Silencer I",          "rarity": "uncommon", "type": "Muzzle" },
+        { "id": "bp-silencer-2",         "name": "Silencer II",         "rarity": "rare",     "type": "Muzzle" },
+        { "id": "bp-silencer-3",         "name": "Silencer III",        "rarity": "epic",     "type": "Muzzle" },
+        { "id": "bp-compensator-1",      "name": "Compensator I",       "rarity": "uncommon", "type": "Muzzle" },
+        { "id": "bp-compensator-2",      "name": "Compensator II",      "rarity": "rare",     "type": "Muzzle" },
+        { "id": "bp-compensator-3",      "name": "Compensator III",     "rarity": "epic",     "type": "Muzzle" }
+      ]
+    },
+    {
+      "id": "magazines",
+      "name": "Magazines",
+      "icon": "📦",
+      "blueprints": [
+        { "id": "bp-light-mag-1",    "name": "Extended Light Mag I",    "rarity": "common",   "type": "Magazine" },
+        { "id": "bp-light-mag-2",    "name": "Extended Light Mag II",   "rarity": "uncommon", "type": "Magazine" },
+        { "id": "bp-light-mag-3",    "name": "Extended Light Mag III",  "rarity": "rare",     "type": "Magazine" },
+        { "id": "bp-medium-mag-1",   "name": "Extended Medium Mag I",   "rarity": "common",   "type": "Magazine" },
+        { "id": "bp-medium-mag-2",   "name": "Extended Medium Mag II",  "rarity": "uncommon", "type": "Magazine" },
+        { "id": "bp-medium-mag-3",   "name": "Extended Medium Mag III", "rarity": "rare",     "type": "Magazine" },
+        { "id": "bp-shotgun-mag-1",  "name": "Extended Shotgun Mag I",  "rarity": "common",   "type": "Magazine" },
+        { "id": "bp-shotgun-mag-2",  "name": "Extended Shotgun Mag II", "rarity": "uncommon", "type": "Magazine" },
+        { "id": "bp-shotgun-mag-3",  "name": "Extended Shotgun Mag III","rarity": "rare",     "type": "Magazine" }
+      ]
+    }
+  ]
+}
