@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARC Raiders Hub — Expedition Tracker</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app-layout">
+  <nav id="sidebar" class="sidebar"></nav>
+  <main class="main-content" x-data="expApp()" x-init="init()" x-cloak>
+
+    <div class="page-header">
+      <div>
+        <h1>Expedition Tracker</h1>
+        <p>Check off items as you gather them. Progress saves automatically.</p>
+      </div>
+      <div class="flex gap-2 items-center">
+        <span class="badge badge-accent mono" x-text="overallProgress.pct + '% complete'"></span>
+        <button class="btn btn-danger btn-sm" @click="confirmReset()">Reset</button>
+      </div>
+    </div>
+
+    <div class="page-body">
+
+      <!-- Overall progress -->
+      <div class="card mb-6" style="padding:20px">
+        <div class="flex justify-between items-center mb-2">
+          <span class="bold">Overall Expedition Progress</span>
+          <span class="mono text-accent" x-text="overallProgress.done + ' / ' + overallProgress.total + ' items'"></span>
+        </div>
+        <div class="progress-track" style="height:10px">
+          <div class="progress-fill"
+            :class="overallProgress.pct === 100 ? 'green' : ''"
+            :style="'width:' + overallProgress.pct + '%'"></div>
+        </div>
+        <div class="flex justify-between mt-2">
+          <span class="text-muted text-xs">Phase 1: Foundation</span>
+          <span class="text-muted text-xs">Phase 5: Load Stage</span>
+        </div>
+      </div>
+
+      <!-- Total coin value summary -->
+      <div class="highlight-box mb-6">
+        <div class="flex items-center justify-between">
+          <div>
+            <div class="bold mb-1">🪙 Total Expedition Value: 750,000 coins</div>
+            <div class="text-secondary text-sm">Phase 5 requires 750,000 coins in items across 4 categories</div>
+          </div>
+          <div class="mono text-accent bold" style="font-size:20px">750K</div>
+        </div>
+      </div>
+
+      <!-- Phases -->
+      <template x-for="(phase, pi) in expedition.phases" :key="phase.id">
+        <div class="phase-block">
+          <div class="collapsible-header" @click="togglePhase(pi)">
+            <div class="flex items-center gap-3">
+              <div class="phase-head-title" x-text="phase.name"></div>
+              <span class="phase-tag" x-text="phaseProgress(pi).done + '/' + phaseProgress(pi).total + (phase.isCoinPhase ? ' categories' : ' items')"></span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="progress-track" style="width:100px">
+                <div class="progress-fill"
+                  :class="phaseProgress(pi).pct === 100 ? 'green' : ''"
+                  :style="'width:' + phaseProgress(pi).pct + '%'"></div>
+              </div>
+              <span class="mono text-xs text-muted" x-text="phaseProgress(pi).pct + '%'"></span>
+              <span class="collapse-arrow" :class="openPhases[pi] ? 'open' : ''">&rsaquo;</span>
+            </div>
+          </div>
+
+          <div x-show="openPhases[pi]">
+
+            <!-- Regular items -->
+            <template x-if="!phase.isCoinPhase">
+              <div>
+                <template x-for="(item, ii) in phase.items" :key="ii">
+                  <div class="phase-row"
+                    :class="isChecked(pi, ii) ? 'done' : ''"
+                    @click="toggle(pi, ii)">
+                    <div class="chk" :class="isChecked(pi, ii) ? 'on' : ''">
+                      <span x-show="isChecked(pi, ii)">✓</span>
+                    </div>
+                    <div class="phase-item-name" x-text="item.name"></div>
+                    <div class="flex items-center gap-2">
+                      <span class="phase-qty" x-text="'×' + item.qty"></span>
+                      <span class="phase-sell" x-text="item.sellValue ? '🪙' + item.sellValue.toLocaleString() + '/ea' : ''"></span>
+                      <span class="mono text-xs"
+                        :class="item.recycleROI > 0 ? 'text-green' : (item.recycleROI < -40 ? 'text-red' : 'text-muted')"
+                        x-text="item.recycleROI !== null ? (item.recycleROI > 0 ? '+' : '') + item.recycleROI + '%' : ''">
+                      </span>
+                    </div>
+                  </div>
+                </template>
+
+                <!-- Total for this phase -->
+                <div style="padding:10px 18px;background:var(--bg-surface);border-top:1px solid var(--border);display:flex;justify-content:flex-end;gap:16px">
+                  <span class="text-muted text-xs">Phase total sell value:</span>
+                  <span class="mono text-yellow text-xs" x-text="'🪙 ' + phaseTotalValue(phase).toLocaleString()"></span>
+                </div>
+              </div>
+            </template>
+
+            <!-- Coin phase (Phase 5) -->
+            <template x-if="phase.isCoinPhase">
+              <div>
+                <template x-for="(item, ii) in phase.items" :key="ii">
+                  <div class="phase-row"
+                    :class="isChecked(pi, ii) ? 'done' : ''"
+                    @click="toggle(pi, ii)">
+                    <div class="chk" :class="isChecked(pi, ii) ? 'on' : ''">
+                      <span x-show="isChecked(pi, ii)">✓</span>
+                    </div>
+                    <div class="phase-item-name" x-text="item.name"></div>
+                    <span class="phase-qty text-yellow" x-text="'🪙 ' + item.coinValue.toLocaleString()"></span>
+                  </div>
+                </template>
+                <div style="padding:10px 18px;background:var(--bg-surface);border-top:1px solid var(--border);display:flex;justify-content:flex-end;gap:16px">
+                  <span class="text-muted text-xs">Phase 5 total:</span>
+                  <span class="mono text-yellow text-xs">🪙 750,000</span>
+                </div>
+              </div>
+            </template>
+
+          </div>
+        </div>
+      </template>
+
+      <!-- Tips -->
+      <div class="card mt-6" style="padding:20px">
+        <div class="sec-title mb-3">💡 Farming Tips</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px">
+          <div>
+            <div class="bold text-sm mb-1">Phase 1 &amp; 2 (Base Components)</div>
+            <div class="text-secondary text-xs">Farm Metal Parts, Rubber Parts, Arc Alloy &amp; Steel Spring from general loot. Common drops.</div>
+          </div>
+          <div>
+            <div class="bold text-sm mb-1">Phase 3 (Framework)</div>
+            <div class="text-secondary text-xs">Durable Cloth: recycle ARC Thermo Lining (+16%) or Spring Cushion (+28%). Electrical Components: Fried Motherboard gives ×2.</div>
+          </div>
+          <div>
+            <div class="bold text-sm mb-1">Phase 4 (Outfitting)</div>
+            <div class="text-secondary text-xs">Adv. Electrical Components: recycle Mini Centrifuge (×2) or Spectrometer. Leaper Pulse Unit &amp; Ion Sputter are rare drops.</div>
+          </div>
+          <div>
+            <div class="bold text-sm mb-1">Phase 5 (Load Stage)</div>
+            <div class="text-secondary text-xs">Sell items rather than recycle for Phase 5 coin categories. Focus on high-value items: Radio Relay (3K), Sample Cleaner (3K).</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+<script src="js/nav.js"></script>
+<script src="js/tracker.js"></script>
+<script>
+function expApp() {
+  return {
+    expedition: { phases: [] },
+    openPhases: {},
+
+    async init() {
+      const data = await arcHub.loadJSON('data/expedition.json');
+      this.expedition = data.expeditions[0];
+      // Open all phases by default
+      this.expedition.phases.forEach((_, i) => {
+        this.openPhases[i] = true;
+      });
+    },
+
+    get overallProgress() {
+      return Tracker.exp.progress(this.expedition.phases);
+    },
+
+    phaseProgress(pi) {
+      const phase = this.expedition.phases[pi];
+      if (!phase) return { done: 0, total: 0, pct: 0 };
+      return Tracker.exp.phaseProgress(phase, pi);
+    },
+
+    isChecked(pi, ii) {
+      return Tracker.exp.isChecked(`${pi}_${ii}`);
+    },
+
+    toggle(pi, ii) {
+      Tracker.exp.toggle(`${pi}_${ii}`);
+      // Force Alpine reactivity
+      this.expedition = { ...this.expedition };
+    },
+
+    togglePhase(pi) {
+      this.openPhases = { ...this.openPhases, [pi]: !this.openPhases[pi] };
+    },
+
+    phaseTotalValue(phase) {
+      return (phase.items || []).reduce((sum, item) => {
+        return sum + (item.sellValue || 0) * (item.qty || 0);
+      }, 0);
+    },
+
+    confirmReset() {
+      if (confirm('Reset all expedition progress? This cannot be undone.')) {
+        Tracker.exp.reset();
+        this.expedition = { ...this.expedition };
+      }
+    }
+  };
+}
+</script>
+</body>
+</html>

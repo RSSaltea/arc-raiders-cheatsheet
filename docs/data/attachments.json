@@ -1,0 +1,164 @@
+{
+  "grips": [
+    {
+      "name": "Angled Grip",
+      "type": "grip",
+      "stat": "Horizontal Recoil",
+      "effect": "reduce",
+      "description": "Reduces side-to-side kick. Most effective on fast-firing guns.",
+      "tiers": [
+        { "tier": "I",   "pct": 20, "compatibleWeapons": ["Kettle", "Stitcher", "Bobcat"] },
+        { "tier": "II",  "pct": 30, "compatibleWeapons": ["Kettle", "Stitcher", "Bobcat"] },
+        { "tier": "III", "pct": 40, "compatibleWeapons": ["Kettle", "Stitcher", "Bobcat"] }
+      ]
+    },
+    {
+      "name": "Vertical Grip",
+      "type": "grip",
+      "stat": "Vertical Recoil",
+      "effect": "reduce",
+      "description": "Reduces gun climb while firing. Most effective on fast-firing guns.",
+      "tiers": [
+        { "tier": "I",   "pct": 20, "compatibleWeapons": ["Kettle", "Stitcher", "Bobcat"] },
+        { "tier": "II",  "pct": 30, "compatibleWeapons": ["Kettle", "Stitcher", "Bobcat"] },
+        { "tier": "III", "pct": 40, "compatibleWeapons": ["Kettle", "Stitcher", "Bobcat"] }
+      ]
+    },
+    {
+      "name": "Horizontal Grip",
+      "type": "grip",
+      "stat": "Horizontal Recoil",
+      "effect": "reduce",
+      "description": "Reduces horizontal recoil by 30%. Compatible with more weapons than Angled Grip.",
+      "tiers": [
+        { "tier": "",    "pct": 30, "compatibleWeapons": ["Kettle", "Stitcher", "Bobcat", "Osprey", "Ferro Anvil", "Renegade"] }
+      ]
+    }
+  ],
+  "stocks": [
+    {
+      "name": "Stable Stock",
+      "type": "stock",
+      "stat": "Dispersion Recovery Time",
+      "effect": "reduce",
+      "description": "Reduces how long the crosshair takes to shrink back to default after firing.",
+      "tiers": [
+        { "tier": "I",   "pct": 20, "timeSec": -0.13, "equipTimePct": 20, "compatibleWeapons": ["Kettle", "Stitcher", "Bobcat"] },
+        { "tier": "II",  "pct": 35, "timeSec": -0.25, "equipTimePct": 20, "compatibleWeapons": ["Kettle", "Stitcher", "Bobcat"] },
+        { "tier": "III", "pct": 50, "timeSec": -0.38, "equipTimePct": 20, "compatibleWeapons": ["Kettle", "Stitcher", "Bobcat"] }
+      ]
+    },
+    {
+      "name": "Padded Stock",
+      "type": "stock",
+      "stat": "Recoil Recovery Time",
+      "effect": "reduce",
+      "description": "Reduces recoil recovery time but increases equip/unequip time.",
+      "tiers": [
+        { "tier": "", "recoilRecoveryPct": -35, "equipTimePct": 20, "compatibleWeapons": ["Bobcat"] }
+      ]
+    },
+    {
+      "name": "Lightweight Stock",
+      "type": "stock",
+      "stat": "Equip/Unequip Time",
+      "effect": "reduce",
+      "description": "Reduces equip and unequip time at the cost of recoil recovery.",
+      "tiers": [
+        { "tier": "", "equipTimePct": -30, "equipTimeSec": -0.35, "compatibleWeapons": ["Kettle", "Stitcher", "Bobcat"] }
+      ]
+    }
+  ],
+  "barrels": [
+    {
+      "name": "Extended Barrel",
+      "type": "barrel",
+      "stat": "Bullet Velocity",
+      "effect": "increase",
+      "description": "Increases bullet velocity — shoot further, reduce travel time, less damage dropoff.",
+      "tiers": [
+        { "tier": "I",  "pct": 10, "compatibleWeapons": ["Multiple"] },
+        { "tier": "II", "pct": 25, "compatibleWeapons": ["Multiple"] }
+      ]
+    },
+    {
+      "name": "Silencer",
+      "type": "barrel",
+      "stat": "Noise Reduction",
+      "effect": "reduce",
+      "description": "Suppresses gunshot noise and traceability. Most effective on long-range guns.",
+      "tiers": [
+        { "tier": "I",   "pct": 20, "compatibleWeapons": ["Ferro", "Anvil", "Osprey", "Renegade"] },
+        { "tier": "II",  "pct": 40, "compatibleWeapons": ["Ferro", "Anvil", "Osprey", "Renegade"] },
+        { "tier": "III", "pct": 60, "compatibleWeapons": ["Ferro", "Anvil", "Osprey", "Renegade"] }
+      ]
+    },
+    {
+      "name": "Compensator",
+      "type": "barrel",
+      "stat": "Per-shot & Max Dispersion",
+      "effect": "reduce",
+      "description": "Reduces spread added per shot and maximum spread during sustained fire.",
+      "tiers": [
+        { "tier": "I",   "pct": 15, "compatibleWeapons": ["Multiple"] },
+        { "tier": "II",  "pct": 20, "compatibleWeapons": ["Multiple"] },
+        { "tier": "III", "pct": 25, "compatibleWeapons": ["Multiple"] }
+      ]
+    }
+  ],
+  "magazines": [
+    {
+      "name": "Extended Light Mag",
+      "type": "magazine",
+      "description": "For Stitcher, Kettle, Hairpin, Burletta, Bobcat",
+      "compatibleWeapons": ["Stitcher", "Kettle", "Hairpin", "Burletta", "Bobcat"],
+      "sizes": {
+        "Stitcher": { "base": 20, "I": 25, "II": 30, "III": 35 },
+        "Kettle":   { "base": 20, "I": 25, "II": 30, "III": 35 },
+        "Hairpin":  { "base": 8,  "I": 13, "II": 18, "III": 23 },
+        "Burletta": { "base": 12, "I": 17, "II": 22, "III": 27 },
+        "Bobcat":   { "base": 20, "I": 25, "II": 30, "III": 35 }
+      }
+    },
+    {
+      "name": "Extended Medium Mag",
+      "type": "magazine",
+      "description": "For Arpeggio, Venator, Renegade, Osprey, Tempest, Il Toro, Vulcano",
+      "compatibleWeapons": ["Arpeggio", "Venator", "Renegade", "Osprey", "Tempest", "Il Toro", "Vulcano"],
+      "sizes": {
+        "Arpeggio": { "base": 24, "I": 28, "II": 32, "III": 36 },
+        "Venator":  { "base": 10, "I": 14, "II": 18, "III": 22 },
+        "Renegade": { "base": 8,  "I": 12, "II": 16, "III": 20 },
+        "Osprey":   { "base": 8,  "I": 12, "II": 16, "III": 20 },
+        "Tempest":  { "base": 25, "I": 29, "II": 33, "III": 37 },
+        "Il Toro":  { "base": 5,  "I": 7,  "II": 9,  "III": 11 },
+        "Vulcano":  { "base": 6,  "I": 8,  "II": 10, "III": 12 }
+      }
+    },
+    {
+      "name": "Extended Shotgun Mag",
+      "type": "magazine",
+      "description": "For shotgun-class weapons",
+      "compatibleWeapons": ["Shotgun A", "Shotgun B"],
+      "sizes": {
+        "Shotgun A": { "base": 5, "I": 7, "II": 9,  "III": 11 },
+        "Shotgun B": { "base": 6, "I": 8, "II": 10, "III": 12 }
+      }
+    }
+  ],
+  "weaponCompatibility": {
+    "Kettle":     { "grips": ["Angled", "Vertical", "Horizontal"], "stocks": ["Stable", "Lightweight"], "mags": "Light",    "barrels": ["Extended Barrel", "Compensator"] },
+    "Stitcher":   { "grips": ["Angled", "Vertical", "Horizontal"], "stocks": ["Stable", "Lightweight"], "mags": "Light",    "barrels": ["Extended Barrel", "Compensator"] },
+    "Bobcat":     { "grips": ["Angled", "Vertical", "Horizontal"], "stocks": ["Stable", "Padded", "Lightweight"], "mags": "Light",    "barrels": ["Extended Barrel", "Compensator"] },
+    "Hairpin":    { "grips": [],                                   "stocks": [],                        "mags": "Light",    "barrels": [] },
+    "Burletta":   { "grips": [],                                   "stocks": [],                        "mags": "Light",    "barrels": [] },
+    "Arpeggio":   { "grips": [],                                   "stocks": [],                        "mags": "Medium",   "barrels": ["Extended Barrel"] },
+    "Venator":    { "grips": [],                                   "stocks": [],                        "mags": "Medium",   "barrels": [] },
+    "Renegade":   { "grips": ["Horizontal"],                       "stocks": [],                        "mags": "Medium",   "barrels": ["Silencer"] },
+    "Osprey":     { "grips": ["Horizontal"],                       "stocks": [],                        "mags": "Medium",   "barrels": ["Silencer"] },
+    "Tempest":    { "grips": [],                                   "stocks": [],                        "mags": "Medium",   "barrels": [] },
+    "Il Toro":    { "grips": [],                                   "stocks": [],                        "mags": "Medium",   "barrels": [] },
+    "Vulcano":    { "grips": [],                                   "stocks": [],                        "mags": "Medium",   "barrels": [] },
+    "Ferro Anvil":{ "grips": ["Horizontal"],                       "stocks": [],                        "mags": null,       "barrels": ["Silencer"] }
+  }
+}

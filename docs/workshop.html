@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARC Raiders Hub — Workshop Upgrades</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app-layout">
+  <nav id="sidebar" class="sidebar"></nav>
+  <main class="main-content" x-data="workshopApp()" x-init="init()" x-cloak>
+
+    <div class="page-header">
+      <div>
+        <h1>Workshop Upgrades</h1>
+        <p>Required materials for every station upgrade. Data from PDF v3.2.</p>
+      </div>
+    </div>
+
+    <div class="page-body">
+
+      <div class="highlight-box mb-4">
+        <p>Items with negative ROI are still worth keeping if they're needed for workshop upgrades. Prioritize upgrading stations that unlock better crafting options.</p>
+      </div>
+
+      <template x-for="station in stations" :key="station.id">
+        <div class="card mb-6">
+          <div class="card-header">
+            <div class="sec-title">
+              <span x-text="station.icon"></span>
+              <span x-text="station.name"></span>
+            </div>
+            <span class="badge badge-accent" x-text="station.upgrades.length + ' upgrades'"></span>
+          </div>
+
+          <template x-for="upgrade in station.upgrades" :key="upgrade.level">
+            <div>
+              <div style="padding:10px 18px;background:var(--bg-elevated);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between">
+                <span class="mono text-accent text-sm bold" x-text="'Level ' + upgrade.level"></span>
+                <span class="mono text-yellow text-xs" x-text="'Total value: 🪙 ' + levelValue(upgrade).toLocaleString()"></span>
+              </div>
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Item Required</th>
+                    <th>Qty</th>
+                    <th>Sell Value</th>
+                    <th>Recycle ROI</th>
+                    <th>Total Cost</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <template x-for="item in upgrade.items" :key="item.name">
+                    <tr>
+                      <td class="bold" x-text="item.name"></td>
+                      <td class="mono text-accent" x-text="'×' + item.qty"></td>
+                      <td class="mono text-yellow" x-text="item.sellValue ? '🪙 ' + item.sellValue.toLocaleString() : '—'"></td>
+                      <td>
+                        <span class="mono"
+                          :class="item.recycleROI > 0 ? 'text-green' : (item.recycleROI < -40 ? 'text-red' : 'text-muted')"
+                          x-text="item.recycleROI !== null ? (item.recycleROI > 0 ? '+' : '') + item.recycleROI + '%' : '—'"></span>
+                      </td>
+                      <td class="mono text-secondary" x-text="item.sellValue ? '🪙 ' + (item.sellValue * item.qty).toLocaleString() : '—'"></td>
+                    </tr>
+                  </template>
+                </tbody>
+              </table>
+            </div>
+          </template>
+        </div>
+      </template>
+
+    </div>
+  </main>
+</div>
+
+<script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+<script src="js/nav.js"></script>
+<script>
+function workshopApp() {
+  return {
+    stations: [],
+
+    async init() {
+      const data = await arcHub.loadJSON('data/workshop.json');
+      this.stations = data.stations;
+    },
+
+    levelValue(upgrade) {
+      return upgrade.items.reduce((sum, i) => sum + (i.sellValue || 0) * i.qty, 0);
+    }
+  };
+}
+</script>
+</body>
+</html>

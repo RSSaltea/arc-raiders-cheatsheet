@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARC Raiders Hub — Key Locations</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app-layout">
+  <nav id="sidebar" class="sidebar"></nav>
+  <main class="main-content" x-data="keysApp()" x-init="init()" x-cloak>
+
+    <div class="page-header">
+      <div>
+        <h1>Key Locations</h1>
+        <p>All keycards for all 5 maps. Video guides by u/toofumed on YouTube.</p>
+      </div>
+    </div>
+
+    <div class="page-body">
+
+      <!-- Map tabs -->
+      <div class="map-tabs">
+        <template x-for="map in maps" :key="map.id">
+          <button class="map-tab" :class="activeMap === map.id ? 'active' : ''" @click="activeMap = map.id">
+            <span x-text="map.icon + ' ' + map.name"></span>
+          </button>
+        </template>
+      </div>
+
+      <!-- Map content -->
+      <template x-for="map in maps" :key="map.id">
+        <div x-show="activeMap === map.id">
+
+          <!-- Known locations -->
+          <template x-if="map.knownLocations && map.knownLocations.length > 0">
+            <div class="card mb-4">
+              <div class="card-header">
+                <h3>📍 Named Locations</h3>
+                <span class="mono text-muted text-xs" x-text="map.knownLocations.length + ' areas'"></span>
+              </div>
+              <div class="card-body">
+                <div class="flex gap-2" style="flex-wrap:wrap">
+                  <template x-for="loc in map.knownLocations" :key="loc">
+                    <span class="badge badge-cat" x-text="loc"></span>
+                  </template>
+                </div>
+              </div>
+            </div>
+          </template>
+
+          <!-- Keys -->
+          <div class="sec-head mb-3">
+            <div class="sec-title">🗝 Keys for <span class="accent-text" x-text="map.name"></span></div>
+            <span class="badge badge-accent mono" x-text="map.keys.length + ' keys'"></span>
+          </div>
+
+          <div class="card">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Key Name</th>
+                  <th>Stack</th>
+                  <th>Sell Value</th>
+                  <th>Notes</th>
+                  <th>Video</th>
+                </tr>
+              </thead>
+              <tbody>
+                <template x-for="key in map.keys" :key="key.id">
+                  <tr>
+                    <td>
+                      <div class="flex items-center gap-2">
+                        <span class="bold" x-text="key.name"></span>
+                        <template x-if="key.special">
+                          <span class="badge badge-yellow">special</span>
+                        </template>
+                      </div>
+                    </td>
+                    <td>
+                      <span class="mono text-muted" x-text="key.stackSize === 1 ? '×1 (single use)' : '×' + key.stackSize + ' (reusable)'"></span>
+                    </td>
+                    <td>
+                      <span class="mono text-yellow" x-text="key.sellValue ? '🪙 ' + key.sellValue.toLocaleString() : '—'"></span>
+                    </td>
+                    <td>
+                      <span class="text-secondary text-xs" x-text="key.notes || '—'"></span>
+                    </td>
+                    <td>
+                      <a href="https://www.youtube.com/@toofumed" target="_blank" rel="noopener"
+                        class="btn btn-ghost btn-sm" style="font-size:11px">▶ Guide</a>
+                    </td>
+                  </tr>
+                </template>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Stack size note -->
+          <div class="highlight-box mt-4">
+            <p>
+              <strong>Stack ×1</strong> = single use only, consumed on use.<br>
+              <strong>Stack ×3</strong> = reusable, can be used multiple times before breaking.
+            </p>
+          </div>
+
+        </div>
+      </template>
+
+    </div>
+  </main>
+</div>
+
+<script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+<script src="js/nav.js"></script>
+<script>
+function keysApp() {
+  return {
+    maps: [],
+    activeMap: 'buried-city',
+
+    async init() {
+      const data = await arcHub.loadJSON('data/keys.json');
+      this.maps = data.maps;
+      if (this.maps.length) this.activeMap = this.maps[0].id;
+    }
+  };
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+{
+  "version": "1",
+  "expeditions": [
+    {
+      "id": "expedition-1",
+      "name": "Expedition Project 1",
+      "totalCoins": 750000,
+      "phases": [
+        {
+          "id": "phase-1",
+          "name": "Phase 1: Foundation",
+          "items": [
+            { "name": "Metal Parts",  "qty": 150, "sellValue": 75,  "recycleROI": -25, "category": "component" },
+            { "name": "Rubber Parts", "qty": 200, "sellValue": 50,  "recycleROI": -25, "category": "component" }
+          ]
+        },
+        {
+          "id": "phase-2",
+          "name": "Phase 2: Core Systems",
+          "items": [
+            { "name": "Arc Alloy",    "qty": 80,  "sellValue": 200, "recycleROI": -25, "category": "component" },
+            { "name": "Steel Spring", "qty": 15,  "sellValue": 300, "recycleROI": -25, "category": "component" }
+          ]
+        },
+        {
+          "id": "phase-3",
+          "name": "Phase 3: Framework",
+          "items": [
+            { "name": "Durable Cloth",         "qty": 35, "sellValue": 640,  "recycleROI": -53, "category": "component" },
+            { "name": "Electrical Components", "qty": 30, "sellValue": 640,  "recycleROI": -48, "category": "component" },
+            { "name": "Wires",                 "qty": 30, "sellValue": 200,  "recycleROI": -50, "category": "component" },
+            { "name": "Cooling Fan",           "qty": 5,  "sellValue": 2000, "recycleROI": -18, "category": "component" },
+            { "name": "Light Bulb",            "qty": 5,  "sellValue": 2000, "recycleROI": -25, "category": "component" },
+            { "name": "Shredder Gyro",         "qty": 10, "sellValue": 3000, "recycleROI": -16, "category": "workshop" }
+          ]
+        },
+        {
+          "id": "phase-4",
+          "name": "Phase 4: Outfitting",
+          "items": [
+            { "name": "Battery",                         "qty": 30, "sellValue": 250,  "recycleROI": -40, "category": "component" },
+            { "name": "Exodus Modules",                  "qty": 1,  "sellValue": 2750, "recycleROI": -42, "category": "component" },
+            { "name": "Frequency Modulation Box",        "qty": 5,  "sellValue": 3000, "recycleROI": -25, "category": "workshop" },
+            { "name": "Ion Sputter",                     "qty": 3,  "sellValue": 6000, "recycleROI": -21, "category": "workshop" },
+            { "name": "Advanced Electrical Components",  "qty": 5,  "sellValue": 1750, "recycleROI": -52, "category": "component" },
+            { "name": "Leaper Pulse Unit",               "qty": 3,  "sellValue": 5000, "recycleROI": -18, "category": "component" }
+          ]
+        },
+        {
+          "id": "phase-5",
+          "name": "Phase 5: Load Stage",
+          "isCoinPhase": true,
+          "items": [
+            { "name": "Combat Items",   "qty": null, "coinValue": 200000, "category": "coins" },
+            { "name": "Survival Items", "qty": null, "coinValue": 100000, "category": "coins" },
+            { "name": "Provisions",     "qty": null, "coinValue": 150000, "category": "coins" },
+            { "name": "Materials",      "qty": null, "coinValue": 300000, "category": "coins" }
+          ]
+        }
+      ]
+    }
+  ]
+}

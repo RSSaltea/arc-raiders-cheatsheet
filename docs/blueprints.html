@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARC Raiders Hub — Blueprint Tracker</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app-layout">
+  <nav id="sidebar" class="sidebar"></nav>
+  <main class="main-content" x-data="bpApp()" x-init="init()" x-cloak>
+
+    <div class="page-header">
+      <div>
+        <h1>Blueprint Tracker</h1>
+        <p>Click a blueprint to cycle its status. Data saved automatically in your browser.</p>
+      </div>
+      <div class="flex gap-2 items-center">
+        <span class="badge badge-green mono" x-text="totalCollected + ' / ' + totalBlueprints + ' collected'"></span>
+        <button class="btn btn-ghost btn-sm" @click="showExport = true">Export</button>
+        <button class="btn btn-ghost btn-sm" @click="showImport = true">Import</button>
+        <button class="btn btn-danger btn-sm" @click="confirmReset()">Reset</button>
+      </div>
+    </div>
+
+    <div class="page-body">
+
+      <!-- Legend -->
+      <div class="flex gap-3 mb-4" style="flex-wrap:wrap">
+        <div class="flex items-center gap-2 text-sm">
+          <div style="width:12px;height:12px;border-radius:2px;background:var(--bg-elevated);border:1px solid var(--border)"></div>
+          <span class="text-muted">Not Collected</span>
+        </div>
+        <div class="flex items-center gap-2 text-sm">
+          <div style="width:12px;height:12px;border-radius:2px;background:var(--green-dim);border:1px solid var(--green)"></div>
+          <span class="text-secondary">Collected ✓</span>
+        </div>
+        <div class="flex items-center gap-2 text-sm">
+          <div style="width:12px;height:12px;border-radius:2px;background:var(--blue-dim);border:1px solid var(--blue)"></div>
+          <span class="text-secondary">Wishlist ★</span>
+        </div>
+        <div class="flex items-center gap-2 text-sm">
+          <div style="width:12px;height:12px;border-radius:2px;background:var(--yellow-dim);border:1px solid var(--yellow)"></div>
+          <span class="text-secondary">Has Spares 🔄</span>
+        </div>
+        <div class="text-muted text-xs" style="margin-left:auto">Click to cycle status →</div>
+      </div>
+
+      <!-- Filter bar -->
+      <div class="filter-bar mb-4">
+        <div class="search-wrap">
+          <span class="s-ico">🔍</span>
+          <input type="text" x-model="search" placeholder="Search blueprints…">
+        </div>
+        <select class="filter-sel" x-model="filterStatus">
+          <option value="all">All Statuses</option>
+          <option value="not-collected">Not Collected</option>
+          <option value="collected">Collected</option>
+          <option value="wishlist">Wishlist</option>
+          <option value="has-spares">Has Spares</option>
+        </select>
+        <select class="filter-sel" x-model="filterRarity">
+          <option value="all">All Rarities</option>
+          <option value="common">Common</option>
+          <option value="uncommon">Uncommon</option>
+          <option value="rare">Rare</option>
+          <option value="epic">Epic</option>
+          <option value="legendary">Legendary</option>
+        </select>
+      </div>
+
+      <!-- Categories -->
+      <template x-for="cat in filteredCategories" :key="cat.id">
+        <div class="mb-6">
+          <div class="sec-head">
+            <div class="sec-title">
+              <span x-text="cat.icon"></span>
+              <span x-text="cat.name"></span>
+              <span class="badge badge-accent mono" x-text="catProgress(cat)"></span>
+            </div>
+            <div class="mono text-xs text-muted" x-text="catPercent(cat) + '%'"></div>
+          </div>
+
+          <!-- Progress bar -->
+          <div class="progress-track mb-3">
+            <div class="progress-fill" :class="catPercent(cat) === 100 ? 'green' : ''"
+              :style="'width:' + catPercent(cat) + '%'"></div>
+          </div>
+
+          <div class="bp-grid">
+            <template x-for="bp in filteredBlueprintsFor(cat)" :key="bp.id">
+              <div class="bp-card"
+                :class="['rarity-' + bp.rarity, 's-' + getStatus(bp.id)]"
+                @click="cycleStatus(bp.id)"
+                :data-tip="statusLabel(getStatus(bp.id))">
+                <div class="bp-icon" x-text="categoryIcon(cat.id, bp.type)"></div>
+                <div class="bp-name" x-text="bp.name"></div>
+                <div>
+                  <span class="badge bp-status" :class="'badge-' + rarity2badge(bp.rarity)" x-text="bp.rarity" style="margin-bottom:4px"></span>
+                </div>
+                <div class="bp-status" x-text="statusLabel(getStatus(bp.id))"></div>
+              </div>
+            </template>
+          </div>
+
+          <div class="empty-state" x-show="filteredBlueprintsFor(cat).length === 0" style="padding:20px">
+            <p class="text-xs">No blueprints match your filters in this category.</p>
+          </div>
+        </div>
+      </template>
+
+    </div>
+
+    <!-- Export Modal -->
+    <div class="modal-overlay" x-show="showExport" @click.self="showExport = false" x-cloak>
+      <div class="modal">
+        <div class="modal-header">
+          <div class="modal-title">Export Blueprint Data</div>
+          <button class="modal-close" @click="showExport = false">✕</button>
+        </div>
+        <div class="modal-body">
+          <p class="text-secondary text-sm mb-3">Copy this JSON and save it somewhere safe. Use Import to restore it.</p>
+          <textarea readonly style="width:100%;height:200px;background:var(--bg-input);border:1px solid var(--border);color:var(--text-secondary);padding:10px;border-radius:4px;font-family:var(--font-mono);font-size:11px;resize:none" x-text="exportData"></textarea>
+          <button class="btn btn-primary mt-3" @click="copyExport()">Copy to Clipboard</button>
+          <span class="text-green text-xs ml-2" x-show="copied">Copied!</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Import Modal -->
+    <div class="modal-overlay" x-show="showImport" @click.self="showImport = false" x-cloak>
+      <div class="modal">
+        <div class="modal-header">
+          <div class="modal-title">Import Blueprint Data</div>
+          <button class="modal-close" @click="showImport = false">✕</button>
+        </div>
+        <div class="modal-body">
+          <p class="text-secondary text-sm mb-3">Paste your previously exported JSON here. This will overwrite your current tracking data.</p>
+          <textarea x-model="importData" placeholder="Paste JSON here…" style="width:100%;height:200px;background:var(--bg-input);border:1px solid var(--border);color:var(--text-primary);padding:10px;border-radius:4px;font-family:var(--font-mono);font-size:11px;resize:none"></textarea>
+          <div class="flex gap-2 mt-3">
+            <button class="btn btn-primary" @click="doImport()">Import</button>
+            <button class="btn btn-ghost" @click="showImport = false">Cancel</button>
+            <span class="text-red text-xs" x-show="importError" x-text="importError"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+<script src="js/nav.js"></script>
+<script src="js/tracker.js"></script>
+<script>
+function bpApp() {
+  return {
+    categories: [],
+    bpState: {},
+    search: '',
+    filterStatus: 'all',
+    filterRarity: 'all',
+    showExport: false,
+    showImport: false,
+    exportData: '',
+    importData: '',
+    importError: '',
+    copied: false,
+
+    async init() {
+      const data = await arcHub.loadJSON('data/blueprints.json');
+      this.categories = data.categories;
+      this.bpState = Tracker.bp._load();
+    },
+
+    get totalBlueprints() {
+      return this.categories.flatMap(c => c.blueprints).length;
+    },
+
+    get totalCollected() {
+      return this.categories.flatMap(c => c.blueprints)
+        .filter(bp => {
+          const s = this.bpState[bp.id];
+          return s === 'collected' || s === 'has-spares';
+        }).length;
+    },
+
+    get filteredCategories() {
+      return this.categories.filter(cat =>
+        this.filteredBlueprintsFor(cat).length > 0 ||
+        (this.search === '' && this.filterStatus === 'all' && this.filterRarity === 'all')
+      );
+    },
+
+    filteredBlueprintsFor(cat) {
+      return cat.blueprints.filter(bp => {
+        if (this.search && !bp.name.toLowerCase().includes(this.search.toLowerCase())) return false;
+        if (this.filterStatus !== 'all' && this.getStatus(bp.id) !== this.filterStatus) return false;
+        if (this.filterRarity !== 'all' && bp.rarity !== this.filterRarity) return false;
+        return true;
+      });
+    },
+
+    getStatus(id) {
+      return this.bpState[id] || 'not-collected';
+    },
+
+    cycleStatus(id) {
+      const newStatus = Tracker.bp.cycle(id);
+      this.bpState = { ...this.bpState, [id]: newStatus };
+    },
+
+    statusLabel(s) {
+      return { 'not-collected': 'Not Collected', 'collected': '✓ Collected', 'wishlist': '★ Wishlist', 'has-spares': '🔄 Has Spares' }[s] || s;
+    },
+
+    catProgress(cat) {
+      const collected = cat.blueprints.filter(bp => {
+        const s = this.bpState[bp.id];
+        return s === 'collected' || s === 'has-spares';
+      }).length;
+      return collected + '/' + cat.blueprints.length;
+    },
+
+    catPercent(cat) {
+      const total = cat.blueprints.length;
+      const done = cat.blueprints.filter(bp => {
+        const s = this.bpState[bp.id];
+        return s === 'collected' || s === 'has-spares';
+      }).length;
+      return total ? Math.round(done / total * 100) : 0;
+    },
+
+    categoryIcon(catId, type) {
+      const icons = {
+        weapons: '🔫', augments: '⚡', equipment: '🛡',
+        grips: '✊', stocks: '📏', barrels: '🔧', magazines: '📦'
+      };
+      return icons[catId] || '📦';
+    },
+
+    rarity2badge(r) {
+      return r; // matches badge-common, badge-rare etc
+    },
+
+    get exportData() {
+      return Tracker.bp.export();
+    },
+
+    copyExport() {
+      navigator.clipboard.writeText(this.exportData).then(() => {
+        this.copied = true;
+        setTimeout(() => this.copied = false, 2000);
+      });
+    },
+
+    doImport() {
+      this.importError = '';
+      if (Tracker.bp.import(this.importData)) {
+        this.bpState = Tracker.bp._load();
+        this.showImport = false;
+        this.importData = '';
+      } else {
+        this.importError = 'Invalid JSON format. Please check your data.';
+      }
+    },
+
+    confirmReset() {
+      if (confirm('Reset all blueprint tracking data? This cannot be undone.')) {
+        Tracker.bp.reset();
+        this.bpState = {};
+      }
+    }
+  };
+}
+</script>
+</body>
+</html>

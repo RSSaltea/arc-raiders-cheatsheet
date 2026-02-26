@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARC Raiders Hub — Item Wiki</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app-layout">
+  <nav id="sidebar" class="sidebar"></nav>
+  <main class="main-content" x-data="wikiApp()" x-init="init()" x-cloak>
+
+    <div class="page-header">
+      <div>
+        <h1>Item Wiki</h1>
+        <p>All items — sell values, recycle ROI, donor chains &amp; crafting uses. Click any item for details.</p>
+      </div>
+      <div class="flex gap-2 items-center">
+        <span class="mono text-muted text-xs" x-text="filteredItems.length + ' items'"></span>
+      </div>
+    </div>
+
+    <div class="page-body">
+
+      <!-- Filters -->
+      <div class="filter-bar">
+        <div class="search-wrap">
+          <span class="s-ico">🔍</span>
+          <input type="text" x-model="search" placeholder="Search items…" autocomplete="off">
+        </div>
+        <select class="filter-sel" x-model="filterCat">
+          <option value="all">All Categories</option>
+          <option value="junk">Junk / Loot</option>
+          <option value="component">Components</option>
+          <option value="quest">Quest Items</option>
+          <option value="workshop">Workshop Materials</option>
+          <option value="donor">Donor Items</option>
+          <option value="scrappy">Scrappy Items</option>
+        </select>
+        <select class="filter-sel" x-model="filterRarity">
+          <option value="all">All Rarities</option>
+          <option value="common">Common</option>
+          <option value="uncommon">Uncommon</option>
+          <option value="rare">Rare</option>
+          <option value="epic">Epic</option>
+          <option value="legendary">Legendary</option>
+        </select>
+        <select class="filter-sel" x-model="filterTag">
+          <option value="all">All Tags</option>
+          <option value="safe-to-sell">Safe to Sell</option>
+          <option value="safe-to-recycle">Safe to Recycle</option>
+          <option value="high-roi">High ROI</option>
+          <option value="high-priority">High Priority</option>
+          <option value="expedition">Expedition</option>
+          <option value="quest-item">Quest Item</option>
+          <option value="donor">Donor</option>
+        </select>
+        <select class="filter-sel" x-model="sortBy">
+          <option value="name">Name A–Z</option>
+          <option value="name-z">Name Z–A</option>
+          <option value="sell-high">Sell Value ↓</option>
+          <option value="sell-low">Sell Value ↑</option>
+          <option value="roi-high">ROI ↓ (best first)</option>
+          <option value="roi-low">ROI ↑ (worst first)</option>
+        </select>
+      </div>
+
+      <!-- Items grid -->
+      <div class="items-grid" x-show="filteredItems.length > 0">
+        <template x-for="item in filteredItems" :key="item.id">
+          <div class="item-card"
+            :class="'rarity-' + item.rarity"
+            @click="selectItem(item)">
+            <div class="item-card-name" x-text="item.name"></div>
+            <div class="item-card-cat" x-text="item.category"></div>
+            <div class="item-card-meta">
+              <span class="item-card-sell" x-text="'🪙 ' + (item.sellValue ? item.sellValue.toLocaleString() : '—')"></span>
+              <span class="item-card-roi"
+                :class="item.recycleROI > 0 ? 'pos' : (item.recycleROI !== null && item.recycleROI < -20 ? 'neg' : 'neu')"
+                x-text="item.recycleROI !== null && item.recycleROI !== undefined ? (item.recycleROI > 0 ? '+' : '') + item.recycleROI + '%' : '—'"></span>
+            </div>
+            <div class="flex gap-1 mt-2" style="flex-wrap:wrap">
+              <span class="badge" :class="'badge-' + item.rarity" x-text="item.rarity"></span>
+              <template x-if="item.tags.includes('quest-item')">
+                <span class="badge badge-yellow">quest</span>
+              </template>
+              <template x-if="item.tags.includes('high-priority')">
+                <span class="badge badge-accent">priority</span>
+              </template>
+              <template x-if="item.tags.includes('expedition')">
+                <span class="badge badge-blue">expedition</span>
+              </template>
+            </div>
+          </div>
+        </template>
+      </div>
+
+      <!-- Empty state -->
+      <div class="empty-state" x-show="filteredItems.length === 0 && !loading">
+        <div class="e-icon">🔍</div>
+        <p>No items match your search. Try adjusting the filters.</p>
+      </div>
+
+      <!-- Loading -->
+      <div class="empty-state" x-show="loading">
+        <div class="e-icon">⏳</div>
+        <p>Loading item database…</p>
+      </div>
+
+    </div>
+
+    <!-- Item Detail Modal -->
+    <div class="modal-overlay" x-show="selected" @click.self="selected = null" x-cloak>
+      <div class="modal" x-show="selected" @click.stop>
+        <div class="modal-header">
+          <div>
+            <div class="modal-title" x-text="selected?.name"></div>
+            <div class="flex gap-2 mt-2" style="flex-wrap:wrap">
+              <span class="badge" :class="'badge-' + selected?.rarity" x-text="selected?.rarity"></span>
+              <span class="badge badge-cat" x-text="selected?.category"></span>
+              <template x-if="selected?.stackSize">
+                <span class="badge badge-cat mono" x-text="'Stack: ' + selected?.stackSize"></span>
+              </template>
+              <template x-for="tag in (selected?.tags || [])" :key="tag">
+                <span class="badge badge-accent" x-text="tag" x-show="tag !== 'safe-to-sell'"></span>
+              </template>
+            </div>
+          </div>
+          <button class="modal-close" @click="selected = null">✕</button>
+        </div>
+        <div class="modal-body">
+
+          <!-- Core Stats -->
+          <div class="mb-4">
+            <div class="d-stat">
+              <span class="d-stat-label">Sell Value</span>
+              <span class="d-stat-value text-yellow" x-text="selected?.sellValue ? '🪙 ' + selected.sellValue.toLocaleString() : '—'"></span>
+            </div>
+            <div class="d-stat">
+              <span class="d-stat-label">Recycle ROI</span>
+              <span class="d-stat-value"
+                :class="selected?.recycleROI > 0 ? 'text-green' : (selected?.recycleROI < -20 ? 'text-red' : 'text-secondary')"
+                x-text="selected?.recycleROI !== null && selected?.recycleROI !== undefined ? (selected.recycleROI > 0 ? '+' : '') + selected.recycleROI + '%' : '—'"></span>
+            </div>
+            <div class="d-stat">
+              <span class="d-stat-label">Stack Size</span>
+              <span class="d-stat-value mono" x-text="selected?.stackSize || '—'"></span>
+            </div>
+            <template x-if="selected?.questQty">
+              <div class="d-stat">
+                <span class="d-stat-label">Quest Quantity Needed</span>
+                <span class="d-stat-value text-yellow mono" x-text="'×' + selected.questQty"></span>
+              </div>
+            </template>
+          </div>
+
+          <!-- Notes -->
+          <template x-if="selected?.notes">
+            <div class="highlight-box mb-4">
+              <p x-text="selected.notes"></p>
+            </div>
+          </template>
+
+          <!-- What it recycles into -->
+          <template x-if="selected?.recyclesInto && selected.recyclesInto.length > 0">
+            <div class="mb-4">
+              <div class="sec-title text-sm mb-2">♻️ Recycles Into</div>
+              <ul class="recipe-list">
+                <template x-for="out in selected.recyclesInto" :key="out.name">
+                  <li class="recipe-item">
+                    <span x-text="out.name"></span>
+                    <span class="recipe-qty" x-text="'×' + out.qty"></span>
+                  </li>
+                </template>
+              </ul>
+            </div>
+          </template>
+
+          <!-- Best donor for (if this item donates components when recycled) -->
+          <template x-if="selected?.donorFor && selected.donorFor.length > 0">
+            <div class="mb-4">
+              <div class="sec-title text-sm mb-2">♻️ Recycles Into (Donor)</div>
+              <ul class="recipe-list">
+                <template x-for="d in selected.donorFor" :key="d.component">
+                  <li class="recipe-item">
+                    <span x-text="d.component"></span>
+                    <span class="recipe-qty" x-text="'×' + d.yields"></span>
+                  </li>
+                </template>
+              </ul>
+            </div>
+          </template>
+
+          <!-- Donors (if this is a component — what items give it when recycled) -->
+          <template x-if="selected?.donors && selected.donors.length > 0">
+            <div class="mb-4">
+              <div class="sec-title text-sm mb-2">⬇️ Best Donors (recycle these to get it)</div>
+              <ul class="recipe-list">
+                <template x-for="d in selected.donors" :key="d.name">
+                  <li class="recipe-item" style="flex-direction:column;align-items:flex-start;gap:4px">
+                    <div class="flex justify-between w-full">
+                      <span class="bold" x-text="d.name"></span>
+                      <span class="recipe-qty" x-text="'×' + d.yields + ' ' + selected.name"></span>
+                    </div>
+                    <div class="flex gap-2">
+                      <span class="text-yellow mono text-xs" x-text="d.sellValue ? '🪙 ' + d.sellValue.toLocaleString() : ''" x-show="d.sellValue"></span>
+                      <span class="mono text-xs" :class="d.roi > 0 ? 'text-green' : 'text-muted'" x-text="d.roi ? (d.roi > 0 ? '+' : '') + d.roi + '% ROI' : ''" x-show="d.roi"></span>
+                    </div>
+                  </li>
+                </template>
+              </ul>
+            </div>
+          </template>
+
+          <!-- Used In -->
+          <template x-if="selected?.usedIn && selected.usedIn.length > 0">
+            <div class="mb-4">
+              <div class="sec-title text-sm mb-2">🔧 Used to Craft / Upgrade</div>
+              <div class="flex gap-2" style="flex-wrap:wrap">
+                <template x-for="use in selected.usedIn" :key="use">
+                  <span class="badge badge-cat" x-text="use"></span>
+                </template>
+              </div>
+            </div>
+          </template>
+
+          <!-- ROI Explanation -->
+          <template x-if="selected?.recycleROI !== null && selected?.recycleROI !== undefined">
+            <div class="highlight-box" style="margin-top:8px">
+              <p>
+                <strong>ROI Formula:</strong> (Recycle Value − Sell Value) ÷ Sell Value × 100<br>
+                <span x-show="selected?.recycleROI > 0" style="color:var(--green)">✓ Recycling gives MORE value than selling</span>
+                <span x-show="selected?.recycleROI <= 0" style="color:var(--text-secondary)">Selling directly is more efficient for coins</span>
+              </p>
+            </div>
+          </template>
+
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+<script src="js/nav.js"></script>
+<script src="js/tracker.js"></script>
+<script>
+function wikiApp() {
+  return {
+    items: [],
+    loading: true,
+    search: '',
+    filterCat: 'all',
+    filterRarity: 'all',
+    filterTag: 'all',
+    sortBy: 'name',
+    selected: null,
+
+    async init() {
+      const data = await arcHub.loadJSON('data/items.json');
+      this.items = data.items;
+      this.loading = false;
+
+      // Support direct hash links e.g. wiki.html#steel-spring
+      if (window.location.hash) {
+        const id = window.location.hash.slice(1);
+        const item = this.items.find(i => i.id === id);
+        if (item) this.selected = item;
+      }
+    },
+
+    get filteredItems() {
+      return this.items
+        .filter(item => {
+          if (this.filterCat !== 'all' && item.category !== this.filterCat) return false;
+          if (this.filterRarity !== 'all' && item.rarity !== this.filterRarity) return false;
+          if (this.filterTag !== 'all' && !item.tags.includes(this.filterTag)) return false;
+          if (this.search) {
+            const q = this.search.toLowerCase();
+            return item.name.toLowerCase().includes(q) ||
+              item.category.toLowerCase().includes(q) ||
+              (item.tags || []).some(t => t.includes(q));
+          }
+          return true;
+        })
+        .sort((a, b) => {
+          if (this.sortBy === 'name') return a.name.localeCompare(b.name);
+          if (this.sortBy === 'name-z') return b.name.localeCompare(a.name);
+          if (this.sortBy === 'sell-high') return (b.sellValue || 0) - (a.sellValue || 0);
+          if (this.sortBy === 'sell-low') return (a.sellValue || 0) - (b.sellValue || 0);
+          if (this.sortBy === 'roi-high') return (b.recycleROI ?? -999) - (a.recycleROI ?? -999);
+          if (this.sortBy === 'roi-low') return (a.recycleROI ?? 999) - (b.recycleROI ?? 999);
+          return 0;
+        });
+    },
+
+    selectItem(item) {
+      this.selected = item;
+      window.location.hash = item.id;
+    }
+  };
+}
+</script>
+</body>
+</html>

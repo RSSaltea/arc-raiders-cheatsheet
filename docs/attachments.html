@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARC Raiders Hub — Attachments Guide</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app-layout">
+  <nav id="sidebar" class="sidebar"></nav>
+  <main class="main-content" x-data="attachApp()" x-init="init()" x-cloak>
+
+    <div class="page-header">
+      <div>
+        <h1>Attachments Guide</h1>
+        <p>Weapon attachment stats, recoil data, mag sizes &amp; weapon compatibility. Data from PDF v3.2.</p>
+      </div>
+    </div>
+
+    <div class="page-body">
+
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="tab" :class="tab === 'grips' ? 'active' : ''" @click="tab = 'grips'">Grips</button>
+        <button class="tab" :class="tab === 'stocks' ? 'active' : ''" @click="tab = 'stocks'">Stocks</button>
+        <button class="tab" :class="tab === 'barrels' ? 'active' : ''" @click="tab = 'barrels'">Barrels &amp; Muzzles</button>
+        <button class="tab" :class="tab === 'mags' ? 'active' : ''" @click="tab = 'mags'">Magazines</button>
+        <button class="tab" :class="tab === 'compat' ? 'active' : ''" @click="tab = 'compat'">Weapon Compat</button>
+      </div>
+
+      <!-- GRIPS -->
+      <div x-show="tab === 'grips'">
+        <div class="highlight-box mb-4">
+          <p>Grips reduce <strong>recoil</strong> — horizontal (side-to-side kick) or vertical (gun climb). Most effective on fast-firing guns like Kettle, Stitcher, Bobcat.</p>
+        </div>
+        <template x-for="grip in data.grips" :key="grip.name">
+          <div class="card mb-4">
+            <div class="card-header">
+              <div>
+                <h3 x-text="grip.name"></h3>
+                <div class="text-secondary text-xs mt-1" x-text="grip.description"></div>
+              </div>
+              <span class="badge badge-accent" x-text="grip.stat"></span>
+            </div>
+            <div class="card-body" style="padding:0">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Tier</th>
+                    <th>Reduction</th>
+                    <th>Compatible Weapons</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <template x-for="tier in grip.tiers" :key="tier.tier">
+                    <tr>
+                      <td><span class="mono bold text-accent" x-text="grip.name + (tier.tier ? ' ' + tier.tier : '')"></span></td>
+                      <td><span class="mono text-green bold" x-text="tier.pct + '% reduction'"></span></td>
+                      <td>
+                        <div class="chip-wrap">
+                          <template x-for="w in tier.compatibleWeapons" :key="w">
+                            <span class="weapon-chip" x-text="w"></span>
+                          </template>
+                        </div>
+                      </td>
+                    </tr>
+                  </template>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </template>
+      </div>
+
+      <!-- STOCKS -->
+      <div x-show="tab === 'stocks'">
+        <div class="highlight-box mb-4">
+          <p>Stocks affect <strong>dispersion recovery</strong> (crosshair shrink speed) and <strong>equip time</strong>. Choose based on your playstyle — aggressive or methodical.</p>
+        </div>
+        <template x-for="stock in data.stocks" :key="stock.name">
+          <div class="card mb-4">
+            <div class="card-header">
+              <div>
+                <h3 x-text="stock.name"></h3>
+                <div class="text-secondary text-xs mt-1" x-text="stock.description"></div>
+              </div>
+              <span class="badge badge-accent" x-text="stock.stat"></span>
+            </div>
+            <div class="card-body" style="padding:0">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Tier</th>
+                    <th>Effect</th>
+                    <th>Compatible Weapons</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <template x-for="tier in stock.tiers" :key="tier.tier || 'base'">
+                    <tr>
+                      <td><span class="mono bold text-accent" x-text="stock.name + (tier.tier ? ' ' + tier.tier : '')"></span></td>
+                      <td>
+                        <div x-show="tier.pct" class="mono text-green bold" x-text="tier.pct + '%'"></div>
+                        <div x-show="tier.timeSec" class="mono text-green text-xs" x-text="tier.timeSec + 's dispersion'"></div>
+                        <div x-show="tier.equipTimePct" class="mono text-red text-xs" x-text="'+' + tier.equipTimePct + '% equip time'"></div>
+                        <div x-show="tier.equipTimeSec" class="mono text-green text-xs" x-text="tier.equipTimeSec + 's equip time'"></div>
+                        <div x-show="tier.recoilRecoveryPct" class="mono text-green text-xs" x-text="tier.recoilRecoveryPct + '% recoil recovery'"></div>
+                      </td>
+                      <td>
+                        <div class="chip-wrap">
+                          <template x-for="w in tier.compatibleWeapons" :key="w">
+                            <span class="weapon-chip" x-text="w"></span>
+                          </template>
+                        </div>
+                      </td>
+                    </tr>
+                  </template>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </template>
+      </div>
+
+      <!-- BARRELS & MUZZLES -->
+      <div x-show="tab === 'barrels'">
+        <div class="highlight-box mb-4">
+          <p>Barrels and muzzle devices affect <strong>bullet velocity</strong>, <strong>noise</strong>, and <strong>shot dispersion</strong>.</p>
+        </div>
+        <template x-for="barrel in data.barrels" :key="barrel.name">
+          <div class="card mb-4">
+            <div class="card-header">
+              <div>
+                <h3 x-text="barrel.name"></h3>
+                <div class="text-secondary text-xs mt-1" x-text="barrel.description"></div>
+              </div>
+              <span class="badge badge-accent" x-text="barrel.stat"></span>
+            </div>
+            <div class="card-body" style="padding:0">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Tier</th>
+                    <th>Effect</th>
+                    <th>Compatible Weapons</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <template x-for="tier in barrel.tiers" :key="tier.tier">
+                    <tr>
+                      <td><span class="mono bold text-accent" x-text="barrel.name + (tier.tier ? ' ' + tier.tier : '')"></span></td>
+                      <td>
+                        <span class="mono text-green bold" x-text="(barrel.effect === 'increase' ? '+' : '') + tier.pct + '%'"></span>
+                      </td>
+                      <td>
+                        <div class="chip-wrap">
+                          <template x-for="w in tier.compatibleWeapons" :key="w">
+                            <span class="weapon-chip" x-text="w"></span>
+                          </template>
+                        </div>
+                      </td>
+                    </tr>
+                  </template>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </template>
+      </div>
+
+      <!-- MAGAZINES -->
+      <div x-show="tab === 'mags'">
+        <div class="highlight-box mb-4">
+          <p>Extended magazines increase ammo capacity. Each mag type only fits specific weapons. Mag III gives the largest capacity increase.</p>
+        </div>
+        <template x-for="mag in data.magazines" :key="mag.name">
+          <div class="card mb-6">
+            <div class="card-header">
+              <div>
+                <h3 x-text="mag.name"></h3>
+                <div class="text-secondary text-xs mt-1" x-text="mag.description"></div>
+              </div>
+            </div>
+            <div class="card-body" style="padding:0;overflow-x:auto">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Weapon</th>
+                    <th>Base</th>
+                    <th>Ext I</th>
+                    <th>Ext II</th>
+                    <th>Ext III</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <template x-for="weapon in mag.compatibleWeapons" :key="weapon">
+                    <tr>
+                      <td><span class="weapon-chip" x-text="weapon"></span></td>
+                      <td class="mono text-secondary" x-text="mag.sizes[weapon]?.base || '—'"></td>
+                      <td class="mono text-accent" x-text="mag.sizes[weapon]?.I || '—'"></td>
+                      <td class="mono text-accent" x-text="mag.sizes[weapon]?.II || '—'"></td>
+                      <td class="mono text-accent bold" x-text="mag.sizes[weapon]?.III || '—'"></td>
+                    </tr>
+                  </template>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </template>
+      </div>
+
+      <!-- WEAPON COMPATIBILITY -->
+      <div x-show="tab === 'compat'">
+        <div class="highlight-box mb-4">
+          <p>Full attachment compatibility by weapon. Use this to plan your loadout.</p>
+        </div>
+        <div style="overflow-x:auto">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Weapon</th>
+                <th>Grips</th>
+                <th>Stocks</th>
+                <th>Mag Type</th>
+                <th>Barrels</th>
+              </tr>
+            </thead>
+            <tbody>
+              <template x-for="[weapon, compat] in Object.entries(data.weaponCompatibility || {})" :key="weapon">
+                <tr>
+                  <td><span class="weapon-chip" x-text="weapon"></span></td>
+                  <td>
+                    <div class="chip-wrap">
+                      <template x-if="compat.grips && compat.grips.length > 0">
+                        <template x-for="g in compat.grips" :key="g">
+                          <span class="badge badge-cat text-xs" x-text="g"></span>
+                        </template>
+                      </template>
+                      <span class="text-muted text-xs" x-show="!compat.grips || compat.grips.length === 0">—</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="chip-wrap">
+                      <template x-if="compat.stocks && compat.stocks.length > 0">
+                        <template x-for="s in compat.stocks" :key="s">
+                          <span class="badge badge-cat text-xs" x-text="s"></span>
+                        </template>
+                      </template>
+                      <span class="text-muted text-xs" x-show="!compat.stocks || compat.stocks.length === 0">—</span>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="badge badge-accent text-xs" x-text="compat.mags || '—'"></span>
+                  </td>
+                  <td>
+                    <div class="chip-wrap">
+                      <template x-if="compat.barrels && compat.barrels.length > 0">
+                        <template x-for="b in compat.barrels" :key="b">
+                          <span class="badge badge-cat text-xs" x-text="b"></span>
+                        </template>
+                      </template>
+                      <span class="text-muted text-xs" x-show="!compat.barrels || compat.barrels.length === 0">—</span>
+                    </div>
+                  </td>
+                </tr>
+              </template>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+<script src="js/nav.js"></script>
+<script>
+function attachApp() {
+  return {
+    tab: 'grips',
+    data: {},
+
+    async init() {
+      this.data = await arcHub.loadJSON('data/attachments.json');
+    }
+  };
+}
+</script>
+</body>
+</html>
