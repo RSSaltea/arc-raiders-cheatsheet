@@ -1,0 +1,1291 @@
+{
+  "items": [
+    {
+      "name": "Magnetic Accelerator",
+      "sellValue": 5000,
+      "recycleDelta": null,
+      "sections": ["High-Tier Components"],
+      "categories": ["Gun Components"],
+      "icon": "icons/Magnetic_Accelerator.png",
+      "rarity": "Epic"
+    },
+    {
+      "name": "Alarm Clock",
+      "sellValue": 1000,
+      "recycleDelta": "-14%",
+      "sections": ["Recycle into High-Priority Components","Safe to Sell / Recycle"],
+      "categories": [ "Plastic Parts", "Processor" ],
+      "icon": "icons/Alarm_Clock.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Antiseptic",
+      "sellValue": 1000,
+      "recycleDelta": "-50%",
+      "sections": ["Workshop Upgrades"],
+      "categories": [ "Medical Components", "Chemicals" ],
+      "icon": "icons/Antiseptic.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "ARC Circuitry",
+      "sellValue": 1000,
+      "recycleDelta": "-25%",
+      "sections": ["Workshop Upgrades"],
+      "categories": [ "Explosive Components", "Gear Components", "Refiner Components" ],
+      "icon": "icons/ARC_Circuitry.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "ARC Coolant",
+      "sellValue": 1000,
+      "recycleDelta": null,
+      "sections": ["Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Chemicals"],
+      "icon": "icons/ARC_Coolant.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "ARC Flex Rubber",
+      "sellValue": 1000,
+      "recycleDelta": null,
+      "sections": ["Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Rubber Parts"],
+      "icon": "icons/ARC_Flex_Rubber.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "ARC Motion Core",
+      "sellValue": 1000,
+      "recycleDelta": "-60%",
+      "sections": [ "Workshop Upgrades", "High-Tier Components" ],
+      "categories": [ "Workbench Components", "Refiner Components", "Explosive Components" ],
+      "icon": "icons/ARC_Motion_Core.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "ARC Synthetic Resin",
+      "sellValue": 1000,
+      "recycleDelta": null,
+      "sections": ["Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Plastic Parts"],
+      "icon": "icons/ARC_Synthetic_Resin.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "ARC Thermo Lining",
+      "sellValue": 1000,
+      "recycleDelta": null,
+      "sections": ["Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Fabric"],
+      "icon": "icons/ARC_Thermo_Lining.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Bastion Cell",
+      "sellValue": 5000,
+      "recycleDelta": "-22%",
+      "sections": ["Workshop Upgrades","Safe to Sell / Recycle"],
+      "categories": null,
+      "icon": "icons/Bastion_Cell.png",
+      "rarity": "Epic"
+    },
+    {
+      "name": "Battery",
+      "sellValue": 250,
+      "recycleDelta": "-40%",
+      "sections": ["Expedition Project"],
+      "categories": [ "Workbench Components", "Gear Components", "Explosive Components" ],
+      "icon": "icons/Battery.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Bicycle Pump",
+      "sellValue": 2000,
+      "recycleDelta": null,
+      "sections": ["Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": [ "Metal Parts", "Canister" ],
+      "icon": "icons/Bicycle_Pump.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Bombardier Cell",
+      "sellValue": 5000,
+      "recycleDelta": "-25%",
+      "sections": ["Workshop Upgrades","Safe to Sell / Recycle"],
+      "categories": null,
+      "icon": "icons/Bombardier_Cell.png",
+      "rarity": "Epic"
+    },
+    {
+      "name": "Frequency Modulation Box",
+      "sellValue": 3000,
+      "recycleDelta": "-25%",
+      "sections": ["Expedition Project","Recycle into High-Priority Components","Safe to Sell / Recycle"],
+      "categories": null,
+      "icon": "icons/Frequency_Modulation_Box.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Broken Flashlight",
+      "sellValue": 1000,
+      "recycleDelta": null,
+      "sections": ["Recycle into Core Components","Safe to Sell / Recycle"],
+      "categories": ["Battery"],
+      "icon": "icons/Broken_Flashlight.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Broken Taser",
+      "sellValue": 1000,
+      "recycleDelta": null,
+      "sections": ["Recycle into Core Components","Safe to Sell / Recycle"],
+      "categories": ["Battery"],
+      "icon": "icons/Broken_Taser.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Burned ARC Circuitry",
+      "sellValue": 640,
+      "recycleDelta": "-25%",
+      "sections": ["Safe to Sell / Recycle"],
+      "categories": null,
+      "icon": "icons/Burned_ARC_Circuitry.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Candle Holder",
+      "sellValue": 640,
+      "recycleDelta": null,
+      "sections": ["Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Metal Parts"],
+      "icon": "icons/Candle_Holder.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Advanced Electrical Components",
+      "sellValue": 1750,
+      "recycleDelta": "-52%",
+      "sections": ["Workshop Upgrades","High-Tier Components"],
+      "categories": ["Gear Components","Utility Components","Refiner Components","Explosive Components"],
+      "icon": "icons/Advanced_Electrical_Components.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Advanced Mechanical Components",
+      "sellValue": 1750,
+      "recycleDelta": "-46%",
+      "sections": ["Workshop Upgrades","High-Tier Components"],
+      "categories": ["Gun Components"],
+      "icon": "icons/Advanced_Mechanical_Components.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Coolant",
+      "sellValue": 1000,
+      "recycleDelta": "-10%",
+      "sections": ["Safe to Sell / Recycle"],
+      "categories": [ "Chemicals", "Oil" ],
+      "icon": "icons/Coolant.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Cooling Coil",
+      "sellValue": 1000,
+      "recycleDelta": "-10%",
+      "sections": [ "Recycle into Base Components", "Recycle into High-Priority Components", "Expedition Project","Safe to Sell / Recycle" ],
+      "categories": [ "Chemicals", "Steel Spring" ],
+      "icon": "icons/Cooling_Coil.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Cracked Bioscanner",
+      "sellValue": 1000,
+      "recycleDelta": null,
+      "sections": [ "Workshop Upgrades", "Recycle into Core Components","Recycle into Base Components","Safe to Sell / Recycle" ],
+      "categories": [ "Battery", "Rubber Parts" ],
+      "icon": "icons/Cracked_Bioscanner.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Crude Explosives",
+      "sellValue": 270,
+      "recycleDelta": "-44%",
+      "sections": ["Workshop Upgrades"],
+      "categories": [ "Refiner Components", "Explosive Components", "Gear Components" ],
+      "icon": "icons/Crude_Explosives.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Damaged Heat Sink",
+      "sellValue": 1000,
+      "recycleDelta": "-15%",
+      "sections": ["Workshop Upgrades","Safe to Sell / Recycle"],
+      "categories": null,
+      "icon": "icons/Damaged_Heat_Sink.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Diving Goggles",
+      "sellValue": 640,
+      "recycleDelta": "-6%",
+      "sections": ["Safe to Sell / Recycle"],
+      "categories": ["Rubber Parts"],
+      "icon": "icons/Diving_Goggles.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Dog Collar",
+      "sellValue": 640,
+      "recycleDelta": "-26%",
+      "sections": ["Workshop Upgrades","Safe to Sell / Recycle"],
+      "categories": ["Fabric", "Metal Parts"],
+      "icon": "icons/Dog_Collar.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Durable Cloth",
+      "sellValue": 640,
+      "recycleDelta": "-53%",
+      "sections": ["Expedition Project","Workshop Upgrades"],
+      "categories": ["Fabric", "Medical Components"],
+      "icon": "icons/Durable_Cloth.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Electrical Components",
+      "sellValue": 640,
+      "recycleDelta": "-48%",
+      "sections": ["Workshop Upgrades","Expedition Project","Core Components"],
+      "categories": ["Refiner Components","Gear Components","Explosive Components","Utility Components","Medical Components"],
+      "icon": "icons/Electrical_Components.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Exodus Modules",
+      "sellValue": 2750,
+      "recycleDelta": "-42%",
+      "sections": ["Expedition Project","Recycle into Core Components","Recycle into High-Priority Components","Safe to Sell / Recycle"],
+      "categories": ["Magnet","Gun Components","Utility Components","Processor"],
+      "icon": "icons/Exodus_Modules.png",
+      "rarity": "Epic"
+    },
+    {
+      "name": "Expired Respirator",
+      "sellValue": 640,
+      "recycleDelta": "-6%",
+      "sections": ["Safe to Sell / Recycle"],
+      "categories": ["Rubber Parts","Fabric"],
+      "icon": "icons/Expired_Respirator.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Explosive Compound",
+      "sellValue": 1000,
+      "recycleDelta": "-46%",
+      "sections": ["Workshop Upgrades","High-Tier Components"],
+      "categories": ["Explosive Components"],
+      "icon": "icons/Explosive_Compound.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Fireball Burner",
+      "sellValue": 640,
+      "recycleDelta": "-27%",
+      "sections": ["Workshop Upgrades","Safe to Sell / Recycle"],
+      "categories": ["Chemicals"],
+      "icon": "icons/Fireball_Burner.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Flame Spray",
+      "sellValue": 2000,
+      "recycleDelta": "-14%",
+      "sections": ["Safe to Sell / Recycle"],
+      "categories": ["Canister"],
+      "icon": "icons/Flame_Spray.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Flow Controller",
+      "sellValue": 3000,
+      "recycleDelta": null,
+      "sections": ["Recycle into High-Priority Components","Safe to Sell / Recycle"],
+      "categories": ["Sensors"],
+      "icon": "icons/Flow_Controller.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Fried Motherboard",
+      "sellValue": 2000,
+      "recycleDelta": "-21%",
+      "sections": ["Workshop Upgrades","Recycle into Core Components","Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Utility Components","Plastic Parts","Wires"],
+      "icon": "icons/Fried_Motherboard.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Frying Pan",
+      "sellValue": 640,
+      "recycleDelta": null,
+      "sections": ["Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Metal Parts"],
+      "icon": "icons/Frying_Pan.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Garlic Press",
+      "sellValue": 1000,
+      "recycleDelta": null,
+      "sections": ["Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Metal Parts"],
+      "icon": "icons/Garlic_Press.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Headphones",
+      "sellValue": 1000,
+      "recycleDelta": "-15%",
+      "sections": ["Safe to Sell / Recycle"],
+      "categories": ["Rubber Parts"],
+      "icon": "icons/Headphones.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Heavy Gun Parts",
+      "sellValue": 700,
+      "recycleDelta": null,
+      "sections": ["High-Tier Components"],
+      "categories": ["Gun Components"],
+      "icon": "icons/Heavy_Gun_Parts.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Hornet Driver",
+      "sellValue": 2000,
+      "recycleDelta": "-16%",
+      "sections": ["Workshop Upgrades","Recycle into Core Components","Safe to Sell / Recycle"],
+      "categories": null,
+      "icon": "icons/Hornet_Driver.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Ice Cream Scooper",
+      "sellValue": 640,
+      "recycleDelta": null,
+      "sections": ["Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Metal Parts"],
+      "icon": "icons/Ice_Cream_Scooper.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Industrial Battery",
+      "sellValue": 1000,
+      "recycleDelta": "-15%",
+      "sections": ["Workshop Upgrades","Recycle into Core Components","Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Battery","Chemicals"],
+      "icon": "icons/Industrial_Battery.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Industrial Charger",
+      "sellValue": 1000,
+      "recycleDelta": "-12%",
+      "sections": ["Safe to Sell / Recycle"],
+      "categories": ["Metal Parts","Voltage Converter"],
+      "icon": "icons/Industrial_Charger.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Industrial Magnet",
+      "sellValue": 1000,
+      "recycleDelta": null,
+      "sections": ["Recycle into Core Components","Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Magnet","Metal Parts"],
+      "icon": "icons/Industrial_Magnet.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Raider Hatch Key",
+      "sellValue": 2000,
+      "recycleDelta": null,
+      "sections": ["High-Tier Items"],
+      "categories": null,
+      "icon": "icons/Raider_Hatch_Key.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Barricade Kit",
+      "sellValue": 640,
+      "recycleDelta": "-25%",
+      "sections": ["Safe to Sell / Recycle"],
+      "categories": ["Metal Parts"],
+      "icon": "icons/Barricade_Kit.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Rusted Shut Medical Kit",
+      "sellValue": 2000,
+      "recycleDelta": "+0%",
+      "sections": ["Workshop Upgrades","Safe to Sell / Recycle"],
+      "categories": null,
+      "icon": "icons/Rusted_Shut_Medical_Kit.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Laboratory Reagents",
+      "sellValue": 2000,
+      "recycleDelta": "-20%",
+      "sections": ["Workshop Upgrades","Safe to Sell / Recycle"],
+      "categories": ["Chemicals"],
+      "icon": "icons/Laboratory_Reagents.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Leaper Pulse Unit",
+      "sellValue": 5000,
+      "recycleDelta": "-18%",
+      "sections": ["Workshop Upgrades","Expedition Project","Safe to Sell / Recycle"],
+      "categories": null,
+      "icon": "icons/Leaper_Pulse_Unit.png",
+      "rarity": "Epic"
+    },
+    {
+      "name": "Light Gun Part",
+      "sellValue": 700,
+      "recycleDelta": null,
+      "sections": ["High-Tier Components"],
+      "categories": ["Gun Components"],
+      "icon": "icons/Light_Gun_Parts.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Looting Mk. 3 (Cautious)",
+      "sellValue": 5000,
+      "recycleDelta": null,
+      "sections": ["High-Tier Items","Augments"],
+      "categories": null,
+      "icon": "icons/Looting_Mk._3_(Cautious).png",
+      "rarity": "Epic"
+    },
+    {
+      "name": "Looting Mk. 3 (Survivor)",
+      "sellValue": 5000,
+      "recycleDelta": null,
+      "sections": ["High-Tier Items","Augments"],
+      "categories": null,
+      "icon": "icons/Looting_Mk._3_(Survivor).png",
+      "rarity": "Epic"
+    },
+    {
+      "name": "Magnet",
+      "sellValue": 300,
+      "recycleDelta": null,
+      "sections": ["Core Components"],
+      "categories": ["Metal Parts","Gear Components","Explosive Components","Gun Components"],
+      "icon": "icons/Magnet.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Medium Gun Part",
+      "sellValue": 700,
+      "recycleDelta": null,
+      "sections": ["High-Tier Components"],
+      "categories": ["Gun Components"],
+      "icon": "icons/Medium_Gun_Parts.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Microscope",
+      "sellValue": 3000,
+      "recycleDelta": null,
+      "sections": ["Recycle into Core Components","Safe to Sell / Recycle"],
+      "categories": ["Magnet"],
+      "icon": "icons/Microscope.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Mini Centrifuge",
+      "sellValue": 3000,
+      "recycleDelta": null,
+      "sections": ["Recycle into High-Priority Components","Safe to Sell / Recycle"],
+      "categories": ["Canister"],
+      "icon": "icons/Mini_Centrifuge.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Mod Components",
+      "sellValue": 1750,
+      "recycleDelta": null,
+      "sections": ["High-Tier Components"],
+      "categories": null,
+      "icon": "icons/Mod_Components.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Motor",
+      "sellValue": 2000,
+      "recycleDelta": "-25%",
+      "sections": ["Workshop Upgrades","Safe to Sell / Recycle"],
+      "categories": ["Oil"],
+      "icon": "icons/Motor.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Number Plate",
+      "sellValue": 270,
+      "recycleDelta": "+181%",
+      "sections": ["Safe to Sell / Recycle"],
+      "categories": ["Metal Parts"],
+      "icon": "icons/Number_Plate.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Pop Trigger",
+      "sellValue": 640,
+      "recycleDelta": "-27%",
+      "sections": ["Workshop Upgrades","Safe to Sell / Recycle"],
+      "categories": null,
+      "icon": "icons/Pop_Trigger.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Portable TV",
+      "sellValue": 2000,
+      "recycleDelta": null,
+      "sections": ["Recycle into Core Components","Safe to Sell / Recycle"],
+      "categories": ["Battery","Wires"],
+      "icon": "icons/Portable_TV.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Power Bank",
+      "sellValue": 1000,
+      "recycleDelta": null,
+      "sections": ["Recycle into Core Components","Safe to Sell / Recycle"],
+      "categories": ["Battery","Wires"],
+      "icon": "icons/Power_Bank.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Power Cable",
+      "sellValue": 1000,
+      "recycleDelta": "-20%",
+      "sections": ["Workshop Upgrades","Recycle into Core Components","Safe to Sell / Recycle"],
+      "categories": ["Wires"],
+      "icon": "icons/Power_Cable.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Power Rod",
+      "sellValue": 5500,
+      "recycleDelta": null,
+      "sections": ["High-Tier Components"],
+      "categories": ["Gear Components"],
+      "icon": "icons/Power_Rod.png",
+      "rarity": "Epic"
+    },
+    {
+      "name": "Damaged ARC Powercell",
+      "sellValue": 293,
+      "recycleDelta": "-32%",
+      "sections": ["Safe to Sell / Recycle"],
+      "categories": null,
+      "icon": "icons/Damaged_ARC_Powercell.png",
+      "rarity": "Common"
+    },
+    {
+      "name": "Prickly Pear",
+      "sellValue": 640,
+      "recycleDelta": "-53%",
+      "sections": ["Workshop Upgrades","Safe to Sell / Recycle"],
+      "categories": null,
+      "icon": "icons/Prickly_Pear.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Projector",
+      "sellValue": 1000,
+      "recycleDelta": null,
+      "sections": ["Recycle into Core Components","Recycle into High-Priority Components","Safe to Sell / Recycle"],
+      "categories": ["Wires","Processor"],
+      "icon": "icons/Projector.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Radio",
+      "sellValue": 1000,
+      "recycleDelta": "+0%",
+      "sections": ["Safe to Sell / Recycle"],
+      "categories": ["Sensors"],
+      "icon": "icons/Radio.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Radio Relay",
+      "sellValue": 3000,
+      "recycleDelta": "-33%",
+      "sections": ["Safe to Sell / Recycle"],
+      "categories": ["Sensors"],
+      "icon": "icons/Radio_Relay.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Surge Shield Recharger",
+      "sellValue": 1200,
+      "recycleDelta": null,
+      "sections": ["High-Tier Items"],
+      "categories": null,
+      "icon": "icons/Surge_Shield_Recharger.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Ripped Safety Vest",
+      "sellValue": 1000,
+      "recycleDelta": null,
+      "sections": ["Recycle into Core Components","Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Magnet","Fabric"],
+      "icon": "icons/Ripped_Safety_Vest.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Rocketeer Driver",
+      "sellValue": 5000,
+      "recycleDelta": null,
+      "sections": ["Workshop Upgrades","Safe to Sell / Recycle"],
+      "categories": null,
+      "icon": "icons/Rocketeer_Driver.png",
+      "rarity": "Epic"
+    },
+    {
+      "name": "Rotary Encoder",
+      "sellValue": 3000,
+      "recycleDelta": null,
+      "sections": ["Recycle into High-Priority Components","Safe to Sell / Recycle"],
+      "categories": ["Processor"],
+      "icon": "icons/Rotary_Encoder.png",
+      "rarity": "Epic"
+    },
+    {
+      "name": "Rubber Parts",
+      "sellValue": 50,
+      "recycleDelta": "-26%",
+      "sections": ["Workshop Upgrades","Expedition Project","Base Components"],
+      "categories": ["Workbench Components","Utility Components","Gear Components","Workbench Components","Gun Components","Explosive Components","Refiner Components"],
+      "icon": "icons/Rubber_Parts.png",
+      "rarity": "Common"
+    },
+    {
+      "name": "Rubber Pad",
+      "sellValue": 1000,
+      "recycleDelta": null,
+      "sections": ["Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Rubber Parts"],
+      "icon": "icons/Rubber_Pad.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Ruined Parachute",
+      "sellValue": 640,
+      "recycleDelta": null,
+      "sections": ["Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Fabric"],
+      "icon": "icons/Ruined_Parachute.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Ruined Baton",
+      "sellValue": 640,
+      "recycleDelta": "-6%",
+      "sections": ["Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Metal Parts","Rubber Parts"],
+      "icon": "icons/Ruined_Baton.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Rusted Gear",
+      "sellValue": 2000,
+      "recycleDelta": null,
+      "sections": ["Workshop Upgrades","Recycle into Core Components","Safe to Sell / Recycle"],
+      "categories": ["Metal Parts"],
+      "icon": "icons/Rusted_Gear.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Rusted Tools",
+      "sellValue": 1000,
+      "recycleDelta": "-10%",
+      "sections": ["Workshop Upgrades","Recycle into Core Components","Safe to Sell / Recycle"],
+      "categories": ["Steel Spring","Metal Parts"],
+      "icon": "icons/Rusted_Tools.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Rusty ARC Steel",
+      "sellValue": 640,
+      "recycleDelta": "-25%",
+      "sections": ["Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Metal Parts"],
+      "icon": "icons/Rusty_ARC_Steel.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Sentinel Firing Core",
+      "sellValue": 3000,
+      "recycleDelta": "-23%",
+      "sections": ["Workshop Upgrades","Recycle into Core Components","Safe to Sell / Recycle"],
+      "categories": null,
+      "icon": "icons/Sentinel_Firing_Core.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Signal Amplifier",
+      "sellValue": 3000,
+      "recycleDelta": null,
+      "sections": ["Recycle into Core Components","Safe to Sell / Recycle"],
+      "categories": null,
+      "icon": "icons/Signal_Amplifier.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Snap Hook",
+      "sellValue": 14000,
+      "recycleDelta": null,
+      "sections": ["High-Tier Items"],
+      "categories": null,
+      "icon": "icons/Snap_Hook.png",
+      "rarity": "Legendary"
+    },
+    {
+      "name": "Snitch Scanner",
+      "sellValue": 2000,
+      "recycleDelta": "-26%",
+      "sections": ["Workshop Upgrades","Recycle into Core Components","Safe to Sell / Recycle"],
+      "categories": null,
+      "icon": "icons/Snitch_Scanner.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Spectrometer",
+      "sellValue": 3000,
+      "recycleDelta": null,
+      "sections": ["Recycle into High-Priority Components","Safe to Sell / Recycle"],
+      "categories": ["Sensors"],
+      "icon": "icons/Spectrometer.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Spring Cushion",
+      "sellValue": 2000,
+      "recycleDelta": null,
+      "sections": ["Recycle into Base Components","Recycle into Core Components","Safe to Sell / Recycle"],
+      "categories": ["Fabric","Steel Spring"],
+      "icon": "icons/Spring_Cushion.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Steel Spring",
+      "sellValue": 300,
+      "recycleDelta": null,
+      "sections": ["Expedition Project","Core Components"],
+      "categories": null,
+      "icon": "icons/Steel_Spring.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Surveyor Vault",
+      "sellValue": 2000,
+      "recycleDelta": "-16%",
+      "sections": ["Workshop Upgrades","Recycle into High-Priority Components","Safe to Sell / Recycle"],
+      "categories": null,
+      "icon": "icons/Surveyor_Vault.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Synthesized Fuel",
+      "sellValue": 700,
+      "recycleDelta": null,
+      "sections": ["Workshop Upgrades","Recycle into High-Priority Components","Safe to Sell / Recycle"],
+      "categories": ["Explosive Components","Oil","Plastic Parts"],
+      "icon": "icons/Synthesized_Fuel.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Tactical Mk. 3 (Defensive)",
+      "sellValue": 5000,
+      "recycleDelta": null,
+      "sections": ["High-Tier Items","Augments"],
+      "categories": null,
+      "icon": "icons/Tactical_Mk._3_(Defensive).png",
+      "rarity": "Epic"
+    },
+    {
+      "name": "Tactical Mk. 3 (Healing)",
+      "sellValue": 5000,
+      "recycleDelta": null,
+      "sections": ["High-Tier Items","Augments"],
+      "categories": null,
+      "icon": "icons/Tactical_Mk._3_(Healing).png",
+      "rarity": "Epic"
+    },
+    {
+      "name": "Tattered ARC Lining",
+      "sellValue": 640,
+      "recycleDelta": null,
+      "sections": ["Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Fabric"],
+      "icon": "icons/Tattered_ARC_Lining.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Telemetry Transceiver",
+      "sellValue": 3000,
+      "recycleDelta": null,
+      "sections": ["Recycle into High-Priority Components","Safe to Sell / Recycle"],
+      "categories": ["Processor"],
+      "icon": "icons/Telemetry_Transceiver.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Tempest",
+      "sellValue": 13000,
+      "recycleDelta": null,
+      "sections": ["High-Tier Items"],
+      "categories": null,
+      "icon": "icons/Tempest-Level1.png",
+      "rarity": "Epic"
+    },
+    {
+      "name": "Tick Pod",
+      "sellValue": 640,
+      "recycleDelta": "-22%",
+      "sections": ["Workshop Upgrades","Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Chemicals"],
+      "icon": "icons/Tick_Pod.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Toaster",
+      "sellValue": 1000,
+      "recycleDelta": ["-10%"],
+      "sections": ["Workshop Upgrades","Recycle into Base Components","Recycle into Core Components","Safe to Sell / Recycle"],
+      "categories": ["Plastic Parts","Wires"],
+      "icon": "icons/Toaster.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Torn Blanket",
+      "sellValue": 640,
+      "recycleDelta": null,
+      "sections": ["Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Fabric"],
+      "icon": "icons/Torn_Blanket.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Torrente",
+      "sellValue": 7000,
+      "recycleDelta": null,
+      "sections": ["High-Tier Items"],
+      "categories": null,
+      "icon": "icons/Torrente-Level1.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Turbo Pump",
+      "sellValue": 2000,
+      "recycleDelta": null,
+      "sections": ["Recycle into Core Components","Safe to Sell / Recycle"],
+      "categories": ["Oil"],
+      "icon": "icons/Turbo_Pump.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Unusable Weapon",
+      "sellValue": 2000,
+      "recycleDelta": "-2.5%",
+      "sections": ["Recycle into Base Components","Recycle into Core Components","Safe to Sell / Recycle"],
+      "categories": ["Metal Parts"],
+      "icon": "icons/Unusable_Weapon.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Venator",
+      "sellValue": 7000,
+      "recycleDelta": null,
+      "sections": ["High-Tier Items"],
+      "categories": null,
+      "icon": "icons/Venator-Level1.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Voltage Converter",
+      "sellValue": 500,
+      "recycleDelta": "-50%",
+      "sections": ["High-Tier Components"],
+      "categories": ["Gear Components","Explosive Components"],
+      "icon": "icons/Voltage_Converter.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Wasp Driver",
+      "sellValue": 1000,
+      "recycleDelta": null,
+      "sections": ["Workshop Upgrades","Recycle into Core Components","Safe to Sell / Recycle"],
+      "categories": null,
+      "icon": "icons/Wasp_Driver.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Chemicals",
+      "sellValue": 50,
+      "recycleDelta": null,
+      "sections": ["Base Components"],
+      "categories": ["Workbench Components","Medical Components","Workbench Components","Refiner Components","Utility Components","Explosive Components"],
+      "icon": "icons/Chemicals.png",
+      "rarity": "Common"
+    },
+    {
+      "name": "Oil",
+      "sellValue": 300,
+      "recycleDelta": "-50%",
+      "sections": ["High-Tier Components"],
+      "categories": ["Explosive Components","Refiner Components","Gun Components"],
+      "icon": "icons/Oil.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Broken Guidance System",
+      "sellValue": 2000,
+      "recycleDelta": "+0%",
+      "sections": ["Recycle into Core Components","Safe to Sell / Recycle"],
+      "categories": ["Processor"],
+      "icon": "icons/Broken_Guidance_System.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Broken Handheld Radio",
+      "sellValue": 2000,
+      "recycleDelta": "-5%",
+      "sections": ["Recycle into Core Components","Safe to Sell / Recycle"],
+      "categories": ["Sensors","Wires"],
+      "icon": "icons/Broken_Handheld_Radio.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Pollued Air Filter",
+      "sellValue": 1000,
+      "recycleDelta": "-10%",
+      "sections": ["Recycle into High-Priority Components","Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Oil","Fabric"],
+      "icon": "icons/Polluted_Air_Filter.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Remote Control",
+      "sellValue": 1000,
+      "recycleDelta": "-8%",
+      "sections": ["Recycle into High-Priority Components","Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Plastic Parts","Sensors"],
+      "icon": "icons/Remote_Control.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Thermostat",
+      "sellValue": 1000,
+      "recycleDelta": "-15%",
+      "sections": ["Recycle into High-Priority Components","Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Rubber Parts","Sensors"],
+      "icon": "icons/Thermostat.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Sample Cleaner",
+      "sellValue": 3000,
+      "recycleDelta": "-11%",
+      "sections": ["Recycle into High-Priority Components","Safe to Sell / Recycle"],
+      "categories": null,
+      "icon": "icons/Sample_Cleaner.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Speaker Component",
+      "sellValue": 500,
+      "recycleDelta": "-46%",
+      "sections": ["Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Plastic Parts","Rubber Parts"],
+      "icon": "icons/Speaker_Component.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Camera Lens",
+      "sellValue": 640,
+      "recycleDelta": "-25%",
+      "sections": ["Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Plastic Parts"],
+      "icon": "icons/Camera_Lens.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Crumpled Plastic Bottle",
+      "sellValue": 270,
+      "recycleDelta": "-11%",
+      "sections": ["Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Plastic Parts"],
+      "icon": "icons/Crumpled_Plastic_Bottle.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Deflated Football",
+      "sellValue": 1000,
+      "recycleDelta": "-10%",
+      "sections": ["Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Rubber Parts","Fabric"],
+      "icon": "icons/Deflated_Football.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Degraded ARC Rubber",
+      "sellValue": 640,
+      "recycleDelta": "-14%",
+      "sections": ["Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Rubber Parts"],
+      "icon": "icons/Degraded_ARC_Rubber.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Dried-Out ARC Resin",
+      "sellValue": 640,
+      "recycleDelta": "-16%",
+      "sections": ["Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Plastic Parts"],
+      "icon": "icons/Dried-Out_ARC_Resin.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Househould Cleaner",
+      "sellValue": 640,
+      "recycleDelta": "-14%",
+      "sections": ["Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Chemicals"],
+      "icon": "icons/Household_Cleaner.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Ruined Handcuffs",
+      "sellValue": 640,
+      "recycleDelta": "-25%",
+      "sections": ["Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Metal Parts"],
+      "icon": "icons/Ruined_Handcuffs.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Spotter Relay",
+      "sellValue": 2000,
+      "recycleDelta": "-26%",
+      "sections": ["Recycle into High-Priority Components","Safe to Sell / Recycle"],
+      "categories": null,
+      "icon": "icons/Spotter_Relay.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Rusted Bolts",
+      "sellValue": 640,
+      "recycleDelta": "-6%",
+      "sections": ["Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Metal Parts"],
+      "icon": "icons/Rusted_Bolts.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Metal Parts",
+      "sellValue": 75,
+      "recycleDelta": null,
+      "sections": ["Workshop Upgrades","Base Components","Expedition Project"],
+      "categories": ["Gun Components","Utility Components","Workbench Components","Refiner Components"],
+      "icon": "icons/Metal_Parts.png",
+      "rarity": "Common"
+    },
+    {
+      "name": "ARC Alloy",
+      "sellValue": 200,
+      "recycleDelta": "-25%",
+      "sections": ["Workshop Upgrades","Core Components","Expedition Project"],
+      "categories": ["Refiner Components","Gear Components","Workbench Components","Explosive Components"],
+      "icon": "icons/ARC_Alloy.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Wires",
+      "sellValue": 200,
+      "recycleDelta": "-50%",
+      "sections": ["Expedition Project","Core Components"],
+      "categories": ["Refiner Components","Workbench Components","Gun Components","Explosive Components"],
+      "icon": "icons/Wires.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Light Bulb",
+      "sellValue": 2000,
+      "recycleDelta": "-25%",
+      "sections": ["Expedition Project","Safe to Sell / Recycle"],
+      "categories": null,
+      "icon": "icons/Light_Bulb.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Shredder Gyro",
+      "sellValue": 3000,
+      "recycleDelta": "-16%",
+      "sections": ["Expedition Project","Recycle into High-Priority Components","Safe to Sell / Recycle"],
+      "categories": null,
+      "icon": "icons/Shredder_Gyro.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Shredder Gyro",
+      "sellValue": 6000,
+      "recycleDelta": "-21%",
+      "sections": ["Expedition Project","Recycle into High-Priority Components","Safe to Sell / Recycle"],
+      "categories": ["Voltage Converter"],
+      "icon": "icons/Ion_Sputter.png",
+      "rarity": "Epic"
+    },
+    {
+      "name": "Mechanical Components",
+      "sellValue": 640,
+      "recycleDelta": "-49%",
+      "sections": ["Workshop Upgrades","Core Components"],
+      "categories": ["Refiner Components","Gun Components"],
+      "icon": "icons/Mechanical_Components.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Lemon",
+      "sellValue": 640,
+      "recycleDelta": "-25%",
+      "sections": ["Workshop Upgrades","Safe to Sell / Recycle"],
+      "categories": null,
+      "icon": "icons/Lemon.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Apricot",
+      "sellValue": 640,
+      "recycleDelta": "-53%",
+      "sections": ["Workshop Upgrades","Safe to Sell / Recycle"],
+      "categories": null,
+      "icon": "icons/Apricot.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Olives",
+      "sellValue": 640,
+      "recycleDelta": "-69%",
+      "sections": ["Workshop Upgrades","Safe to Sell / Recycle"],
+      "categories": null,
+      "icon": "icons/Olives.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Cat Bed",
+      "sellValue": 1000,
+      "recycleDelta": "-25%",
+      "sections": ["Workshop Upgrades","Safe to Sell / Recycle"],
+      "categories": null,
+      "icon": "icons/Cat_Bed.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Mushroom",
+      "sellValue": 1000,
+      "recycleDelta": "-25%",
+      "sections": ["Workshop Upgrades","Safe to Sell / Recycle"],
+      "categories": null,
+      "icon": "icons/Mushroom.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Very Comfortable Pillow",
+      "sellValue": 2000,
+      "recycleDelta": "-25%",
+      "sections": ["Workshop Upgrades","Safe to Sell / Recycle"],
+      "categories": null,
+      "icon": "icons/Very_Comfortable_Pillow.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Plastic Parts",
+      "sellValue": 60,
+      "recycleDelta": "-26%",
+      "sections": ["Workshop Upgrades","Base Components"],
+      "categories": ["Medical Components","Utility Components","Gear Components","Refiner Components","Gun Components"],
+      "icon": "icons/Plastic_Parts.png",
+      "rarity": "Common"
+    },
+    {
+      "name": "Fabric",
+      "sellValue": 50,
+      "recycleDelta": null,
+      "sections": ["Workshop Upgrades","Base Components"],
+      "categories": ["Medical Components","Refiner Components"],
+      "icon": "icons/Fabric.png",
+      "rarity": "Common"
+    },
+    {
+      "name": "Ruined Riot Shield",
+      "sellValue": 1000,
+      "recycleDelta": null,
+      "sections": ["Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Plastic Parts","Rubber Parts"],
+      "icon": "icons/Ruined_Riot_Shield.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Tattered Clothes",
+      "sellValue": 640,
+      "recycleDelta": null,
+      "sections": ["Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Fabric"],
+      "icon": "icons/Tattered_Clothes.png",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "ARC Performance Steel",
+      "sellValue": 1000,
+      "recycleDelta": null,
+      "sections": ["Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Metal Parts"],
+      "icon": "icons/ARC_Performance_Steel.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Processor",
+      "sellValue": 500,
+      "recycleDelta": "-50%",
+      "sections": ["High-Tier Components"],
+      "categories": ["Gear Components","Explosive Components"],
+      "icon": "icons/Processor.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Ruined Accordion",
+      "sellValue": 2000,
+      "recycleDelta": null,
+      "sections": ["Recycle into Core Components","Recycle into Base Components","Safe to Sell / Recycle"],
+      "categories": ["Rubber Parts","Steel Spring"],
+      "icon": "icons/Ruined_Accordion.png",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Geiger Counter",
+      "sellValue": 3500,
+      "recycleDelta": null,
+      "sections": ["Recycle into Core Components","Safe to Sell / Recycle"],
+      "categories": ["Battery"],
+      "icon": "icons/Geiger_Counter.png",
+      "rarity": "Epic"
+    }
+  ]
+}

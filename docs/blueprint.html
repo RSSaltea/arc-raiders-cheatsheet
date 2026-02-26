@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>ARC Raider • Blueprint Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="bp/bp.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbarRow">
+
+    <div class="brand">
+      <div class="logo"></div>
+      <div>
+        <div class="title">Blueprint Tracker</div>
+        <div class="subtitle">Click to mark collected</div>
+      </div>
+    </div>
+
+    <div class="bp-search">
+      <input
+        id="bpSearch"
+        type="search"
+        placeholder="Search blueprints…"
+        autocomplete="off"
+      />
+    </div>
+
+    <a class="navBtn" href="index.html">Cheat Sheet</a>
+
+    <div class="bp-top-actions">
+      <div id="bpProgress" class="bp-progress">0 / 0 collected</div>
+      <button id="bpExport" class="btn small">Export PNG</button>
+      <button id="bpMarkAll" class="btn small">Mark all</button>
+      <button id="bpClearAll" class="btn small">Clear all</button>
+    </div>
+
+  </div>
+</header>
+
+<main class="container">
+  <section id="bpGrid" class="blueprint-grid"></section>
+</main>
+
+<!-- Export dependency -->
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+<!-- App logic -->
+<script src="bp/bp.js"></script>
+</body>
+</html>
